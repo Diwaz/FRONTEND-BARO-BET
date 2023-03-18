@@ -19,7 +19,7 @@ body {
 }
 
 .customNav {
-    background-color: rgb(26, 25, 28)!important;
+    background-color: rgb(31, 38, 47)!important;
     border-width: 1px 0;
     border-style: solid;
     border-color: rgb(64, 64, 68);
@@ -36,16 +36,16 @@ body {
 }
 
 .customUl1 {
-    color: rgb(193, 138, 110)!important
+    color: rgb(26, 153, 199)!important
 }
 
 .customUl1:hover {
     color: rgb(218, 218, 218)!important;
-    border: 1px solid rgb(193, 138, 110)!important;
+    border: 1px solid rgb(26, 153, 199)!important;
 }
 
 .customUl:hover {
-    color: rgb(193, 138, 110)!important
+    color: rgb(26, 153, 199)!important
 }
 
 .customDrop {
@@ -220,7 +220,7 @@ textarea {
 
 .button:hover,
 .button:focus {
-    background-color: rgb(193, 138, 110)!important
+    background-color: rgb(26, 153, 199)!important
 }
 
 .button-block {
@@ -250,6 +250,29 @@ textarea {
     width: 100px;
 }
 
+.afterSignup {
+    display: none !important;
+}
+
+.login {
+    display: block;
+}
+
+.signUpBlock {
+    display: none;
+}
+
+.formInput {}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.formTitle {
+    color: #ffffff;
+}
+
 .customRegister {
     background-color: rgb(26, 153, 199) !important;
     padding: 8px;
@@ -257,9 +280,22 @@ textarea {
     justify-content: center;
     align-items: center;
     border-radius: 3px;
+    cursor: pointer;
 }
 
-.customRegister:hover {
+.customLogin {
+    background-color: rgb(26, 153, 199) !important;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.customRegister:hover,
+.customLogin:hover {
     background-color: rgb(15, 101, 133) !important;
     color: #ffffff
 }
