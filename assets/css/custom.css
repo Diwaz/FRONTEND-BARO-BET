@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgb(23, 28, 34);
+}
+
+.sidebar {
+    background-color: rgb(31, 38, 47);
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.contentWrapper {
+    margin-top: 70px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.title {
+    color: rgb(97, 102, 108);
+    /* width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; */
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+.specLogo {
+    position: absolute;
+    left: 10px;
+}
+
+.submenu {
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 10px;
+    font-weight: 400;
+}
+
+.active {
+    color: #16bdf9!important;
+}
+
+.sportsMenu {
+    padding: 10px;
+    /* border-bottom: 1px solid linear-gradient(90deg, #313b46 48.96%, hsla(0, 0%, 100%, 0)); */
+}
+
+.menuDivider {
+    height: 1px;
+    background-image: linear-gradient(90deg, #313b46 48.96%, hsla(0, 0%, 100%, 0));
+    margin-top: 10px;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgb(31, 38, 47);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.spanWord {
+    color: rgb(26, 153, 199)!important;
+}
+
+.rightSegment {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    position: fixed;
+    right: 0;
+}
+
+.navWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.bi-person-circle {
+    color: rgb(26, 153, 199)!important;
+    font-size: 25px;
+    display: none;
+}
+
+.logoSegment {
+    display: none;
+}
+
+.submenu:hover {
+    color: rgb(26, 153, 199)!important;
+}
+
+.signinBtn {
+    background-color: rgb(26, 153, 199)!important;
+    cursor: pointer;
+    padding: 0 20px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #ffffff;
+    margin-right: 10px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupInfo {
+    color: rgb(188, 190, 193);
+    font-size: 12px;
+}
+
+.my-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+.bi-list {
+    color: rgb(26, 153, 199)!important;
+    font-size: 25px;
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 30px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: rgb(54, 60, 68);
+}
+
+
+/* Styles for small screens (up to 576px) */
+
+@media (max-width: 576px) {
+    /* Add additional styles as needed */
+}
+
+
+/* Styles for medium screens (up to 768px) */
+
+@media (max-width: 768px) {
+    /* Add additional styles as needed */
+}
+
+
+/* Styles for large screens (up to 992px) */
+
+@media (max-width: 992px) {
+    /* Add additional styles as needed */
+}
+
+
+/* Styles for extra large screens (up to 1200px) */
+
+@media (max-width: 1200px) {
+    .logoSegment {
+        display: block;
+    }
+    .sidebar {
+        left: -100%;
+    }
+    .rightSegment {
+        display: none;
+    }
+    .bi-person-circle {
+        display: block;
+    }
+    .bi-list {
+        display: block;
+    }
+    /* Add additional styles as needed */
+}
+
+
+/* Styles for screens larger than 1200px */
+
+
+/* Add additional styles as needed */
