@@ -1,11 +1,32 @@
 * {
     padding: 0;
     margin: 0;
+    color: #ffffff;
 }
 
 body {
     font-family: 'Noto Sans', sans-serif;
     background-color: rgb(23, 28, 34);
+}
+
+.bodyWrapper {
+    display: flex;
+    justify-content: space-between;
+    /* height: 100vh; */
+}
+
+.column1 {
+    background-color: rgb(31, 38, 47);
+    flex-basis: 250px;
+}
+
+.column2 {
+    flex-basis: 912px;
+}
+
+.column3 {
+    background-color: rgb(31, 38, 47);
+    flex-basis: 350px;
 }
 
 .sidebar {
@@ -17,7 +38,7 @@ body {
 }
 
 .contentWrapper {
-    margin-top: 70px;
+    margin-top: 0px;
 }
 
 .logo {
@@ -46,6 +67,7 @@ body {
 .specLogo {
     position: absolute;
     left: 10px;
+    color: rgb(97, 102, 108);
 }
 
 .submenu {
@@ -103,6 +125,10 @@ body {
     padding-right: 15px;
 }
 
+.bi-power {
+    margin-right: 5px;
+}
+
 .bi-person-circle {
     color: rgb(26, 153, 199)!important;
     font-size: 25px;
@@ -127,7 +153,7 @@ body {
     margin-right: 10px;
     height: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -151,6 +177,188 @@ body {
     color: rgb(26, 153, 199)!important;
     font-size: 25px;
     display: none;
+}
+
+.betSlip {
+    position: fixed;
+    background-color: rgb(31, 38, 47);
+    width: 350px;
+    height: 100vh;
+    overflow: auto;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slipWrapper {
+    top: 0;
+    width: 326px;
+    background-color: rgb(39, 48, 58);
+}
+
+.slipHeader {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(26, 153, 199)!important;
+}
+
+.HeaderTop {
+    color: rgb(26, 153, 199)!important;
+    font-size: 12px;
+}
+
+.HeaderBottom {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.op1 {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.op1:hover {
+    color: rgb(26, 153, 199)!important;
+}
+
+.slipBody {
+    border-bottom: 1px solid #1e242c;
+}
+
+.emptyCart {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slipFooter {
+    border-top: 1px solid #303a46;
+}
+
+.bi-dash-circle {
+    color: rgb(97, 102, 108);
+    font-size: 30px;
+}
+
+.infoEmpty {
+    color: rgb(97, 102, 108);
+    font-weight: 300;
+}
+
+.bi-trash {
+    margin-right: 5px;
+}
+
+.emptyAll {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.emptyAll:hover {
+    color: rgb(26, 153, 199)!important;
+}
+
+.IncDec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ControlWrapper {
+    background-color: rgb(48, 58, 70);
+    height: 35px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.amount {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 12px;
+    font-weight: 300;
+    border-left: 1px solid #1e242c;
+    border-right: 1px solid #303a46;
+    height: 100%;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.erase {
+    border-left: 1px solid #1e242c;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.inc {
+    padding: 10px;
+}
+
+.totalOdds {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.betControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 5px
+}
+
+.OddsNumber {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgb(26, 153, 199)!important;
+}
+
+.BetBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btnNew {
+    background-color: rgb(26, 153, 199)!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 95%;
+    font-weight: 300;
+}
+
+.btnNew:hover {
+    background-color: rgb(29, 170, 222)!important;
+    cursor: pointer;
+}
+
+.chooseSports {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #16bdf9;
+}
+
+.sportsWrapper {
+    background-color: aqua;
 }
 
 ::-webkit-scrollbar {
@@ -201,6 +409,9 @@ body {
     }
     .bi-list {
         display: block;
+    }
+    .betSlip {
+        right: 100%
     }
     /* Add additional styles as needed */
 }
