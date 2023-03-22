@@ -8,105 +8,342 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/custom.css">
     <title>Homepage</title>
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navWrapper">
-            <div class="tooglebarSegment">
-                <i class="bi bi-list "></i>
-            </div>
-            <div class="logoSegment">
-                <img src="assets/images/logo (1).png" class="imgLogo" width="160" height="30">
-            </div>
-            <div class="rightSegment">
-                <div class="signinBtn"><i class="bi bi-power"></i> Sign In</div>
-                <div class="signupInfo"> Aren't you member yet ? <span class="spanWord">Sign Up</span></div>
-            </div>
-            <i class="bi bi-person-circle"></i>
 
+    <nav class="navbar navbar-expand-lg bg-body-tertiary customNav  sticky-top">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#"><img src="assets/images/logo (1).png" class="d-inline-block align-text-top" width="200" height="23"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class=" navBarToggler"><i class="bi bi-list"></i></span>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ">
+
+                    <li class="nav-item  mx-2">
+                        <a class="nav-link customUl" href="#">LIVE SPORTS</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl" href="#">SPORTS</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl" href="#">LIVE CASINO</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl" href="#">EVENT</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl" href="#">SLOT MACHINE</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl" href="#">MINI GAMES</a>
+                    </li>
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle customUl" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SEE MORE
+          </a>
+                        <ul class="dropdown-menu customDrop">
+                            <li><a class=" dropdown-item customDropper py-2 " href="#">Action</a></li>
+                            <li><a class="dropdown-item customDropper py-2" href="#">Another action</a></li>
+                            <li><a class="dropdown-item customDropper py-2" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl" href="#">SPORTS TOURNAMENT</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl" href="#">
+                                    ⭐
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl1" href="#">MEMBERSHIP</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link customUl" href="#">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
     <div class="bodyWrapper">
         <!-- <div class="my-backdrop"></div> -->
-        <div class="column1">
-            <div class="sidebar">
-                <div class="contentWrapper">
-                    <div class="logo">
-                        <img src="assets/images/logo (1).png" class="imgLogo" width="160" height="30">
-                    </div>
-                    <div class="menu">
-                        <div class="sportsMenu">
-                            <div class="title">
-                                <i class="bi bi-dribbble specLogo"></i>SPORTS</div>
-                            <div class="submenu active">Sports</div>
-                            <div class="submenu">Sports Live</div>
-                            <div class="menuDivider"></div>
-                        </div>
-                        <div class="sportsMenu">
-                            <div class="title">
-                                <i class="bi bi-dribbble specLogo"></i>E-SPORTS</div>
-                            <div class="submenu">E-Sports</div>
-                            <div class="submenu">E-Sports Live</div>
-                            <div class="menuDivider"></div>
-                        </div>
-                        <div class="sportsMenu">
-                            <div class="title">
-                                <i class="bi bi-suit-spade specLogo"></i>CASINO</div>
 
-                            <div class="submenu">Live Casino</div>
-                            <div class="menuDivider"></div>
-                        </div>
-                        <div class="sportsMenu">
-                            <div class="title">
-                                <i class="bi bi-controller specLogo"></i>GAMES</div>
-                            <div class="submenu">Mind Games</div>
-                            <div class="submenu">Sky park</div>
-                            <div class="submenu">BET365 Virtual</div>
-                            <div class="submenu">Plinko</div>
-                            <div class="menuDivider"></div>
-                        </div>
-                        <div class="sportsMenu">
-                            <div class="title">
-                                <i class="bi bi-clipboard2-minus specLogo"></i>BOARD</div>
-                            <div class="submenu">Notice</div>
-                            <div class="submenu">Event</div>
-                            <div class="menuDivider"></div>
-                        </div>
-                        <div class="sportsMenu">
-                            <div class="title">
-                                <i class="bi bi-clipboard2-minus specLogo"></i>BOARD</div>
-                            <div class="submenu">Notice</div>
-                            <div class="submenu">Event</div>
-                            <div class="menuDivider"></div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="column2">
             <div class="chooseSports">
                 <div class="sportsWrapper">
-                    Here
+                    <div class="topSideWrapper bbcolor">
+
+
+                        <div class="topSideSports">
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Soccer</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/7.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Basketball</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/6.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Tennis</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/5.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Handball</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/4.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Golf</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/3.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Boxing</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/2.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Rugby</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/1.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Snooker</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/9.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Golf</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/10.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Boxing</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/11.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Rugby</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/12.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Snooker</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/13.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Boxing</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/14.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Rugby</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/15.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Snooker</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomSideWrapper btSpecColor">
+
+                        <div class="downSideSports">
+                            <div class="inputSports">
+                                <input type="text" name="Sport" id="" placeholder="Please enter team name or league name" class="inputLeague">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="sortWrapper">
+                    <div class="sortButtons">
+                        <div class="btn1"><i class="bi bi-bookmark"></i>Select league</div>
+                        <div class="btn2 active"><i class="bi bi-sort-down"></i>Sort time</div>
+                        <div class="btn3"><i class="bi bi-sort-up"></i>Sort league</div>
+                    </div>
+                </div>
+                <div class="gamesWrapper">
+                    <div class="gamesTable">
+                        <div class="leagueTable">
+                            <div class="leagueHeader bbcolor">
+                                <div class="leagueCol1">
+
+                                    <img src="assets/images/country3.png" alt="" width="19" height="14" class="representLogo"> Segunda Division</div>
+                                <div class="leagueCol2">
+                                    <div class="betHeader">Home </div>
+                                    <div class="betHeader">Draw</div>
+                                    <div class="bHeader">Away</div>
+                                </div>
+                                <div class="leagueCol3">Handicap</div>
+                                <div class="leagueCol4">Over/Under</div>
+                            </div>
+                            <div class="leagueFooter btcolor">
+                                <div class="gameCol1">
+
+                                    <div class="teamRow1">
+                                        <div class="nestedRow">03/11</div>
+                                        <div class="nestedRow"> <img src="assets/images/team1.png" alt="" width="14" height="14" class="representLogo"> Arsenal FC</div>
+                                    </div>
+                                    <div class="teamRow1">
+                                        <div class="nestedRow">6:00</div>
+                                        <div class="nestedRow"> <img src="assets/images/team2.png" alt="" width="14" height="14" class="representLogo"> Bayern FC</div>
+                                    </div>
+
+                                </div>
+                                <div class="gameCol2">
+                                    <div class="betOdds">3.50 </div>
+                                    <div class="betOdds">3.20</div>
+                                    <div class="betOdds">3.00</div>
+                                </div>
+                                <div class="gameCol3">
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontOrange">-1.5</div>
+                                        <div class="nestedOdds">2.10</div>
+                                    </div>
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontOrange">1.5</div>
+                                        <div class="nestedOdds">1.64</div>
+                                    </div>
+
+
+                                </div>
+                                <div class="gameCol4">
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontRed">-1.5</div>
+                                        <div class="nestedOdds">2.10</div>
+                                    </div>
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontBlue">1.5</div>
+                                        <div class="nestedOdds">1.64</div>
+                                    </div>
+                                    <div class="extraOdd">+78</div>
+                                </div>
+                                <div class="gameOdds"></div>
+                            </div>
+                            <div class="leagueFooter btcolor">
+                                <div class="gameCol1">
+
+                                    <div class="teamRow1">
+                                        <div class="nestedRow">03/11</div>
+                                        <div class="nestedRow"> <img src="assets/images/team3.png" alt="" width="14" height="14" class="representLogo">FC Barcelona</div>
+                                    </div>
+                                    <div class="teamRow1">
+                                        <div class="nestedRow">6:00</div>
+                                        <div class="nestedRow"> <img src="assets/images/team4.png" alt="" width="14" height="14" class="representLogo"> Roma FC</div>
+                                    </div>
+
+                                </div>
+                                <div class="gameCol2">
+                                    <div class="betOdds">3.50 </div>
+                                    <div class="betOdds">3.20</div>
+                                    <div class="betOdds">3.00</div>
+                                </div>
+                                <div class="gameCol3">
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontOrange">-1.5</div>
+                                        <div class="nestedOdds">2.10</div>
+                                    </div>
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontOrange">1.5</div>
+                                        <div class="nestedOdds">1.64</div>
+                                    </div>
+
+
+                                </div>
+                                <div class="gameCol4">
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontRed">-1.5</div>
+                                        <div class="nestedOdds">2.10</div>
+                                    </div>
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontBlue">1.5</div>
+                                        <div class="nestedOdds">1.64</div>
+                                    </div>
+                                    <div class="extraOdd">+78</div>
+                                </div>
+                                <div class="gameOdds"></div>
+                            </div>
+                        </div>
+                        <div class="leagueTable">
+                            <div class="leagueHeader bbcolor">
+                                <div class="leagueCol1">
+
+                                    <img src="assets/images/country2.png" alt="" width="19" height="14" class="representLogo"> Series A</div>
+                                <div class="leagueCol2">
+                                    <div class="betHeader">Home </div>
+                                    <div class="betHeader">Draw</div>
+                                    <div class="bHeader">Away</div>
+                                </div>
+                                <div class="leagueCol3">Handicap</div>
+                                <div class="leagueCol4">Over/Under</div>
+                            </div>
+                            <div class="leagueFooter btcolor">
+                                <div class="gameCol1">
+
+                                    <div class="teamRow1">
+                                        <div class="nestedRow">03/11</div>
+                                        <div class="nestedRow"> <img src="assets/images/team1.png" alt="" width="14" height="14" class="representLogo"> Arsenal FC</div>
+                                    </div>
+                                    <div class="teamRow1">
+                                        <div class="nestedRow">6:00</div>
+                                        <div class="nestedRow"> <img src="assets/images/team2.png" alt="" width="14" height="14" class="representLogo"> Bayern FC</div>
+                                    </div>
+
+                                </div>
+                                <div class="gameCol2">
+                                    <div class="betOdds">3.50 </div>
+                                    <div class="betOdds">3.20</div>
+                                    <div class="betOdds">3.00</div>
+                                </div>
+                                <div class="gameCol3">
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontOrange">-1.5</div>
+                                        <div class="nestedOdds">2.10</div>
+                                    </div>
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontOrange">1.5</div>
+                                        <div class="nestedOdds">1.64</div>
+                                    </div>
+
+
+                                </div>
+                                <div class="gameCol4">
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontRed">-1.5</div>
+                                        <div class="nestedOdds">2.10</div>
+                                    </div>
+                                    <div class="handiOdds">
+                                        <div class="nestedOdds fontBlue">1.5</div>
+                                        <div class="nestedOdds">1.64</div>
+                                    </div>
+                                    <div class="extraOdd">+78</div>
+                                </div>
+                                <div class="gameOdds"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+
+
+
+
         </div>
         <div class="column3">
             <div class="betSlip">
                 <div class="slipWrapper">
-                    <div class="slipHeader">
-                        <div class="HeaderTop">Betting Slip</div>
+                    <div class="slipHeaderWrapper">
+                        <div class="slipHeader">
+                            <div class="HeaderTop">Betting Slip</div>
 
-                    </div>
-                    <div class="HeaderBottom">
-                        <div class="op1">Single</div>
-                        <div class="op1">Multi</div>
+                        </div>
+                        <div class="HeaderBottom">
+                            <div class="op1">Single</div>
+                            <div class="op1">Multi</div>
 
+                        </div>
                     </div>
+
                     <div class="slipBody">
                         <div class="emptyCart">
                             <i class="bi bi-dash-circle"></i>
@@ -144,10 +381,9 @@
             </div>
         </div>
 
-    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
-
-    <script src="assets/js/homepage.js"></script>
+        <script src="assets/js/homepage.js"></script>
 </body>
 
 </html>
