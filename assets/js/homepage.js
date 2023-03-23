@@ -5,6 +5,8 @@ const leagueTable = document.querySelector('.gamesTable');
 const handiOdds = document.querySelector('.nestedOdds');
 const betOdds = document.querySelector('.betOdds');
 const extraOdd = document.querySelector('.extraOdd');
+const cartItemsWrapper = document.querySelector('.cartItemsWrapper');
+const OddsNumber = document.querySelector('.OddsNumber');
 
 
 
@@ -231,28 +233,44 @@ function addToCard(key) {
 }
 
 function reloadCard() {
-    // listCard.innerHTML = '';
+    cartItemsWrapper.innerHTML = ''
 
-    let totalOdds = 0;
-    listCards.forEach((value, key) => {
-        totalOdds = totalOdds + value.price;
-        count = count + value.quantity;
+    let totalOdds = 1;
+    dataArray.forEach((value, key) => {
+        totalOdds = totalOdds * parseFloat(value.odds);
+        // count = count + value.quantity;
         if (value != null) {
-            let newDiv = document.createElement('li');
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('cartItem')
             newDiv.innerHTML = `
-                <div><img src="image/${value.image}"/></div>
-                <div>${value.name}</div>
-                <div>${value.price.toLocaleString()}</div>
-                <div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                    <div class="count">${value.quantity}</div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                </div>`;
-            listCard.appendChild(newDiv);
+            <div class="line1">
+        <div class="leftWrapper">
+
+            <img src="assets/images/${value.leagueLogo}.png" alt="" width="14" height="14" class="representLogo">${value.leagueName}
+        </div>
+
+        <div class="exitLogo">
+            <i class="bi bi-x-lg"></i>
+        </div>
+    </div>
+    <div class="line2">
+        <span class="fontBlue">
+
+            ${value.matchTime} 
+        </span> ${value.matchType}
+    </div>
+    <div class="line3">${value.fullGame}</div>
+    <div class="line4 fontBlue">${value.teamName}
+    <div class="oddsLine">
+    ${value.odds}
+</div>
+    </div>
+                `;
+            cartItemsWrapper.appendChild(newDiv);
         }
     })
-    total.innerText = totalPrice.toLocaleString();
-    quantity.innerText = count;
+    OddsNumber.innerText = totalOdds.toLocaleString();
+    // quantity.innerText = count;
 }
 
 
@@ -289,16 +307,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 3 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
             const leagueName = soccerData[leagueIndex].League.leagueName;
+            const leagueLogo = soccerData[leagueIndex].League.leagueFlag;
             const fullGame = soccerData[leagueIndex].League.Game[gameIndex].home + ' vs ' + soccerData[leagueIndex].League.Game[gameIndex].away;
             const matchType = '1x2';
             const matchTime = 'Prematch';
             const selectedOdd = betOdds.textContent
-            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + selectedOdd;
+
+            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + selectedOdd + matchTime + matchType;
 
 
             console.log(selectedOdd)
             let newObject = {
-                id: id, // generate unique id using timestamp
+                id: id, // generate unique id 
+                leagueLogo: leagueLogo,
                 leagueName: leagueName,
                 odds: selectedOdd,
                 teamName: teamName,
@@ -309,10 +330,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (dataArray.some(obj => obj.id === id)) {
                 dataArray = dataArray.filter(obj => obj.id !== id);
             } else {
-
                 dataArray.push(newObject);
             }
-
+            reloadCard();
             // push the new object into the array
             console.log(dataArray)
 

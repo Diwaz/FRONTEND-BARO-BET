@@ -755,6 +755,11 @@ body {
     justify-content: space-between;
 }
 
+.line4 {
+    display: flex;
+    justify-content: space-between;
+}
+
 .nestedRow {
     padding: 5px;
     width: 30%;
