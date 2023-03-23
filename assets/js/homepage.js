@@ -7,6 +7,13 @@ const betOdds = document.querySelector('.betOdds');
 const extraOdd = document.querySelector('.extraOdd');
 const cartItemsWrapper = document.querySelector('.cartItemsWrapper');
 const OddsNumber = document.querySelector('.OddsNumber');
+const emptyCart = document.querySelector('.emptyCart');
+const selectOptions = document.querySelector('.selectOptions');
+
+
+
+
+
 
 
 
@@ -234,6 +241,11 @@ function addToCard(key) {
 
 function reloadCard() {
     cartItemsWrapper.innerHTML = ''
+    if (dataArray.length > 0) {
+        emptyCart.style.display = 'none';
+    } else {
+        emptyCart.style.display = 'flex'
+    }
 
     let totalOdds = 1;
     dataArray.forEach((value, key) => {
@@ -286,6 +298,118 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.handiOdds');
     const betOdds = document.querySelectorAll('.betOdds');
     const extraOdd = document.querySelectorAll('.extraOdd');
+    const leagueCol2 = document.querySelectorAll('.leagueCol2');
+    const leagueCol3 = document.querySelectorAll('.leagueCol3');
+    const leagueCol4 = document.querySelectorAll('.leagueCol4');
+    const leagueCol34 = document.querySelectorAll('.leagueCol4 .leagueCol3');
+    const leagueCol24 = document.querySelectorAll('.leagueCol4 .leagueCol2');
+    const leagueCol23 = document.querySelectorAll('.leagueCol2 .leagueCol3');
+    const gameCol2 = document.querySelectorAll('.gameCol2');
+    const gameCol3 = document.querySelectorAll('.gameCol3');
+    const gameCol4 = document.querySelectorAll('.gameCol4');
+    const gameCol34 = document.querySelectorAll('.gameCol4 .gameCol3');
+    const gameCol24 = document.querySelectorAll('.gameCol4 .gameCol2');
+    const gameCol23 = document.querySelectorAll('.gameCol2 .gameCol3');
+
+
+    selectOptions.addEventListener('change', function() {
+
+        if (selectOptions.value == 'winner') {
+
+            for (let i = 0; i < leagueCol3.length; i++) {
+                leagueCol3[i].style.display = 'none';
+                leagueCol4[i].style.display = 'none';
+                for (let i = 0; i < gameCol3.length; i++) {
+
+                    gameCol3[i].style.display = 'none';
+                    gameCol4[i].style.display = 'none';
+                }
+            }
+            for (let i = 0; i < leagueCol2.length; i++) {
+                leagueCol2[i].style.display = '';
+
+                for (let i = 0; i < gameCol2.length; i++) {
+
+                    gameCol2[i].style.display = '';
+
+                }
+            }
+        }
+        if (selectOptions.value == 'handicap') {
+
+            for (let i = 0; i < leagueCol2.length; i++) {
+                leagueCol2[i].style.display = 'none';
+                leagueCol4[i].style.display = 'none';
+                for (let i = 0; i < gameCol2.length; i++) {
+
+                    gameCol2[i].style.display = 'none';
+                    gameCol4[i].style.display = 'none';
+                }
+            }
+            for (let i = 0; i < leagueCol3.length; i++) {
+                leagueCol3[i].style.display = '';
+
+                for (let i = 0; i < gameCol3.length; i++) {
+
+                    gameCol3[i].style.display = '';
+
+                }
+            }
+
+        }
+        if (selectOptions.value == 'overUnder') {
+
+            for (let i = 0; i < leagueCol3.length; i++) {
+                leagueCol3[i].style.display = 'none';
+                leagueCol2[i].style.display = 'none';
+                for (let i = 0; i < gameCol3.length; i++) {
+
+                    gameCol3[i].style.display = 'none';
+                    gameCol2[i].style.display = 'none';
+                }
+            }
+            for (let i = 0; i < leagueCol4.length; i++) {
+                leagueCol4[i].style.display = '';
+
+                for (let i = 0; i < gameCol4.length; i++) {
+
+                    gameCol4[i].style.display = '';
+
+                }
+            }
+        }
+        // else {
+        //     // Show all the league columns
+        //     for (let i = 0; i < leagueCol34.length; i++) {
+        //         console.log('here')
+        //         leagueCol34[i].style.display = '';
+        //     }
+        // }
+
+        // switch (selectOptions.value) {
+        //     case 'winner':
+        //         leagueCol3.style.display = 'none';
+        //         leagueCol4.style.display = 'none';
+        //         gameCol3.style.display = 'none';
+        //         gameCol4.style.display = 'none';
+        //         break;
+        //     case 'handicap':
+        //         leagueCol2.style.display = 'none';
+        //         leagueCol4.style.display = 'none';
+        //         gameCol2.style.display = 'none';
+        //         gameCol4.style.display = 'none';
+        //         break;
+        //     case 'overUnder':
+        //         leagueCol2.style.display = 'none';
+        //         leagueCol3.style.display = 'none';
+        //         gameCol2.style.display = 'none';
+        //         gameCol3.style.display = 'none';
+        //         break;
+        //     default:
+        //         console.log('here')
+        // }
+    });
+
 
     buttons.forEach(function(button) {
         button.addEventListener('click', function(event) {
@@ -354,6 +478,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
 
 
 

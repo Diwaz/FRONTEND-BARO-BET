@@ -542,6 +542,7 @@ body {
     align-items: center;
     width: 99%;
     margin-top: 10px;
+    justify-content: space-between;
 }
 
 .sortButtons {
@@ -709,7 +710,7 @@ body {
 
 .gameCol1 {
     display: flex;
-    flex-grow: 5.7;
+    flex-grow: 2.7;
     align-items: start;
     flex-direction: column;
 }
@@ -831,22 +832,49 @@ body {
     }
 }
 
+.selectOptions {
+    background-color: rgb(34, 42, 51);
+    border: none;
+    font-size: 12px;
+    padding: 10px;
+    margin-right: 5px;
+    display: none;
+}
 
-/* Styles for medium screens (up to 768px) */
+.selectOptions:focus {
+    outline: none;
+}
 
-@media (max-width: 768px) {
+@media (max-width: 1500px) {
     /* Add additional styles as needed */
+    .column2 {
+        max-width: 76%;
+    }
+}
+
+@media (max-width: 1450px) {
+    /* Add additional styles as needed */
+    .column2 {
+        max-width: 74%;
+    }
+}
+
+@media (max-width: 1400px) {
+    /* Add additional styles as needed */
+    .column2 {
+        max-width: 73%;
+    }
 }
 
 
-/* Styles for large screens (up to 992px) */
+/* Add additional styles as needed */
 
-@media (max-width: 992px) {
+@media (max-width: 1350px) {
     /* Add additional styles as needed */
+    .column2 {
+        max-width: 72%;
+    }
 }
-
-
-/* Styles for extra large screens (up to 1200px) */
 
 @media (max-width: 1300px) {
     .logoSegment {
@@ -888,34 +916,32 @@ body {
         font-size: 16px;
     }
     .column2 {
-        max-width: 60%;
+        max-width: 100%;
     }
     /* Add additional styles as needed */
-}
-
-
-/* Styles for screens larger than 1200px */
-
-@media (max-width: 1350px) {
-    /* Add additional styles as needed */
-    .column2 {
-        max-width: 65%;
+    /* Styles for medium screens (up to 768px) */
+    @media (max-width: 768px) {
+        /* Add additional styles as needed */
     }
-}
-
-@media (max-width: 1400px) {
-    /* Add additional styles as needed */
-    .column2 {
-        max-width: 68%;
+    /* Styles for large screens (up to 992px) */
+    @media (max-width: 852px) {
+        /* Add additional styles as needed */
+        .selectOptions {
+            display: block;
+        }
+        /* .leagueCol3 {
+            display: none;
+        }
+        .leagueCol4 {
+            display: none;
+        }
+        .gameCol3 {
+            display: none;
+        }
+        .gameCol4 {
+            display: none;
+        } */
     }
+    /* Styles for extra large screens (up to 1200px) */
+    /* Styles for screens larger than 1200px */
 }
-
-@media (max-width: 1500px) {
-    /* Add additional styles as needed */
-    .column2 {
-        max-width: 74%;
-    }
-}
-
-
-/* Add additional styles as needed */
