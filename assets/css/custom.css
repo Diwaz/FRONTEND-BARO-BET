@@ -299,6 +299,8 @@ body {
 .slipBody {
     border-bottom: 1px solid #1e242c;
     flex-grow: 7;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .emptyCart {
@@ -655,7 +657,8 @@ body {
     background-color: rgb(39, 48, 58);
     height: 40px;
     width: 100%;
-    margin-left: 5px
+    margin-left: 5px;
+    cursor: pointer;
 }
 
 .handiOdds {
@@ -667,17 +670,28 @@ body {
     background-color: rgb(39, 48, 58);
     margin-left: 5px;
     width: 100%;
+    cursor: pointer;
 }
 
 .nestedOdds {
     display: flex;
     height: 40px;
     align-items: center;
+    background-color: inherit;
+}
+
+.betOdds:hover {
+    background-color: #16bdf9;
 }
 
 .handiOdds:hover {
     /* border: 1px solid blue; */
-    background-color: rgb(93, 114, 138);
+    background-color: #16bdf9;
+    ;
+}
+
+.extraOdd:hover {
+    background-color: #16bdf9;
     ;
 }
 
@@ -690,6 +704,7 @@ body {
     background-color: rgb(52, 65, 78);
     margin-left: 5px;
     height: 40px;
+    cursor: pointer;
 }
 
 .gameCol1 {
@@ -704,9 +719,45 @@ body {
     width: 100%;
 }
 
+.betActive {
+    background-color: #16bdf9;
+    color: white!important;
+}
+
+.cartItemsWrapper {}
+
+.cartItem {
+    background-color: rgb(48, 58, 70);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.leftWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line1,
+.line2,
+.line3,
+.line4 {
+    font-size: 12px;
+    font-weight: 200;
+    padding: 2px;
+}
+
+.line1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .nestedRow {
     padding: 5px;
-    width: 20%;
+    width: 30%;
 }
 
 .gameCol2 {
