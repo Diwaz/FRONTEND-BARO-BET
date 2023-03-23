@@ -23,8 +23,10 @@ let soccerData = [
             Game: [
 
                 {
+                    gameId: 55555,
                     home: 'FC Barcelona',
                     away: 'Real Madrid',
+                    draw: 'draw',
                     time: '7:00',
                     date: '03/10',
                     homeLogo: 'team1',
@@ -56,8 +58,10 @@ let soccerData = [
             Game: [
 
                 {
+                    gameId: 11111,
                     home: 'Arsenal FC',
                     away: 'FC Bayern',
+                    draw: 'draw',
                     time: '6:00',
                     date: '03/10',
                     homeLogo: 'team3',
@@ -67,8 +71,10 @@ let soccerData = [
                     extra: '+78'
                 },
                 {
+                    gameId: 52134,
                     home: 'Manchester City',
                     away: 'Napoli',
+                    draw: 'draw',
                     time: '6:00',
                     date: '03/10',
                     homeLogo: 'team2',
@@ -85,13 +91,16 @@ let soccerData = [
         League: {
             leagueFlag: 'italy',
             leagueName: 'Series A',
+
             leagueRank: 1,
 
             Game: [
 
                 {
+                    gameId: 23345,
                     home: 'AC Milan',
                     away: 'Inter Milan',
+                    draw: 'draw',
                     time: '6:00',
                     date: '03/10',
                     homeLogo: 'team1',
@@ -101,8 +110,10 @@ let soccerData = [
                     extra: '+78'
                 },
                 {
+                    gameId: 12345,
                     home: 'Juventus',
                     away: 'AS Roma',
+                    draw: 'draw',
                     time: '6:00',
                     date: '03/10',
                     homeLogo: 'team1',
@@ -120,6 +131,7 @@ let soccerData = [
 ];
 
 let listCards = [];
+let dataArray = [];
 
 function initApp() {
     console.log(soccerData)
@@ -166,16 +178,16 @@ function initApp() {
 
     </div>
     <div class="gameCol2">
-        <div class="betOdds" id="betOdds-${indx}-0">${val.bets[0]} </div>
-        <div class="betOdds" id="betOdds-${indx}-0">${val.bets[1]}</div>
-        <div class="betOdds" id="betOdds-${indx}-0">${val.bets[2]}</div>
+        <div class="betOdds" id="${indx}-${key}-1">${val.bets[0]} </div>
+        <div class="betOdds" id="${indx}-${key}-2">${val.bets[1]}</div>
+        <div class="betOdds" id="${indx}-${key}-3">${val.bets[2]}</div>
     </div>
     <div class="gameCol3">
-        <div class="handiOdds">
+        <div class="handiOdds"id="${indx}-${key}-1" >
             <div class="nestedOdds fontOrange">${val.handiBets[0]}</div>
             <div class="nestedOdds">${val.handiBets[1]}</div>
         </div>
-        <div class="handiOdds">
+        <div class="handiOdds" id="${indx}-${key}-2">
             <div class="nestedOdds fontOrange">${val.handiBets[2]}</div>
             <div class="nestedOdds">${val.handiBets[3]}</div>
         </div>
@@ -183,12 +195,12 @@ function initApp() {
 
     </div>
     <div class="gameCol4">
-        <div class="handiOdds">
-            <div class="nestedOdds fontRed">${val.handiBets[4]}</div>
+        <div class="handiOdds" id="${indx}-${key}-3">
+            <div class="nestedOdds fontRed" >${val.handiBets[4]}</div>
             <div class="nestedOdds">${val.handiBets[5]}</div>
         </div>
-        <div class="handiOdds">
-            <div class="nestedOdds fontBlue">${val.handiBets[6]}</div>
+        <div class="handiOdds" id="${indx}-${key}-1">
+            <div class="nestedOdds fontBlue" >${val.handiBets[6]}</div>
             <div class="nestedOdds">${val.handiBets[7]}</div>
         </div>
         <div class="extraOdd">${val.extra}</div>
@@ -261,18 +273,63 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
             event.currentTarget.classList.toggle('betActive');
+
+
+
         });
     });
     betOdds.forEach(function(betOdds) {
         betOdds.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
             event.currentTarget.classList.toggle('betActive');
+            const gameIndex = event.target.id.split('-')[0]
+            const leagueIndex = event.target.id.split('-')[1]
+            const oddIndex = event.target.id.split('-')[2]
+
+
+            const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 3 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
+            const leagueName = soccerData[leagueIndex].League.leagueName;
+            const fullGame = soccerData[leagueIndex].League.Game[gameIndex].home + ' vs ' + soccerData[leagueIndex].League.Game[gameIndex].away;
+            const matchType = '1x2';
+            const matchTime = 'Prematch';
+            const selectedOdd = betOdds.textContent
+            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + selectedOdd;
+
+
+            console.log(selectedOdd)
+            let newObject = {
+                id: id, // generate unique id using timestamp
+                leagueName: leagueName,
+                odds: selectedOdd,
+                teamName: teamName,
+                fullGame: fullGame,
+                matchType: matchType,
+                matchTime: matchTime
+            };
+            if (dataArray.some(obj => obj.id === id)) {
+                dataArray = dataArray.filter(obj => obj.id !== id);
+            } else {
+
+                dataArray.push(newObject);
+            }
+
+            // push the new object into the array
+            console.log(dataArray)
+
+            // console.log('team', soccerData[leagueIndex].League.Game[gameIndex].team);
+
+
+
         });
     });
     extraOdd.forEach(function(extraOdd) {
         extraOdd.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
             event.currentTarget.classList.toggle('betActive');
+
+
+
+
         });
     });
 
