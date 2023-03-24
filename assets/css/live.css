@@ -78,14 +78,20 @@ body {
 
 .column2 {
     /* flex-basis: 912px; */
-    flex-grow: 3;
-    max-width: 77%;
+    flex-grow: 1;
+    max-width: 40%;
+    overflow-y: auto;
+    overflow-x: hidden;
     /* background-color: #16bdf9; */
 }
 
 .column3 {
     background-color: rgb(31, 38, 47);
     /* flex-basis: 350px; */
+    flex-grow: 1;
+}
+
+.column4 {
     flex-grow: 1;
 }
 
@@ -431,7 +437,7 @@ body {
     /* justify-content: center;
     align-items: center; */
     flex-direction: column;
-    height: 100vh;
+    height: 90vh;
     align-items: center;
 }
 
@@ -611,16 +617,16 @@ body {
 }
 
 .leagueCol3 {
-    display: flex;
+    display: none;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .leagueCol4 {
-    display: flex;
+    display: none;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -643,6 +649,7 @@ body {
     font-weight: 300;
     background-color: rgb(29, 35, 42);
     padding: 10px;
+    height: 100px;
 }
 
 .representLogo {
@@ -654,9 +661,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     color: rgb(232, 230, 227);
     background-color: rgb(39, 48, 58);
-    height: 40px;
+    height: 75px;
     width: 100%;
     margin-left: 5px;
     cursor: pointer;
@@ -676,7 +684,7 @@ body {
 
 .nestedOdds {
     display: flex;
-    height: 40px;
+    height: 75px;
     align-items: center;
     background-color: inherit;
 }
@@ -704,7 +712,7 @@ body {
     color: rgb(232, 230, 227);
     background-color: rgb(52, 65, 78);
     margin-left: 5px;
-    height: 40px;
+    height: 75px;
     cursor: pointer;
 }
 
@@ -717,7 +725,14 @@ body {
 
 .teamRow1 {
     display: flex;
+    justify-content: space-between;
     width: 100%;
+}
+
+.specWidth {
+    width: 40%!important;
+    display: flex!important;
+    justify-content: space-around!important;
 }
 
 .betActive {
@@ -726,6 +741,10 @@ body {
 }
 
 .cartItemsWrapper {}
+
+.fontGrey {
+    color: rgb(48, 58, 70);
+}
 
 .cartItem {
     background-color: rgb(48, 58, 70);
@@ -761,9 +780,15 @@ body {
     justify-content: space-between;
 }
 
+.bi-stopwath {
+    margin-right: 2px;
+}
+
 .nestedRow {
     padding: 5px;
     width: 30%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .gameCol2 {
@@ -775,17 +800,84 @@ body {
 }
 
 .gameCol3 {
-    display: flex;
+    display: none;
     flex-grow: 1;
     justify-content: space-between;
     align-items: center;
 }
 
 .gameCol4 {
-    display: flex;
+    display: none;
     flex-grow: 1;
     justify-content: space-between;
     align-items: center;
+}
+
+.ExtraOddsWrapper {
+    padding: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ExtraHeader {
+    padding: 5px;
+}
+
+.sports {
+    display: flex;
+}
+
+.upperHeader {
+    width: 70%;
+    background-color: rgb(39, 48, 58);
+    display: flex;
+    font-size: 12px;
+    padding: 15px;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.LowerHeader {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    background-color: rgb(39, 48, 58);
+    display: flex;
+    font-size: 12px;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.gamePlaceHolder {
+    margin-top: 5px;
+    width: 95%;
+    background-color: rgb(39, 48, 58);
+    display: flex;
+    font-size: 12px;
+    padding: 10px;
+    justify-content: space-between;
+    height: 300px;
+}
+
+.extraOddsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.oddsHeader {
+    background-color: rgb(39, 48, 58);
+    padding: 10px;
+}
+
+.oddsFooter {
+    display: flex;
+    background-color: rgb(48, 59, 71);
+    padding: 10px;
+    justify-content: space-around;
 }
 
 .fontOrange {
@@ -838,7 +930,6 @@ body {
     font-size: 12px;
     padding: 10px;
     margin-right: 5px;
-    display: none;
 }
 
 .selectOptions:focus {
@@ -847,23 +938,35 @@ body {
 
 @media (max-width: 1500px) {
     /* Add additional styles as needed */
-    .column2 {
+    /* .column2 {
         max-width: 76%;
+    } */
+    .leagueCol3 {
+        display: none;
+    }
+    .leagueCol4 {
+        display: none;
+    }
+    .gameCol3 {
+        display: none;
+    }
+    .gameCol4 {
+        display: none;
     }
 }
 
 @media (max-width: 1450px) {
     /* Add additional styles as needed */
-    .column2 {
+    /* .column2 {
         max-width: 74%;
-    }
+    } */
 }
 
 @media (max-width: 1400px) {
     /* Add additional styles as needed */
-    .column2 {
+    /* .column2 {
         max-width: 73%;
-    }
+    } */
 }
 
 
@@ -871,9 +974,9 @@ body {
 
 @media (max-width: 1350px) {
     /* Add additional styles as needed */
-    .column2 {
+    /* .column2 {
         max-width: 72%;
-    }
+    } */
 }
 
 @media (max-width: 1300px) {
@@ -915,14 +1018,14 @@ body {
     h1 {
         font-size: 16px;
     }
-    .column2 {
+    /* .column2 {
         max-width: 100%;
-    }
+    } */
     /* Add additional styles as needed */
     /* Styles for medium screens (up to 768px) */
     @media (max-width: 1008px) {
         /* Add additional styles as needed */
-        .leagueCol3 {
+        /* .leagueCol3 {
             display: flex;
         }
         .leagueCol4 {
@@ -933,25 +1036,13 @@ body {
         }
         .gameCol4 {
             display: flex;
-        }
+        } */
     }
     /* Styles for large screens (up to 992px) */
     @media (max-width: 852px) {
         /* Add additional styles as needed */
         .selectOptions {
             display: block;
-        }
-        .leagueCol3 {
-            display: none;
-        }
-        .leagueCol4 {
-            display: none;
-        }
-        .gameCol3 {
-            display: none;
-        }
-        .gameCol4 {
-            display: none;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

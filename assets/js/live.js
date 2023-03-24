@@ -36,6 +36,8 @@ let soccerData = [
                     home: 'FC Barcelona',
                     away: 'Real Madrid',
                     draw: 'draw',
+                    homeGoal: 2,
+                    awayGoal: 2,
                     time: '7:00',
                     date: '03/10',
                     homeLogo: 'team1',
@@ -44,17 +46,21 @@ let soccerData = [
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 6, 1],
                     extra: '+78'
                 },
-                // {
-                //     home: 'Valencia',
-                //     away: 'Athletico Madrid',
-                //     time: '6:00',
-                //     date: '03/10',
-                //     homeLogo: 'team2',
-                //     awayLogo: 'team4',
-                //     bets: [3.5, 3.2, 3.00],
-                //     handiBets: [-1.5, 2, 10, 1, 5, 1, 4, 4],
-                //     extra: '+78'
-                // },
+                {
+                    gameId: 122222,
+                    home: 'Valencia',
+                    away: 'Ath. Madrid',
+                    draw: 'draw',
+                    homeGoal: 2,
+                    awayGoal: 2,
+                    time: '6:00',
+                    date: '03/10',
+                    homeLogo: 'team2',
+                    awayLogo: 'team4',
+                    bets: [3.5, 3.2, 3.00],
+                    handiBets: [-1.5, 2, 10, 1, 5, 1, 4, 4],
+                    extra: '+78'
+                },
 
             ],
         }
@@ -71,6 +77,8 @@ let soccerData = [
                     home: 'Arsenal FC',
                     away: 'FC Bayern',
                     draw: 'draw',
+                    homeGoal: 0,
+                    awayGoal: 1,
                     time: '6:00',
                     date: '03/10',
                     homeLogo: 'team3',
@@ -81,9 +89,26 @@ let soccerData = [
                 },
                 {
                     gameId: 52134,
-                    home: 'Manchester City',
+                    home: 'Man. City',
                     away: 'Napoli',
                     draw: 'draw',
+                    homeGoal: 5,
+                    awayGoal: 0,
+                    time: '6:00',
+                    date: '03/10',
+                    homeLogo: 'team2',
+                    awayLogo: 'team3',
+                    bets: [3.5, 3.2, 3.00],
+                    handiBets: [-1.5, 2, 10, 1, 5, 1, 8, 7],
+                    extra: '+78'
+                },
+                {
+                    gameId: 52134,
+                    home: 'Man. City',
+                    away: 'Napoli',
+                    draw: 'draw',
+                    homeGoal: 1,
+                    awayGoal: 7,
                     time: '6:00',
                     date: '03/10',
                     homeLogo: 'team2',
@@ -93,49 +118,50 @@ let soccerData = [
                     extra: '+78'
                 },
 
+
             ],
         }
     },
-    {
-        League: {
-            leagueFlag: 'italy',
-            leagueName: 'Series A',
+    // {
+    //     League: {
+    //         leagueFlag: 'italy',
+    //         leagueName: 'Series A',
 
-            leagueRank: 1,
+    //         leagueRank: 1,
 
-            Game: [
+    //         Game: [
 
-                {
-                    gameId: 23345,
-                    home: 'AC Milan',
-                    away: 'Inter Milan',
-                    draw: 'draw',
-                    time: '6:00',
-                    date: '03/10',
-                    homeLogo: 'team1',
-                    awayLogo: 'team4',
-                    bets: [3.5, 3.2, 3.00],
-                    handiBets: [-1.5, 2, 10, 1, 5, 1, 2, 7],
-                    extra: '+78'
-                },
-                {
-                    gameId: 12345,
-                    home: 'Juventus',
-                    away: 'AS Roma',
-                    draw: 'draw',
-                    time: '6:00',
-                    date: '03/10',
-                    homeLogo: 'team1',
-                    awayLogo: 'team3',
-                    bets: [3.5, 3.2, 3.00],
-                    handiBets: [-1.5, 2, 10, 1, 5, 1, 4, 7],
-                    extra: '+78'
-                },
+    //             {
+    //                 gameId: 23345,
+    //                 home: 'AC Milan',
+    //                 away: 'Inter Milan',
+    //                 draw: 'draw',
+    //                 time: '6:00',
+    //                 date: '03/10',
+    //                 homeLogo: 'team1',
+    //                 awayLogo: 'team4',
+    //                 bets: [3.5, 3.2, 3.00],
+    //                 handiBets: [-1.5, 2, 10, 1, 5, 1, 2, 7],
+    //                 extra: '+78'
+    //             },
+    //             {
+    //                 gameId: 12345,
+    //                 home: 'Juventus',
+    //                 away: 'AS Roma',
+    //                 draw: 'draw',
+    //                 time: '6:00',
+    //                 date: '03/10',
+    //                 homeLogo: 'team1',
+    //                 awayLogo: 'team3',
+    //                 bets: [3.5, 3.2, 3.00],
+    //                 handiBets: [-1.5, 2, 10, 1, 5, 1, 4, 7],
+    //                 extra: '+78'
+    //             },
 
-            ],
+    //         ],
 
-        }
-    },
+    //     }
+    // },
 
 ];
 
@@ -156,12 +182,15 @@ function initApp() {
 
             <img src="assets/images/${value.League.leagueFlag}.png" alt="" width="19" height="14" class="representLogo"> ${value.League.leagueName}</div>
         <div class="leagueCol2">
-            <div class="betHeader">Home </div>
-            <div class="betHeader">Draw</div>
-            <div class="bHeader">Away</div>
+          
+        <div class="betHeader">Home </div>
+        <div class="betHeader">Draw</div>
+        <div class="bHeader">Away</div>
         </div>
-        <div class="leagueCol3">Handicap</div>
-        <div class="leagueCol4">Over/Under</div>
+        <div class="leagueCol3"> Handicap
+        </div>
+        <div class="leagueCol4">Over/Under
+        </div>
     </div>
    `;
 
@@ -174,48 +203,58 @@ function initApp() {
             let gamesDiv = document.createElement('div');
             gamesDiv.classList.add('leagueFooter');
             gamesDiv.innerHTML = `
-        <div class="gameCol1">
+            <div class="gameCol1">
 
-        <div class="teamRow1">
-            <div class="nestedRow">03/11</div>
-            <div class="nestedRow"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
+            <div class="teamRow1">
+                <div class="nestedRow"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
+                <div class="nestedRow fontBlue">${val.homeGoal}</div>
+            </div>
+            <div class="teamRow1">
+                <div class="nestedRow"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
+                <div class="nestedRow fontBlue">${val.awayGoal}</div>
+            </div>
+            <div class="teamRow1">
+                <div class="nestedRow specWidth"><i class="bi bi-stopwatch "></i> 1st half of <span class="fontBlue"> 37:31'</span></div>
+                <div class="nestedRow fontBlue">+48</div>
+            </div>
+    
         </div>
-        <div class="teamRow1">
-            <div class="nestedRow">6:00</div>
-            <div class="nestedRow"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
+        <div class="gameCol2">
+            <div class="betOdds" id="${indx}-${key}-1">
+               
+                ${val.bets[0]}
+            </div>
+            <div class="betOdds" id="${indx}-${key}-2">
+                
+                ${val.bets[1]}</div>
+            <div class="betOdds" id="${indx}-${key}-3">
+                
+                ${val.bets[2]}</div>
         </div>
-
-    </div>
-    <div class="gameCol2">
-        <div class="betOdds" id="${indx}-${key}-1">${val.bets[0]} </div>
-        <div class="betOdds" id="${indx}-${key}-2">${val.bets[1]}</div>
-        <div class="betOdds" id="${indx}-${key}-3">${val.bets[2]}</div>
-    </div>
-    <div class="gameCol3">
-        <div class="handiOdds"id="${indx}-${key}-1" >
-            <div class="nestedOdds fontOrange">${val.handiBets[0]}</div>
-            <div class="nestedOdds">${val.handiBets[1]}</div>
+        <div class="gameCol3">
+            <div class="handiOdds">
+                <div class="nestedOdds fontOrange">${val.handiBets[0]}</div>
+                <div class="nestedOdds">${val.handiBets[1]}</div>
+            </div>
+            <div class="handiOdds">
+                <div class="nestedOdds fontOrange">${val.handiBets[2]}</div>
+                <div class="nestedOdds">${val.handiBets[3]}</div>
+            </div>
+    
+    
         </div>
-        <div class="handiOdds" id="${indx}-${key}-2">
-            <div class="nestedOdds fontOrange">${val.handiBets[2]}</div>
-            <div class="nestedOdds">${val.handiBets[3]}</div>
+        <div class="gameCol4">
+            <div class="handiOdds">
+                <div class="nestedOdds fontRed">${val.handiBets[4]}</div>
+                <div class="nestedOdds">${val.handiBets[5]}</div>
+            </div>
+            <div class="handiOdds">
+                <div class="nestedOdds fontBlue">${val.handiBets[6]}</div>
+                <div class="nestedOdds">${val.handiBets[7]}</div>
+            </div>
+    
         </div>
-
-
-    </div>
-    <div class="gameCol4">
-        <div class="handiOdds" id="${indx}-${key}-3">
-            <div class="nestedOdds fontRed" >${val.handiBets[4]}</div>
-            <div class="nestedOdds">${val.handiBets[5]}</div>
-        </div>
-        <div class="handiOdds" id="${indx}-${key}-1">
-            <div class="nestedOdds fontBlue" >${val.handiBets[6]}</div>
-            <div class="nestedOdds">${val.handiBets[7]}</div>
-        </div>
-        <div class="extraOdd">${val.extra}</div>
-    </div>
-    <div class="gameOdds"></div>
-</div>
+        <div class="gameOdds"></div>
    `;
             leagueTable.appendChild(gamesDiv);
         })
