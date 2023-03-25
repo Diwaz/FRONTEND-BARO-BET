@@ -93,6 +93,8 @@ body {
 
 .column4 {
     flex-grow: 1;
+    display: flex;
+    max-width: 37%;
 }
 
 .sidebar {
@@ -389,6 +391,14 @@ body {
 
 .inc {
     padding: 10px;
+}
+
+.odds1:hover {
+    background-color: rgb(29, 170, 222)!important;
+}
+
+.highlightOdd {
+    color: white;
 }
 
 .totalOdds {
@@ -721,6 +731,7 @@ body {
     flex-grow: 2.7;
     align-items: start;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .teamRow1 {
@@ -817,6 +828,12 @@ body {
     padding: 5px;
     overflow-y: auto;
     overflow-x: hidden;
+    height: 90vh;
+    width: 100%;
+}
+
+.gameCol1:hover {
+    background-color: rgb(39, 48, 58);
 }
 
 .ExtraHeader {
@@ -840,7 +857,7 @@ body {
 .LowerHeader {
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 95%;
+    width: 100%;
     background-color: rgb(39, 48, 58);
     display: flex;
     font-size: 12px;
@@ -850,35 +867,72 @@ body {
 
 .gamePlaceHolder {
     margin-top: 5px;
-    width: 95%;
+    width: 100%;
     background-color: rgb(39, 48, 58);
     display: flex;
     font-size: 12px;
     padding: 10px;
     justify-content: space-between;
     height: 300px;
+    margin-bottom: 10px;
 }
 
-.extraOddsContainer {
+.extraOddsContainer {}
+
+.extraOddsBody {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    margin-top: 10px;
+    width: 100%;
     font-size: 14px;
     font-weight: 300;
+}
+
+.fullGame {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #16bdf9; */
+    width: 40%;
 }
 
 .oddsHeader {
     background-color: rgb(39, 48, 58);
     padding: 10px;
+    border-bottom: 1px solid #1e242c;
 }
 
 .oddsFooter {
     display: flex;
     background-color: rgb(48, 59, 71);
-    padding: 10px;
+    /* height: 40px; */
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
+
+.finalOddWrapper {
+    width: 25%;
+}
+
+.odds1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    padding: 10px;
+    /* border-left: 1px solid #1e242c;
+    border-bottom: 1px solid #1e242c;
+    border-right: 1px solid #1e242c; */
+    cursor: pointer;
+}
+
+.incHeight1 {}
+
+.incHeight1 {}
+
+.incHeight1 {}
 
 .fontOrange {
     color: orange;
