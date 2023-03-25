@@ -1021,6 +1021,16 @@ body {
     /* .column2 {
         max-width: 73%;
     } */
+    .column3 {
+        display: none;
+        flex-basis: 0px;
+    }
+    .column4 {
+        max-width: 40%;
+    }
+    .column2 {
+        max-width: 60%;
+    }
 }
 
 
@@ -1091,6 +1101,12 @@ body {
         .gameCol4 {
             display: flex;
         } */
+        .column2 {
+            max-width: 100%;
+        }
+        .column4 {
+            display: none;
+        }
     }
     /* Styles for large screens (up to 992px) */
     @media (max-width: 852px) {
