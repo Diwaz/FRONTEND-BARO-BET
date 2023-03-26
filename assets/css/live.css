@@ -242,6 +242,19 @@
         align-items: center;
     }
     
+    .cartBackdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .NoticeWrapper {
         display: flex;
         justify-content: center;
@@ -1037,6 +1050,21 @@
         padding: 10px;
     }
     
+    .cartWrapper {
+        background-color: rgba(26, 153, 199, 0.4);
+        padding: 10px;
+        position: absolute;
+        border-radius: 10px;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .bi-cart3 {
+        font-size: 40px;
+    }
+    
     .msgBack {
         background-color: #16bdf9;
         display: none;
@@ -1119,6 +1147,9 @@
         }
         .gameCol4 {
             display: none;
+        }
+        .column3 {
+            display: flex;
         }
     }
     
@@ -1223,6 +1254,9 @@
         @media (max-width: 852px) {
             /* Add additional styles as needed */
             .selectOptions {
+                display: block;
+            }
+            .cartWrapper {
                 display: block;
             }
         }

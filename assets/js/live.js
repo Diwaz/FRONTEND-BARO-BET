@@ -14,6 +14,10 @@ const ExtraOddsWrapper = document.querySelector('.ExtraOddsWrapper');
 const noticeCancelBtn = document.querySelector('.noticeCancel');
 const backDrop = document.querySelector('.my-backdrop');
 const noticeBody = document.querySelector('.noticeBody');
+const cartWrapper = document.querySelector('.cartWrapper');
+const cartBackdrop = document.querySelector('.cartBackdrop');
+const col3 = document.querySelector('.column3');
+
 
 
 
@@ -1005,6 +1009,19 @@ function reloadCard() {
 noticeCancelBtn.addEventListener('click', function() {
     backDrop.style.display = 'none'
 
+})
+
+cartWrapper.addEventListener('click', function() {
+    cartBackdrop.style.display = 'flex'
+    col3.style.display = 'flex'
+    col3.style.zIndex = 3
+
+})
+
+cartBackdrop.addEventListener('click', function() {
+    cartBackdrop.style.display = 'none'
+    col3.style.display = ''
+    col3.style.zIndex = 1
 })
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.handiOdds');
