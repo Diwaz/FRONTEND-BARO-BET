@@ -11,6 +11,10 @@ const emptyCart = document.querySelector('.emptyCart');
 const selectOptions = document.querySelector('.selectOptions');
 const col4 = document.querySelector('.column4');
 const ExtraOddsWrapper = document.querySelector('.ExtraOddsWrapper');
+const noticeCancelBtn = document.querySelector('.noticeCancel');
+const backDrop = document.querySelector('.my-backdrop');
+
+
 
 
 
@@ -936,6 +940,10 @@ function reloadCard() {
 //         //  backdrop.style.display = 'block'
 
 // }
+noticeCancelBtn.addEventListener('click', function() {
+    backDrop.style.display = 'none'
+
+})
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.handiOdds');
     const betOdds = document.querySelectorAll('.betOdds');
