@@ -1016,11 +1016,38 @@
         cursor: pointer;
     }
     
-    .incHeight1 {}
+    .msgBody {
+        display: flex;
+        flex-direction: column;
+        background-color: #27303a;
+        margin-top: 10px;
+        font-size: 12px;
+    }
     
-    .incHeight1 {}
+    .msgContent {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 200px;
+        padding: 10px;
+    }
     
-    .incHeight1 {}
+    .msgHeader {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .msgBack {
+        background-color: #16bdf9;
+        display: none;
+        justify-content: center;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .msgBack:hover {
+        background-color: #129ed1;
+    }
     
     .fontOrange {
         color: orange;

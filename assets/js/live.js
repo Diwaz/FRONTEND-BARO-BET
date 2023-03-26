@@ -13,6 +13,7 @@ const col4 = document.querySelector('.column4');
 const ExtraOddsWrapper = document.querySelector('.ExtraOddsWrapper');
 const noticeCancelBtn = document.querySelector('.noticeCancel');
 const backDrop = document.querySelector('.my-backdrop');
+const noticeBody = document.querySelector('.noticeBody');
 
 
 
@@ -30,7 +31,42 @@ const backDrop = document.querySelector('.my-backdrop');
 
 
 
+let messageData = [{
+        msgType: 'notification',
+        title: 'Bank check Type Information',
+        message: ' 23: 30 ~ 00: 05 is bank check time, so charging is not possible.When depositing during bank inspection time (deposit account may change), it is difficult to check It may take a long time to confirm payment.If you make a linked deposit rather than a registered account, it will be cumbersome to check every time. Please make a deposit to the account you registered when you registered as a member.',
+        date: '2023-03-26 22:40:44',
+        status: 'Unread',
+        color: 'Red'
+    },
+    {
+        msgType: 'notification',
+        title: 'Bet Fraud',
+        message: ' 23: 30 ~ 00: 05 is bank check time, so charging is not possible.When depositing during bank inspection time (deposit account may change), it is difficult to check It may take a long time to confirm payment.If you make a linked deposit rather than a registered account, it will be cumbersome to check every time. Please make a deposit to the account you registered when you registered as a member.',
 
+        date: '2023-03-26 22:40:44',
+        status: 'Unread',
+        color: 'Red'
+    },
+    {
+        msgType: 'notification',
+        title: 'Barcelona wins another classico',
+        message: ' 23: 30 ~ 00: 05 is bank check time, so charging is not possible.When depositing during bank inspection time (deposit account may change), it is difficult to check It may take a long time to confirm payment.If you make a linked deposit rather than a registered account, it will be cumbersome to check every time. Please make a deposit to the account you registered when you registered as a member.',
+
+        date: '2023-03-26 22:40:44',
+        status: 'Read',
+        color: 'Blue'
+    },
+    {
+        msgType: 'notification',
+        title: 'Hello there!',
+        message: ' 23: 30 ~ 00: 05 is bank check time, so charging is not possible.When depositing during bank inspection time (deposit account may change), it is difficult to check It may take a long time to confirm payment.If you make a linked deposit rather than a registered account, it will be cumbersome to check every time. Please make a deposit to the account you registered when you registered as a member.',
+
+        date: '2023-03-26 22:40:44',
+        status: 'Unread',
+        color: 'Red'
+    },
+]
 
 let soccerData = [
 
@@ -754,6 +790,32 @@ function replaceSidebar(leagueIndx, gameIndx) {
 
 function initApp() {
     // console.log(soccerData)
+    messageData.forEach((val, key) => {
+        let newsDiv = document.createElement('div')
+        newsDiv.classList.add('noticeItem')
+        newsDiv.innerHTML = `
+       
+        <div class="upperItem" id="${key}">
+            <div class="leftPart">
+                <span class="fontSecondary">
+
+                    [${val.msgType}] 
+                </span> ${val.title}
+            </div>
+
+            <input type="checkbox" name="read" id="">
+        </div>
+        <div class="lowerItem fontSecondary">
+            ${val.date}
+            <div class="noticeStatus font${val.color}">
+                ${val.status}
+            </div>
+        </div>
+    
+        `
+        noticeBody.appendChild(newsDiv)
+    })
+
     soccerData.forEach((value, key) => {
 
 
@@ -958,6 +1020,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectGame = document.querySelectorAll('.gameCol1');
     const extraOddBtn = document.querySelectorAll('.odds1');
     const col4 = document.querySelector('.column4');
+    const noticeDownHeader = document.querySelector('.noticeDownHeader');
+    const backBtn = document.querySelector('.msgBack');
+    const upperItem = document.querySelectorAll('.upperItem');
+    const noticeItem = document.querySelectorAll('.noticeItem');
+
+
+
 
 
 
@@ -1041,6 +1110,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
         })
     })
+    console.log(upperItem)
+        // noticeItem.forEach(function(e) {
+        //     e.addEventListener('click', function(event) {
+        //         console.log(e.childNodes[1].id)
+        //         let renderComp = false
+        //         if(!renderComp){
+        //             //render
+
+    //             renderComp = true
+    //         }
+
+    //     })
+    // })
+    upperItem.forEach(function(upperItem) {
+        upperItem.addEventListener('click', function(event) {
+
+
+            const msgIndex = event.target.id;
+            console.log(msgIndex)
+            for (let i = 0; i < noticeItem.length; i++) {
+                noticeItem[i].style.display = 'none'
+            }
+            noticeDownHeader.style.display = 'none'
+
+
+
+            const msgContent = messageData[msgIndex].message;
+            const msgType = messageData[msgIndex].msgType;
+            const msgTitle = messageData[msgIndex].title;
+            const msgDate = messageData[msgIndex].date;
+            messageData[msgIndex].status = 'Read'
+            messageData[msgIndex].color = 'Blue'
+
+            console.log(messageData[msgIndex])
+
+            let newDiv = document.createElement('div')
+            newDiv.classList.add('msgBody')
+            newDiv.innerHTML = `
+            <div class="msgHeader bbcolor">
+            <div class="up">[${msgType}] ${msgTitle}</div>
+            <div class="down fontSecondary">
+                ${msgDate}
+            </div>
+        </div>
+        <div class="msgContent btcolor">
+           ${msgContent}
+        </div>
+    
+            `
+
+            noticeBody.appendChild(newDiv)
+
+
+        })
+    })
+
     buttons.forEach(function(button) {
         button.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
