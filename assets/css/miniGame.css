@@ -1,0 +1,1392 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgb(23, 28, 34);
+}
+
+.navBarToggler {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customNav {
+    background-color: rgb(31, 38, 47)!important;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: rgb(64, 64, 68);
+    border-top-width: 1px;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    /* height: 70px */
+}
+
+.customUl {
+    color: rgb(218, 218, 218)!important;
+    font-size: 14px !important;
+}
+
+.customUl1 {
+    color: rgb(26, 153, 199)!important
+}
+
+.customUl1:hover {
+    color: rgb(218, 218, 218)!important;
+    border: 1px solid rgb(26, 153, 199)!important;
+}
+
+.customUl:hover {
+    color: rgb(26, 153, 199)!important
+}
+
+.customDrop {
+    background-color: rgb(26, 25, 28)!important;
+    border: 1px solid rgb(64, 64, 68)!important;
+    border-radius: 0%;
+}
+
+.customDropper {
+    color: rgb(218, 218, 218)!important;
+}
+
+.customDropper:hover {
+    color: rgb(193, 138, 110)!important;
+    background-color: rgb(26, 25, 28)!important;
+}
+
+.bodyWrapper {
+    display: flex;
+    justify-content: space-between;
+    /* height: 100vh; */
+}
+
+.column1 {
+    background-color: rgb(31, 38, 47);
+    flex-basis: 250px;
+}
+
+.column2 {
+    /* flex-basis: 912px; */
+    flex-grow: 1;
+    max-width: 30%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* background-color: #16bdf9; */
+}
+
+.column3 {
+    background-color: rgb(31, 38, 47);
+    /* flex-basis: 350px; */
+    /* flex-grow: 1; */
+}
+
+.column4 {
+    flex-grow: 1;
+    display: flex;
+    max-width: 77%;
+}
+
+.sidebar {
+    background-color: rgb(31, 38, 47);
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.contentWrapper {
+    margin-top: 0px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.title {
+    color: rgb(97, 102, 108);
+    /* width: 45%;
+display: flex;
+align-items: center;
+justify-content: space-around; */
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+.specLogo {
+    position: absolute;
+    left: 10px;
+    color: rgb(97, 102, 108);
+}
+
+.submenu {
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 10px;
+    font-weight: 400;
+}
+
+.active {
+    color: #16bdf9!important;
+}
+
+.sportsMenu {
+    padding: 10px;
+    /* border-bottom: 1px solid linear-gradient(90deg, #313b46 48.96%, hsla(0, 0%, 100%, 0)); */
+}
+
+.menuDivider {
+    height: 1px;
+    background-image: linear-gradient(90deg, #313b46 48.96%, hsla(0, 0%, 100%, 0));
+    margin-top: 10px;
+}
+
+
+/* .navbar {
+position: sticky;
+top: 0;
+background-color: rgb(31, 38, 47);
+height: 50px;
+display: flex;
+align-items: center;
+flex-direction: row-reverse;
+} */
+
+.spanWord {
+    color: rgb(26, 153, 199)!important;
+}
+
+.rightSegment {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    position: fixed;
+    right: 0;
+}
+
+.navWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.bi-power {
+    margin-right: 5px;
+}
+
+.bi-person-circle {
+    color: rgb(26, 153, 199)!important;
+    font-size: 25px;
+    display: none;
+}
+
+.logoSegment {
+    display: none;
+}
+
+.submenu:hover {
+    color: rgb(26, 153, 199)!important;
+}
+
+.signinBtn {
+    background-color: rgb(26, 153, 199)!important;
+    cursor: pointer;
+    padding: 0 20px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #ffffff;
+    margin-right: 10px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signupInfo {
+    color: rgb(188, 190, 193);
+    font-size: 12px;
+}
+
+.my-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BoardnoticeWrapper {
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 90vh;
+}
+
+.noticeViewWrapper {
+    padding: 10px;
+}
+
+.noticeViewer {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.viewHeader {
+    background-color: #222a33;
+    padding: 10px;
+}
+
+.viewBody {
+    background-color: #1D232A;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsHeading {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #1f2732;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    color: yellow
+}
+
+.eventsWrapper {
+    background-color: #1F262F;
+}
+
+.eventsBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.singleEvent {
+    border-top: 1px solid #27303a;
+}
+
+.newsContent {
+    width: 90%;
+    background-color: #1f2732;
+    padding: 20px;
+}
+
+.boardBody {}
+
+.NoticeWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+}
+
+.noticeBody {
+    background-color: #1F262F;
+    /* width: 500px;
+height: 200px; */
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+    width: 100%;
+}
+
+.noticeHeader {}
+
+.noticeUpHeader {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    border-bottom: 1px solid #16bdf9;
+}
+
+.noticeDownHeader {
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.gamesWrapper {
+    padding: 10px;
+}
+
+.gamesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px;
+}
+
+.miniGamesWrapper {
+    width: 100%;
+}
+
+.gameBody {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.playerHeader {}
+
+.playerBetSlip {
+    width: 40%;
+}
+
+.backHeader {
+    padding: 10px;
+    background-color: rgb(34, 42, 51);
+    width: 15%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.gameListBody {
+    background-color: rgb(34, 42, 51);
+    padding: 10px;
+}
+
+.gameMode {
+    width: 20%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.modeName {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerPlaceholder {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    /* align-items: center; */
+}
+
+.Player {
+    background-color: rgb(34, 42, 51);
+    height: 600px;
+    width: 90%;
+    border: 5px solid white;
+}
+
+.playerBetPlace {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.playerOddsContainer {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.singleGame {
+    background-color: #1F262F;
+    display: flex;
+    border-radius: 10px;
+    height: 140px;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.noticeCancel {
+    position: relative;
+    right: 0;
+    margin-top: -35px;
+    background-color: #16bdf9;
+    padding: 10px;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+}
+
+.noticeBtn {
+    background-color: rgb(39, 48, 58);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.bi-list {
+    color: rgb(26, 153, 199)!important;
+    font-size: 25px;
+    display: none;
+}
+
+.noticeContainer {
+    /* //padding: 10px; */
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.fontSecondary {
+    color: rgb(134, 140, 148);
+    font-weight: 500!important;
+}
+
+.noticeItem {
+    background-color: #1D232A;
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #262d36;
+    cursor: pointer;
+}
+
+.boardItem {
+    background-color: #1D232A;
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #262d36;
+    cursor: pointer;
+}
+
+.noticeItem:hover {
+    background-color: #222a33;
+    box-shadow: inset 2px 0 #1a99c7;
+    /* box-shadow: inset 0 0 0 2px #1a99c7; */
+}
+
+.boardItem:hover {
+    background-color: #222a33;
+    box-shadow: inset 2px 0 #1a99c7;
+    /* box-shadow: inset 0 0 0 2px #1a99c7; */
+}
+
+.upperItem,
+.lowerItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.betSlip {
+    position: fixed;
+    background-color: rgb(31, 38, 47);
+    width: 350px;
+    height: 100vh;
+    overflow: auto;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slipWrapper {
+    top: 0;
+    background-color: #1F262F;
+    display: flex;
+    flex-direction: column;
+    height: 91%;
+}
+
+.slipHeaderWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.slipHeader {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(39, 48, 58);
+    border-bottom: 1px solid rgb(26, 153, 199)!important;
+}
+
+.HeaderTop {
+    color: rgb(26, 153, 199)!important;
+    font-size: 12px;
+}
+
+.HeaderBottom {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.op1 {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.op1:hover {
+    color: rgb(26, 153, 199)!important;
+}
+
+.slipBody {
+    border-bottom: 1px solid #1e242c;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 120px;
+}
+
+.emptyCart {
+    width: 100%;
+    /* height: 450px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slipFooter {
+    border-top: 1px solid #303a46;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bi-dash-circle {
+    color: rgb(97, 102, 108);
+    font-size: 30px;
+}
+
+.infoEmpty {
+    color: rgb(97, 102, 108);
+    font-weight: 300;
+}
+
+.bi-trash {
+    margin-right: 5px;
+}
+
+.emptyAll {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.emptyAll:hover {
+    color: rgb(26, 153, 199)!important;
+}
+
+.IncDec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ControlWrapper {
+    background-color: rgb(48, 58, 70);
+    height: 35px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.amount {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 12px;
+    font-weight: 300;
+    border-left: 1px solid #1e242c;
+    border-right: 1px solid #303a46;
+    height: 100%;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.erase {
+    border-left: 1px solid #1e242c;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.inc {
+    padding: 10px;
+}
+
+.odds1:hover {
+    box-shadow: inset 0 0 0 2px #1a99c7;
+}
+
+.highlightOdd {
+    color: white;
+}
+
+.totalOdds {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.betControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 5px
+}
+
+.OddsNumber {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgb(26, 153, 199)!important;
+}
+
+.BetBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btnNew {
+    background-color: rgb(26, 153, 199)!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 95%;
+    font-weight: 300;
+}
+
+.btnNew:hover {
+    background-color: rgb(29, 170, 222)!important;
+    cursor: pointer;
+}
+
+.chooseSports {
+    display: flex;
+    /* justify-content: center;
+align-items: center; */
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+}
+
+.sportsWrapper {
+    width: 99%;
+    background-color: rgb(39, 48, 58);
+    margin-top: 10px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btcolor {
+    border-top: 1px solid #262d36;
+}
+
+.btSpecColor {
+    border-top: 1px solid #2a333e;
+}
+
+.bbcolor {
+    border-bottom: 1px solid #1e242c;
+}
+
+.topSideWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 58%;
+    width: 100%;
+}
+
+.topSideSports {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+}
+
+.topSideSports::-webkit-scrollbar {
+    height: 5px;
+}
+
+.singleSport {
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.singleSport:hover {
+    cursor: pointer;
+}
+
+.singleSport:hover .sportName {
+    color: aqua;
+    cursor: pointer;
+}
+
+.sportName {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.bottomSideWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.downSideSports {
+    display: flex;
+    width: 96%;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    text-indent: 10px;
+}
+
+.inputSports {
+    width: 50%;
+}
+
+.inputSports input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 12px;
+}
+
+.inputSports input::placeholder {
+    font-size: 12px;
+}
+
+.inputSports input:focus {
+    outline: none;
+}
+
+.sortWrapper {
+    display: flex;
+    align-items: center;
+    width: 99%;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.sortButtons {
+    display: flex;
+}
+
+.btn1,
+.btn2,
+.btn3 {
+    font-size: 12px;
+    margin: 5px;
+}
+
+.btn2,
+.btn3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* padding: 0 10px; */
+    width: 90px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.active {
+    color: #1a99c7;
+}
+
+.btn1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* padding: 0 10px; */
+    width: 120px;
+    padding: 5px;
+    background-color: #1a99c7;
+    color: #fff;
+    border-radius: 4px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.gamesWrapper {
+    background-color: rgb(23, 28, 34);
+    width: 99%;
+}
+
+.gamesTable {
+    display: flex;
+    flex-direction: column;
+}
+
+.leagueCol1 {
+    display: flex;
+    flex-grow: 2.65;
+    align-items: center;
+}
+
+.leagueCol2 {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.leagueCol3 {
+    display: none;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leagueCol4 {
+    display: none;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leagueHeader {
+    display: flex;
+    font-size: 12px;
+    font-weight: 300;
+    background-color: rgb(39, 48, 58);
+    padding: 10px;
+}
+
+
+/* .betHeader{
+padding: 5px;
+} */
+
+.leagueFooter {
+    display: flex;
+    font-size: 12px;
+    font-weight: 300;
+    background-color: rgb(29, 35, 42);
+    padding: 10px;
+    height: 100px;
+}
+
+.representLogo {
+    margin-right: 5px;
+}
+
+.betOdds {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(232, 230, 227);
+    background-color: rgb(39, 48, 58);
+    height: 75px;
+    width: 100%;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.handiOdds {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(232, 230, 227);
+    background-color: rgb(39, 48, 58);
+    margin-left: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.nestedOdds {
+    display: flex;
+    height: 75px;
+    align-items: center;
+    background-color: inherit;
+}
+
+.betOdds:hover {
+    background-color: #16bdf9;
+}
+
+.handiOdds:hover {
+    /* border: 1px solid blue; */
+    background-color: #16bdf9;
+    ;
+}
+
+.extraOdd:hover {
+    background-color: #16bdf9;
+    ;
+}
+
+.extraOdd {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(232, 230, 227);
+    background-color: rgb(52, 65, 78);
+    margin-left: 5px;
+    height: 75px;
+    cursor: pointer;
+}
+
+.gameCol1 {
+    display: flex;
+    flex-grow: 2.7;
+    align-items: start;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.teamRow1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.specWidth {
+    width: 40%!important;
+    display: flex!important;
+    justify-content: space-around!important;
+}
+
+.betActive {
+    box-shadow: inset 0 0 0 2px #1a99c7;
+    /* background-color: #16bdf9; */
+    color: white!important;
+}
+
+.cartItemsWrapper {}
+
+.fontGrey {
+    color: rgb(48, 58, 70);
+}
+
+.cartItem {
+    background-color: rgb(48, 58, 70);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.leftWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line1,
+.line2,
+.line3,
+.line4 {
+    font-size: 12px;
+    font-weight: 200;
+    padding: 2px;
+}
+
+.line1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.line4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bi-stopwath {
+    margin-right: 2px;
+}
+
+.nestedRow {
+    padding: 5px;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gameCol2 {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 100%; */
+}
+
+.gameCol3 {
+    display: none;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameCol4 {
+    display: none;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ExtraOddsWrapper {
+    padding: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 90vh;
+    width: 100%;
+}
+
+.gameCol1:hover {
+    background-color: rgb(39, 48, 58);
+}
+
+.ExtraHeader {
+    padding: 5px;
+}
+
+.sports {
+    display: flex;
+}
+
+.upperHeader {
+    width: 70%;
+    background-color: rgb(39, 48, 58);
+    display: flex;
+    font-size: 12px;
+    padding: 15px;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.LowerHeader {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: rgb(39, 48, 58);
+    display: flex;
+    font-size: 12px;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.gamePlaceHolder {
+    margin-top: 5px;
+    width: 100%;
+    background-color: rgb(39, 48, 58);
+    display: flex;
+    font-size: 12px;
+    padding: 10px;
+    justify-content: space-between;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.extraOddsContainer {
+    width: 60%;
+}
+
+.extraOddsBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.fullGame {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #16bdf9; */
+    width: 40%;
+}
+
+.oddsHeader {
+    background-color: rgb(39, 48, 58);
+    padding: 10px;
+    border-bottom: 1px solid #1e242c;
+}
+
+.oddsFooter {
+    display: flex;
+    background-color: rgb(48, 59, 71);
+    /* height: 40px; */
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.finalOddWrapper {
+    width: 25%;
+}
+
+.odds1 {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    padding: 10px;
+    /* border-left: 1px solid #1e242c;
+border-bottom: 1px solid #1e242c;
+border-right: 1px solid #1e242c; */
+    cursor: pointer;
+}
+
+.incHeight1 {}
+
+.incHeight1 {}
+
+.incHeight1 {}
+
+.fontOrange {
+    color: orange;
+}
+
+.fontRed {
+    color: red;
+}
+
+.fontBlue {
+    color: #16bdf9;
+}
+
+ ::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 30px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: rgb(54, 60, 68);
+}
+
+
+/* Styles for small screens (up to 576px) */
+
+@media (max-width: 576px) {
+    /* Add additional styles as needed */
+    .credUsername {
+        border: none;
+        width: 50%;
+    }
+    .credPassword {
+        width: 50%;
+    }
+    .savedCred {
+        padding: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(26, 153, 199) !important;
+        width: 80%;
+        height: 70px;
+    }
+}
+
+.selectOptions {
+    background-color: rgb(34, 42, 51);
+    border: none;
+    font-size: 12px;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.selectOptions:focus {
+    outline: none;
+}
+
+@media (max-width: 1500px) {
+    /* Add additional styles as needed */
+    /* .column2 {
+    max-width: 76%;
+} */
+    .leagueCol3 {
+        display: none;
+    }
+    .leagueCol4 {
+        display: none;
+    }
+    .gameCol3 {
+        display: none;
+    }
+    .gameCol4 {
+        display: none;
+    }
+}
+
+@media (max-width: 1450px) {
+    /* Add additional styles as needed */
+    /* .column2 {
+    max-width: 74%;
+} */
+}
+
+@media (max-width: 1400px) {
+    /* Add additional styles as needed */
+    /* .column2 {
+    max-width: 73%;
+} */
+    .column3 {
+        display: none;
+        flex-basis: 0px;
+    }
+    .column4 {
+        max-width: 40%;
+    }
+    .column2 {
+        max-width: 60%;
+    }
+}
+
+
+/* Add additional styles as needed */
+
+@media (max-width: 1350px) {
+    /* Add additional styles as needed */
+    /* .column2 {
+    max-width: 72%;
+} */
+}
+
+@media (max-width: 1300px) {
+    .logoSegment {
+        display: block;
+    }
+    .sidebar {
+        left: -100%;
+    }
+    .rightSegment {
+        display: none;
+    }
+    .bi-person-circle {
+        display: block;
+    }
+    .bi-list {
+        display: block;
+    }
+    .betSlip {
+        /* right: 100% */
+    }
+    /* .column2 {
+    flex-basis: 1300px;
+} */
+    .column3 {
+        display: none;
+        flex-basis: 0px;
+    }
+    .customUl {
+        font-size: 10px !important;
+    }
+    .customUl1 {
+        font-size: 10px !important;
+    }
+    .tab-group li a {
+        font-size: 16px;
+    }
+    h3,
+    h1 {
+        font-size: 16px;
+    }
+    /* .column2 {
+    max-width: 100%;
+} */
+    /* Add additional styles as needed */
+    /* Styles for medium screens (up to 768px) */
+    @media (max-width: 1008px) {
+        /* Add additional styles as needed */
+        /* .leagueCol3 {
+        display: flex;
+    }
+    .leagueCol4 {
+        display: flex;
+    }
+    .gameCol3 {
+        display: flex;
+    }
+    .gameCol4 {
+        display: flex;
+    } */
+        .column2 {
+            max-width: 100%;
+        }
+        .column4 {
+            display: none;
+        }
+    }
+    /* Styles for large screens (up to 992px) */
+    @media (max-width: 852px) {
+        /* Add additional styles as needed */
+        .selectOptions {
+            display: block;
+        }
+    }
+    /* Styles for extra large screens (up to 1200px) */
+    /* Styles for screens larger than 1200px */
+}
