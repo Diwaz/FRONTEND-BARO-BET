@@ -131,6 +131,38 @@ let miniGameData = [
                                 oddName: 'Over 6.5',
                                 odds: 3.5
                             },
+                            {
+                                oddName: 'Over 3.5',
+                                odds: 3.5
+                            },
+                            {
+                                oddName: 'Over 4.5',
+                                odds: 3.5
+                            },
+                            {
+                                oddName: 'Over 5.5',
+                                odds: 3.5
+                            },
+                            {
+                                oddName: 'Over 6.5',
+                                odds: 3.5
+                            },
+                            {
+                                oddName: 'Over 3.5',
+                                odds: 3.5
+                            },
+                            {
+                                oddName: 'Over 4.5',
+                                odds: 3.5
+                            },
+                            {
+                                oddName: 'Over 5.5',
+                                odds: 3.5
+                            },
+                            {
+                                oddName: 'Over 6.5',
+                                odds: 3.5
+                            },
                         ]
                     },
 

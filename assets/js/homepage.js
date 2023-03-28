@@ -22,6 +22,7 @@ const selectOptions = document.querySelector('.selectOptions');
 
 
 
+
 let soccerData = [
 
     {
@@ -165,7 +166,8 @@ function initApp() {
     </div>
    `;
 
-        leagueTable.appendChild(newDiv);
+        //remove this comment debug mode
+        //  leagueTable.appendChild(newDiv);
 
         let games = value.League.Game;
         console.log(games)
@@ -212,12 +214,13 @@ function initApp() {
             <div class="nestedOdds fontBlue" >${val.handiBets[6]}</div>
             <div class="nestedOdds">${val.handiBets[7]}</div>
         </div>
-        <div class="extraOdd">${val.extra}</div>
+        <div class="extraOdd" id="${indx}-${key}">${val.extra}</div>
     </div>
     <div class="gameOdds"></div>
 </div>
    `;
-            leagueTable.appendChild(gamesDiv);
+            //remove this comment debug mode
+            // leagueTable.appendChild(gamesDiv);
         })
 
 
@@ -294,6 +297,11 @@ function reloadCard() {
 //         //  backdrop.style.display = 'block'
 
 // }
+const accord = document.querySelector('.accordionOdd')
+
+extraOdd.addEventListener('click', function() {
+    accord.classList.toggle('accordionActive')
+})
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.handiOdds');
     const betOdds = document.querySelectorAll('.betOdds');

@@ -800,6 +800,64 @@ body {
     color: #16bdf9;
 }
 
+.extraOddsBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.extraOddsContainer {
+    width: 100%;
+}
+
+.oddsHeader {
+    background-color: rgb(39, 48, 58);
+    padding: 10px;
+    border-bottom: 1px solid #1e242c;
+}
+
+.oddsFooter {
+    display: flex;
+    background-color: rgb(48, 59, 71);
+    /* height: 40px; */
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.odds1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    padding: 10px;
+    /* border-left: 1px solid #1e242c;
+border-bottom: 1px solid #1e242c;
+border-right: 1px solid #1e242c; */
+    cursor: pointer;
+}
+
+.accordionOdd {
+    width: 100%;
+    height: 0;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.accordionActive {
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.navMsgBar {
+    display: flex;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     border-radius: 30px;

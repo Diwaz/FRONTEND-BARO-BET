@@ -1140,6 +1140,20 @@ function reloadCard() {
 //         //  backdrop.style.display = 'block'
 
 // }
+const loginBtn = document.querySelector('.loginBtn')
+const sliderMenu = document.querySelector('.sliderMenu')
+const sliderBackDrop = document.querySelector('.sliderMenuBackDrop')
+
+loginBtn.addEventListener('click', function() {
+    sliderMenu.classList.add('sliderMenuActive')
+    sliderBackDrop.style.display = 'block'
+})
+
+sliderBackDrop.addEventListener('click', () => {
+    sliderMenu.classList.remove('sliderMenuActive')
+    sliderBackDrop.style.display = 'none'
+})
+
 noticeCancelBtn.addEventListener('click', function() {
     backDrop.style.display = 'none'
 
