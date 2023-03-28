@@ -730,8 +730,10 @@ let soccerData = [
 
 ];
 
-let listCards = [];
+
 let dataArray = [];
+let cartItem = null;
+
 
 
 //renderSidebar is only to render the sidebar for the first time
@@ -1110,18 +1112,18 @@ function reloadCard() {
         //     emptyCart.style.display = 'flex'
         // }
 
-    let totalOdds = 1;
-    dataArray.forEach((value, key) => {
-        totalOdds = totalOdds * parseFloat(value.odds);
-        // count = count + value.quantity;
-        if (value != null) {
-            let newDiv = document.createElement('div');
-            newDiv.classList.add('cartItem')
-            newDiv.innerHTML = `
+    //  let totalOdds = 1;
+    //  dataArray.forEach((value, key) => {
+    //     totalOdds = totalOdds * parseFloat(value.odds);
+    // count = count + value.quantity;
+    // if (value != null) {
+    let newDiv = document.createElement('div');
+    newDiv.classList.add('cartItem')
+    newDiv.innerHTML = `
             <div class="line1">
         <div class="leftWrapper">
 
-            <img src="assets/images/${value.leagueLogo}.svg" alt="" width="14" height="14" class="representLogo">${value.leagueName}
+            <img src="assets/images/${cartItem.leagueLogo}.svg" alt="" width="14" height="14" class="representLogo">${cartItem.leagueName}
         </div>
 
         <div class="exitLogo">
@@ -1129,17 +1131,17 @@ function reloadCard() {
         </div>
     </div>
    
-    <div class="line3">${value.fullGame}</div>
-    <div class="line4 fontBlue">${value.teamName}
+    <div class="line3">${cartItem.fullGame}</div>
+    <div class="line4 fontBlue">${cartItem.teamName}
     <div class="oddsLine fontBlue">
-    ${value.odds}
+    ${cartItem.odds}
 </div>
     </div>
                 `;
-            cartItemsWrapper.appendChild(newDiv);
-        }
-    })
-    OddsNumber.innerText = totalOdds.toLocaleString();
+    cartItemsWrapper.appendChild(newDiv);
+    // }
+    //   })
+    //   OddsNumber.innerText = totalOdds.toLocaleString();
     // quantity.innerText = count;
 }
 
@@ -1564,7 +1566,14 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
 
+    function setActiveButton(button) {
+        // remove active class from all buttons
+        const buttons = document.querySelectorAll('.odds1')
+        buttons.forEach(btn => btn.classList.remove('betActive'));
 
+        // add active class to the clicked button
+        button.classList.add('betActive');
+    }
     buttons.forEach(function(button) {
         button.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
@@ -1605,6 +1614,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchType: matchType,
                 matchTime: matchTime
             };
+
+
             if (dataArray.some(obj => obj.id === id)) {
                 dataArray = dataArray.filter(obj => obj.id !== id);
             } else {
@@ -1626,9 +1637,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target.classList.contains('odds1')) {
             // Handle the button click here
             console.log('Button clicked:', event.target);
+            setActiveButton(event.target);
             // event.target.classList.toggle('betActive');
             // Toggle the 'button-active' class on the clicked button element
-            event.target.classList.toggle('betActive');
+
             const modeIndex = event.target.id.split('-')[1]
             const gameIndex = event.target.id.split('-')[0]
             const id = event.target.id.substring(0, 3);
@@ -1661,11 +1673,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 fullGame: fullGame,
 
             };
-            if (dataArray.some(obj => obj.id === id)) {
-                dataArray = dataArray.filter(obj => obj.id !== id);
-            } else {
-                dataArray.push(newObject);
-            }
+            cartItem = newObject
+
+
+
+
+
+
+
+
+
+            // if (dataArray.some(obj => obj.id === id)) {
+            //     dataArray = dataArray.filter(obj => obj.id !== id);
+            //     event.target.classList.remove('betActive');
+            // } else {
+            //     dataArray.push(newObject);
+            //     event.target.classList.add('betActive');
+            // }
             reloadCard();
             // push the new object into the array
             //  console.log(dataArray)
