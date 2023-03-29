@@ -39,6 +39,7 @@ let consecutiveHighNumber = 0;
 let consecutiveLowNumber = 0;
 let consecutiveOdd = 0;
 let consecutiveEven = 0;
+let totalHistory = 0;
 
 
 
@@ -352,6 +353,23 @@ function replaceSidebar(leagueIndx, gameIndx) {
 
 }
 
+function generateHistoryTable(number) {
+
+    let historyBody = document.querySelector('.historyBody')
+    let newHistory = document.createElement('div')
+    newHistory.classList = 'singleHistory'
+    newHistory.innerHTML = `
+    <div class="historyCol1">${totalHistory}</div>
+        <div class="historyCol1 ${number < 4 ?  'Under' : 'Over'}">${number < 4 ?  'Under' : 'Over'}</div>
+        <div class="historyCol1 ${number % 2 == 0 ?  'Even' : 'Odd'}">${number % 2 == 0 ?  'Even' : 'Odd'}</div>
+        <div class="historyCol1">
+            <i class="bi bi-dice-${number}-fill"></i>
+        </div>
+    `
+    historyBody.appendChild(newHistory)
+    totalHistory = totalHistory + 1
+}
+
 function generateHistoryTable1(number) {
 
 
@@ -367,7 +385,7 @@ function generateHistoryTable1(number) {
             const element = document.createElement('div');
             element.className = 'element';
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsUnder';
             item.innerHTML = number;
             element.appendChild(item);
             box.appendChild(element);
@@ -376,7 +394,7 @@ function generateHistoryTable1(number) {
         } else if (consecutiveLowNumber < 6) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsUnder';
             item.innerHTML = number;
             lastElement.appendChild(item);
             consecutiveLowNumber++;
@@ -385,7 +403,7 @@ function generateHistoryTable1(number) {
             const element = document.createElement('div');
             element.className = 'element';
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsUnder';
             item.innerHTML = number;
             element.appendChild(item);
             box.appendChild(element);
@@ -398,7 +416,7 @@ function generateHistoryTable1(number) {
             const element = document.createElement('div');
             element.className = 'element';
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsOver';
             item.innerHTML = number;
             element.appendChild(item);
             box.appendChild(element);
@@ -407,7 +425,7 @@ function generateHistoryTable1(number) {
         } else if (consecutiveHighNumber < 6) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsOver';
             item.innerHTML = number;
             lastElement.appendChild(item);
             consecutiveHighNumber++;
@@ -416,7 +434,7 @@ function generateHistoryTable1(number) {
             const element = document.createElement('div');
             element.className = 'element';
             const item = document.createElement('div');
-            item.className = 'item';
+            item.className = 'oddsOver';
             item.innerHTML = number;
             element.appendChild(item);
             box.appendChild(element);
@@ -445,7 +463,7 @@ function generateHistoryTable2(number) {
             const element = document.createElement('div');
             element.className = 'element';
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsEven';
             item.innerHTML = 'Even';
             element.appendChild(item);
             box.appendChild(element);
@@ -454,7 +472,7 @@ function generateHistoryTable2(number) {
         } else if (consecutiveEven < 6) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsEven';
             item.innerHTML = 'Even';
             lastElement.appendChild(item);
             consecutiveEven++;
@@ -463,7 +481,7 @@ function generateHistoryTable2(number) {
             const element = document.createElement('div');
             element.className = 'element';
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsEven';
             item.innerHTML = 'Even';
             element.appendChild(item);
             box.appendChild(element);
@@ -476,7 +494,7 @@ function generateHistoryTable2(number) {
             const element = document.createElement('div');
             element.className = 'element';
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsOdd';
             item.innerHTML = 'Odd';
             element.appendChild(item);
             box.appendChild(element);
@@ -485,7 +503,7 @@ function generateHistoryTable2(number) {
         } else if (consecutiveOdd < 6) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
-            item.className = 'odds1';
+            item.className = 'oddsOdd';
             item.innerHTML = 'Odd';
             lastElement.appendChild(item);
             consecutiveOdd++;
@@ -494,7 +512,7 @@ function generateHistoryTable2(number) {
             const element = document.createElement('div');
             element.className = 'element';
             const item = document.createElement('div');
-            item.className = 'item';
+            item.className = 'oddsOdd';
             item.innerHTML = 'Odd';
             element.appendChild(item);
             box.appendChild(element);
@@ -698,6 +716,7 @@ function reloadCard() {
 
 const diceBtn = document.querySelector('.diceGenerator')
 diceBtn.addEventListener('click', function() {
+
     var randomNumber = Math.floor(Math.random() * 6) + 1;
     var dice = document.querySelector('.dice')
     dice.innerHTML = `
@@ -709,6 +728,7 @@ diceBtn.addEventListener('click', function() {
     resultElement.innerHTML = randomNumber;
     generateHistoryTable1(randomNumber);
     generateHistoryTable2(randomNumber);
+    generateHistoryTable(randomNumber);
     //console.log(diceHistory)
 
 })
