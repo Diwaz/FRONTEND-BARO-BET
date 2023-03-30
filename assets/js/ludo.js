@@ -5,7 +5,7 @@ const leagueTable = document.querySelector('.gamesTable');
 const handiOdds = document.querySelector('.nestedOdds');
 const betOdds = document.querySelector('.betOdds');
 const extraOdd = document.querySelector('.extraOdd');
-
+const cartItemsWrapper = document.querySelector('.cartItemsWrapper');
 
 const emptyCart = document.querySelector('.emptyCart');
 const selectOptions = document.querySelector('.selectOptions');
@@ -42,176 +42,21 @@ let consecutiveEven = 0;
 let totalHistory = 0;
 
 
+let ludoData1 = {
+    Under: 3.2,
+    Over: 2.4,
+    Odd: 2.7,
+    Even: 2.8,
+}
+let ludoData2 = {
+    dice1: 2,
+    dice2: 3,
+    dice3: 4,
+    dice4: 5,
+    dice5: 1,
+    dice6: 2,
+}
 
-let miniGameData = [
-
-    {
-        gameName: 'Pin ball',
-        gameImg: 'game1',
-        Types: [
-
-            {
-                formatName: 'Pinball 8 level',
-                formatLogo: 'mode1',
-
-                allBets: [{
-                        title: 'Pinball 8 level Round of 64',
-
-                        totalBlocks: [{
-                                oddName: 'Over 3.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 4.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 5.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 6.5',
-                                odds: 3.5
-                            },
-                        ]
-                    },
-
-
-                ]
-
-            },
-            {
-                formatName: 'Pinball 8 level',
-                formatLogo: 'mode1',
-                allBets: [{
-                        title: 'Pinball 8 level Round of 16',
-
-                        totalBlocks: [{
-                                oddName: 'Over 3.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 4.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 5.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 6.5',
-                                odds: 3.5
-                            },
-                        ]
-                    },
-
-
-                ]
-
-            },
-
-        ],
-    },
-    {
-        gameName: '8 ball',
-        gameImg: 'game2',
-        Types: [
-
-            {
-                formatName: '8 pool losers out',
-                formatLogo: 'mode1',
-                allBets: [{
-                        title: ' 8 ball Round of 64',
-
-                        totalBlocks: [{
-                                oddName: 'Over 3.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 4.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 5.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 6.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 3.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 4.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 5.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 6.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 3.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 4.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 5.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 6.5',
-                                odds: 3.5
-                            },
-                        ]
-                    },
-
-
-                ]
-
-            },
-            {
-                formatName: ' 8 pool winners out',
-                formatLogo: 'mode1',
-                allBets: [{
-                        title: '8 ball Round of 64',
-
-                        totalBlocks: [{
-                                oddName: 'Over 3.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 4.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 5.5',
-                                odds: 3.5
-                            },
-                            {
-                                oddName: 'Over 6.5',
-                                odds: 3.5
-                            },
-                        ]
-                    },
-
-
-                ]
-
-            },
-
-        ],
-    },
-
-]
 let messageData = [{
         msgType: 'notification',
         title: 'Bank check Type Information',
@@ -525,19 +370,61 @@ function generateHistoryTable2(number) {
 }
 
 function initApp() {
-    // console.log(soccerData)
-    miniGameData.forEach((val, key) => {
-        let loadGames = document.createElement('div')
-        loadGames.classList.add('singleGame');
-        loadGames.innerHTML = `
-        
-        <img src="assets/images/${val.gameImg}.png" class="d-inline-block align-text-top" width="225" height="130" id="${key}">
-   
-        `
-            //remove this cmnt
-            //  gamesContainer.appendChild(loadGames)
+    let bodyWrapper1 = document.querySelector('.extraOddsBody1')
+    let bodyWrapper2 = document.querySelector('.extraOddsBody3')
 
-    })
+    let ludoOdds1Div = document.createElement('div')
+    ludoOdds1Div.classList = 'oddsFooter'
+    ludoOdds1Div.innerHTML = `
+    <div class="oddsSelect" id="1">Under <span class="highlightOdd">
+    ${ludoData1.Under}
+    </span>
+</div>
+<div class="oddsSelect" id="1">Over <span class="highlightOdd">
+${ludoData1.Over}
+    </span>
+</div>
+<div class="oddsSelect" id="1">Odd <span class="highlightOdd">
+${ludoData1.Odd}
+    </span>
+</div>
+<div class="oddsSelect" id="1">Even <span class="highlightOdd">
+${ludoData1.Even}
+    </span>
+</div>
+    `
+    bodyWrapper1.appendChild(ludoOdds1Div);
+
+    let ludoOdds2Div = document.createElement('div')
+    ludoOdds2Div.classList = 'oddsFooter'
+    ludoOdds2Div.innerHTML = `
+    <div class="oddsSelect dice" id="2-1"><i class="bi bi-dice-1-fill"></i> <span class="highlightOdd">
+    ${ludoData2.dice1}
+    </span>
+</div>
+<div class="oddsSelect dice" id="2-2"><i class="bi bi-dice-2-fill"></i> <span class="highlightOdd">
+${ludoData2.dice2}
+    </span>
+</div>
+<div class="oddsSelect dice" id="2-3"><i class="bi bi-dice-3-fill"></i> <span class="highlightOdd">
+${ludoData2.dice3}
+    </span>
+</div>
+<div class="oddsSelect dice" id="2-4"><i class="bi bi-dice-4-fill"></i> <span class="highlightOdd">
+${ludoData2.dice4}
+    </span>
+</div>
+<div class="oddsSelect dice" id="2-5"><i class="bi bi-dice-5-fill"></i> <span class="highlightOdd">
+${ludoData2.dice5}
+    </span>
+</div>
+<div class="oddsSelect dice" id="2-6"><i class="bi bi-dice-6-fill"></i> <span class="highlightOdd">
+${ludoData2.dice6}
+    </span>
+</div>
+    `
+    bodyWrapper2.appendChild(ludoOdds2Div);
+
     messageData.forEach((val, key) => {
         let newsDiv = document.createElement('div')
         newsDiv.classList.add('noticeItem')
@@ -565,137 +452,30 @@ function initApp() {
             //noticeBody.appendChild(newsDiv)
     })
 
-    //     soccerData.forEach((value, key) => {
-
-
-    //         //For leagues
-    //         let newDiv = document.createElement('div');
-    //         newDiv.classList.add('leagueTable');
-    //         newDiv.innerHTML = `
-    //         <div class="leagueHeader bbcolor">
-    //         <div class="leagueCol1">
-
-    //             <img src="assets/images/${value.League.leagueFlag}.png" alt="" width="19" height="14" class="representLogo"> ${value.League.leagueName}</div>
-    //         <div class="leagueCol2">
-
-    //         <div class="betHeader">Home </div>
-    //         <div class="betHeader">Draw</div>
-    //         <div class="bHeader">Away</div>
-    //         </div>
-    //         <div class="leagueCol3"> Handicap
-    //         </div>
-    //         <div class="leagueCol4">Over/Under
-    //         </div>
-    //     </div>
-    //    `;
-
-    //         // leagueTable.appendChild(newDiv);
-
-    //         let games = value.League.Game;
-    //         //  console.log(games)
-    //         games.forEach((val, indx) => {
-    //             // For Games
-    //             let gamesDiv = document.createElement('div');
-    //             gamesDiv.classList.add('leagueFooter');
-    //             gamesDiv.innerHTML = `
-    //             <div class="gameCol1" id='${indx}-${key}'>
-
-    //             <div class="teamRow1">
-    //                 <div class="nestedRow"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
-    //                 <div class="nestedRow fontBlue">${val.homeGoal}</div>
-    //             </div>
-    //             <div class="teamRow1">
-    //                 <div class="nestedRow"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
-    //                 <div class="nestedRow fontBlue">${val.awayGoal}</div>
-    //             </div>
-    //             <div class="teamRow1">
-    //                 <div class="nestedRow specWidth"><i class="bi bi-stopwatch "></i> 1st half of <span class="fontBlue"> 37:31'</span></div>
-    //                 <div class="nestedRow fontBlue">+48</div>
-    //             </div>
-
-    //         </div>
-    //         <div class="gameCol2">
-    //             <div class="betOdds" id="${indx}-${key}-1">
-
-    //                 ${val.bets[0]}
-    //             </div>
-    //             <div class="betOdds" id="${indx}-${key}-2">
-
-    //                 ${val.bets[1]}</div>
-    //             <div class="betOdds" id="${indx}-${key}-3">
-
-    //                 ${val.bets[2]}</div>
-    //         </div>
-    //         <div class="gameCol3">
-    //             <div class="handiOdds">
-    //                 <div class="nestedOdds fontOrange">${val.handiBets[0]}</div>
-    //                 <div class="nestedOdds">${val.handiBets[1]}</div>
-    //             </div>
-    //             <div class="handiOdds">
-    //                 <div class="nestedOdds fontOrange">${val.handiBets[2]}</div>
-    //                 <div class="nestedOdds">${val.handiBets[3]}</div>
-    //             </div>
-
-
-    //         </div>
-    //         <div class="gameCol4">
-    //             <div class="handiOdds">
-    //                 <div class="nestedOdds fontRed">${val.handiBets[4]}</div>
-    //                 <div class="nestedOdds">${val.handiBets[5]}</div>
-    //             </div>
-    //             <div class="handiOdds">
-    //                 <div class="nestedOdds fontBlue">${val.handiBets[6]}</div>
-    //                 <div class="nestedOdds">${val.handiBets[7]}</div>
-    //             </div>
-
-    //         </div>
-    //         <div class="gameOdds"></div>
-    //    `;
-    //             //  leagueTable.appendChild(gamesDiv);
-
-    //             // let allBets = val.allBets;
-    //             // console.log(allBets)
-
-    //             // allBets.forEach((v, k) => {
-    //             //     // For Games
-    //             //     let allBetsDiv = document.createElement('div');
-    //             //     allBetsDiv.classList.add('extraOddsBody');
-    //             //     allBetsDiv.innerHTML = `
-    //             //                 <div class="oddsHeader fontBlue">1x2</div>
-    //             //                 <div class="oddsFooter">
-    //             //                     <div class="odds1">FCB 1.90
-    //             //                     </div>
-
-    //             //                     <div class="odds1">RMA 4.10</div>
-    //             //                 </div>`;
-
-    //             //     ExtraOddsWrapper.appendChild(allBetsDiv);
-
-
-    //             // })
-
-    //         })
-
-
-    //     })
-
-
 }
 initApp();
 
 
 function reloadCard() {
-    const cartItemsWrapper = document.querySelector('.cartItemsWrapper');
-    const OddsNumber = document.querySelector('.OddsNumber');
     cartItemsWrapper.innerHTML = ''
+    if (dataArray.length > 0) {
+        emptyCart.style.display = 'none';
+    } else {
+        emptyCart.style.display = 'flex'
+    }
 
-    let newDiv = document.createElement('div');
-    newDiv.classList.add('cartItem')
-    newDiv.innerHTML = `
+    let totalOdds = 1;
+    dataArray.forEach((value, key) => {
+        totalOdds = totalOdds * parseFloat(value.odds);
+        // count = count + value.quantity;
+        if (value != null) {
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('cartItem')
+            newDiv.innerHTML = `
             <div class="line1">
         <div class="leftWrapper">
 
-            <img src="assets/images/${cartItem.leagueLogo}.svg" alt="" width="14" height="14" class="representLogo">${cartItem.leagueName}
+            <img src="assets/images/${value.leagueLogo}.png" alt="" width="14" height="14" class="representLogo">${value.leagueName}
         </div>
 
         <div class="exitLogo">
@@ -703,14 +483,17 @@ function reloadCard() {
         </div>
     </div>
    
-    <div class="line3">${cartItem.fullGame}</div>
-    <div class="line4 fontBlue">${cartItem.teamName}
+    <div class="line3">${value.fullGame}</div>
+    <div class="line4 fontBlue"> Dice ${value.teamName}
     <div class="oddsLine fontBlue">
-    ${cartItem.odds}
+    ${value.odds}
 </div>
     </div>
                 `;
-    cartItemsWrapper.appendChild(newDiv);
+            cartItemsWrapper.appendChild(newDiv);
+        }
+    })
+    OddsNumber.innerText = totalOdds.toLocaleString();
 
 }
 
@@ -820,12 +603,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         })
     })
-
-
-
-
-
-
 
 
     singleGame.forEach(function(game) {
@@ -1123,7 +900,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setActiveButton(button) {
         // remove active class from all buttons
-        const buttons = document.querySelectorAll('.odds1')
+        const buttons = document.querySelectorAll('.oddsSelect')
         buttons.forEach(btn => btn.classList.remove('betActive'));
 
         // add active class to the clicked button
@@ -1189,28 +966,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     col4.addEventListener('click', (event) => {
         // Check if the clicked element is a button with the desired class
-        if (event.target.classList.contains('odds1')) {
+        if (event.target.classList.contains('oddsSelect')) {
             // Handle the button click here
             console.log('Button clicked:', event.target);
             setActiveButton(event.target);
             // event.target.classList.toggle('betActive');
             // Toggle the 'button-active' class on the clicked button element
 
-            const modeIndex = event.target.id.split('-')[1]
-            const gameIndex = event.target.id.split('-')[0]
-            const id = event.target.id.substring(0, 3);
+            const modeIndex = event.target.id
+
+            console.log(modeIndex)
+            const id = event.target.id.split('-')[0];
             // const oddIndex = event.target.id.split('-')[2]
             //   const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 3 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
-            const leagueName = miniGameData[gameIndex].Types[modeIndex].allBets[0].title;
-            const leagueLogo = miniGameData[gameIndex].Types[modeIndex].formatLogo;
-            const fullGame = miniGameData[gameIndex].Types[modeIndex].formatName;
+            const leagueName = 'Ludo Champion';
+            const leagueLogo = 'dice-1';
+            const fullGame = 'Dice Prediction';
             // const matchType = '1x2';
             // const matchTime = 'Live';
-            const rawContent = event.target.textContent.split(' ')
-            const cleanedArr = rawContent.filter(str => str.trim() !== '');
-            const selectedOdd = parseFloat(cleanedArr.pop());
-            const teamName = cleanedArr.join(' ');
+            let selectedOdd = 0;
+            let teamName = '';
+            if (event.target.classList.contains('dice')) {
+                teamName = event.target.id.split('-')[1]
+                const rawContent = event.target.textContent.split(' ')
+                const cleanedArr = rawContent.filter(str => str.trim() !== '');
+                selectedOdd = parseFloat(cleanedArr.pop());
 
+            } else {
+                const rawContent = event.target.textContent.split(' ')
+                const cleanedArr = rawContent.filter(str => str.trim() !== '');
+                selectedOdd = parseFloat(cleanedArr.pop());
+                teamName = cleanedArr.join(' ');
+            }
+
+            console.log('sO', id)
 
 
 
@@ -1228,7 +1017,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 fullGame: fullGame,
 
             };
-            cartItem = newObject
+            if (dataArray.some(obj => obj.id === id)) {
+                dataArray = dataArray.filter(obj => obj.id !== id);
+                dataArray.push(newObject);
+            } else {
+                dataArray.push(newObject);
+            }
+
 
             reloadCard();
 

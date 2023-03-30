@@ -308,7 +308,7 @@ flex-direction: row-reverse;
 .historyBody {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     height: 100%;
     /* overflow-y: auto;
@@ -618,12 +618,21 @@ height: 200px; */
     justify-content: center;
 }
 
-.slipWrapper {
+.historyWrapper {
     top: 0;
     background-color: #1F262F;
     display: flex;
     flex-direction: column;
     height: 91%;
+}
+
+.slipWrapper {
+    top: 0;
+    background-color: #1F262F;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .historyWrapper {
@@ -683,7 +692,11 @@ height: 200px; */
     border-bottom: 1px solid #1e242c;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 120px;
+    height: 220px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .emptyCart {
@@ -1126,7 +1139,9 @@ padding: 5px;
     color: white!important;
 }
 
-.cartItemsWrapper {}
+.cartItemsWrapper {
+    width: 100%;
+}
 
 .fontGrey {
     color: rgb(48, 58, 70);
@@ -1266,7 +1281,9 @@ padding: 5px;
     margin: 5px
 }
 
-.extraOddsBody2 {
+.extraOddsBody2,
+.extraOddsBody1,
+.extraOddsBody3 {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -1322,6 +1339,23 @@ padding: 5px;
 border-bottom: 1px solid #1e242c;
 border-right: 1px solid #1e242c; */
     cursor: pointer;
+}
+
+.oddsSelect {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    padding: 10px;
+    border-left: 1px solid #1e242c;
+    /* border-bottom: 1px solid #1e242c; */
+    border-right: 1px solid #1e242c;
+    cursor: pointer;
+}
+
+.oddsSelect:hover {
+    box-shadow: inset 0 0 0 2px #1a99c7;
 }
 
 .Under {
