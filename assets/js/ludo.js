@@ -19,6 +19,10 @@ const cartBackdrop = document.querySelector('.cartBackdrop');
 const col3 = document.querySelector('.column3');
 const gamesContainer = document.querySelector('.gamesContainer')
 
+const mainHeaderBtn1 = document.querySelector('.depositeUpHeader1')
+const mainHeaderBtn2 = document.querySelector('.depositeUpHeader2')
+
+
 
 
 
@@ -604,6 +608,146 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 
+
+    mainHeaderBtn1.addEventListener('click', function() {
+
+        mainHeaderBtn1.classList.add('depositeActive')
+
+        mainHeaderBtn2.classList.remove('depositeActive')
+        let noticeBody = document.querySelector('.noticeBody')
+        let nextWindow = document.createElement('div')
+        nextWindow.classList.add('depositeItem')
+        let oldWindow = document.querySelector('.withdrawlItem')
+        console.log(oldWindow)
+
+        nextWindow.innerHTML = `
+        <div class="menuItem">
+                            <div class="dispIcon specDisp">Type</div>
+                            <div class="dispIcon">
+                                <select name="options" id="" class="selectOptions">
+                                    <option value="">Cash</option>
+                                    <option value="">Bitcoin</option>
+                                    <option value="">Wireless</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="menuItem">
+                            <div class="dispIcon specDisp">Home of Depositor</div>
+                            <div class="dispIcon">Helios Predator</div>
+                        </div>
+                        <div class="menuItem">
+                            <div class="dispIcon specDisp">Amount</div>
+                            <div class="dispIcon inputSports"><input type="text" name="amount" id="" placeholder="Please type in the deposite amount" class="inputLeague"></div>
+                        </div>
+                        <div class="menuItem">
+                            <div class="dispIcon specDisp">Apply for Bonus</div>
+                            <div class="dispIcon"> <select name="options" id="" class="selectOptions">
+                                <option value="">Cash</option>
+                                <option value="">Bitcoin</option>
+                                <option value="">Wireless</option>
+                            </select></div>
+                        </div>
+                        <div class="depositeBtn2">
+                            <div class="noticeBtn">Deposite Bill</div>
+                        </div>
+                        <div class="depositeHistory">
+                            <div class="historyHeader">Deposite History</div>
+                            <div class="headerItem">
+                                <div class="hd1">Select</div>
+                                <div class="hd2">Date</div>
+                                <div class="hd3">Type</div>
+                                <div class="hd4">Amount</div>
+                                <div class="hd5">Status</div>
+                            </div>
+                            <div class="footerItem">
+                                <div class="hd1"><input type="checkbox" name="" id=""></div>
+                                <div class="hd2">2023-03-18 19:32:56</div>
+                                <div class="hd3">CASH</div>
+                                <div class="hd4">30,000</div>
+                                <div class="hd5 fontBlue">Approved</div>
+                            </div>
+                            <div class="footerItem">
+                                <div class="hd1"><input type="checkbox" name="" id=""></div>
+                                <div class="hd2">2023-03-12 9:32:56</div>
+                                <div class="hd3">CASH</div>
+                                <div class="hd4">30,000</div>
+                                <div class="hd5 fontRed">Rejected</div>
+                            </div>
+                        </div>
+    
+       
+        `
+
+        noticeBody.replaceChild(nextWindow, oldWindow)
+
+    })
+    mainHeaderBtn2.addEventListener('click', function() {
+
+        mainHeaderBtn2.classList.add('depositeActive')
+
+        mainHeaderBtn1.classList.remove('depositeActive')
+        let noticeBody = document.querySelector('.noticeBody')
+        let nextWindow = document.createElement('div')
+        nextWindow.classList.add('withdrawlItem')
+        let oldWindow = document.querySelector('.depositeItem')
+
+
+        nextWindow.innerHTML = `
+        <div class="menuItem">
+            <div class="dispIcon specDisp">Balance</div>
+            <div class="dispIcon">
+                14,500
+            </div>
+        </div>
+        <div class="menuItem">
+            <div class="dispIcon specDisp">Account Holder</div>
+            <div class="dispIcon">Helios Predator</div>
+        </div>
+        <div class="menuItem">
+            <div class="dispIcon specDisp">Amount</div>
+            <div class="dispIcon inputSports"><input type="text" name="amount"  placeholder="Please type in the deposite amount" class="inputLeague"></div>
+        </div>
+        <div class="menuItem">
+            <div class="dispIcon specDisp">Withdrawl Password</div>
+
+            <div class="dispIcon inputSports"><input type="password" name="amount"  placeholder="Please enter your withdrawl password" class="inputLeague"></div>
+
+        </div>
+
+        <div class="depositeBtn2">
+            <div class="noticeBtn">Withdrawl Request</div>
+        </div>
+        <div class="depositeHistory">
+            <div class="historyHeader">Withdrawl History</div>
+            <div class="headerItem">
+                <div class="hd1">Select</div>
+                <div class="hd2">Date</div>
+                <div class="hd3">Method</div>
+                <div class="hd4">Amount</div>
+                <div class="hd5">Status</div>
+            </div>
+            <div class="footerItem">
+                <div class="hd1"><input type="checkbox" name="" id=""></div>
+                <div class="hd2">2023-03-18 19:32:56</div>
+                <div class="hd3">CASH</div>
+                <div class="hd4">30,000</div>
+                <div class="hd5 fontBlue">Approved</div>
+            </div>
+            <div class="footerItem">
+                <div class="hd1"><input type="checkbox" name="" id=""></div>
+                <div class="hd2">2023-03-12 9:32:56</div>
+                <div class="hd3">CASH</div>
+                <div class="hd4">30,000</div>
+                <div class="hd5 fontRed">Rejected</div>
+            </div>
+        </div>
+    
+       
+        `
+
+        noticeBody.replaceChild(nextWindow, oldWindow)
+
+    })
 
     singleGame.forEach(function(game) {
         game.addEventListener('click', function(event) {

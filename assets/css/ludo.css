@@ -371,12 +371,50 @@ height: 200px; */
     border-bottom: 1px solid #16bdf9;
 }
 
+.depositeUpHeader {
+    display: flex;
+    justify-content: space-around;
+}
+
+.depositeUpHeader1,
+.depositeUpHeader2 {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.depositeActive {
+    border-bottom: 1px solid #16bdf9;
+}
+
 .noticeDownHeader {
     font-size: 11px;
     font-weight: 500;
     display: flex;
     width: 100%;
     justify-content: space-between;
+    padding: 10px;
+}
+
+.depositeBtn2 {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+
+.depositeDownHeader {
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
     padding: 10px;
 }
 
@@ -485,9 +523,7 @@ height: 200px; */
     margin-top: 10px;
 }
 
-.dice {
-    z-index: 2;
-}
+.dice {}
 
 .box {
     display: flex;
@@ -501,7 +537,6 @@ height: 200px; */
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
-    z-index: 2;
 }
 
 .diceGenerator {
@@ -511,7 +546,6 @@ height: 200px; */
     padding: 10px;
     background-color: #1D232A;
     cursor: pointer;
-    z-index: 2;
 }
 
 .diceGenerator:hover {
@@ -545,10 +579,37 @@ height: 200px; */
     cursor: pointer;
 }
 
+.depositeHistory {
+    margin-top: 10px;
+}
+
 .noticeBtn {
     background-color: rgb(39, 48, 58);
     padding: 5px;
     cursor: pointer;
+}
+
+.historyHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.depositeBtn0,
+.depositeBtn1,
+.withdrawlBtn0,
+.withdrawlBtn1 {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.depositeBtn0:hover {
+    color: #16bdf9;
+}
+
+.depositeBtn1:hover {
+    color: #16bdf9;
 }
 
 .bi-list {
@@ -575,6 +636,44 @@ height: 200px; */
     background-color: #1D232A;
     width: 100%;
     padding: 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #262d36;
+    cursor: pointer;
+}
+
+.headerItem,
+.footerItem {
+    background-color: #394552;
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #262d36;
+    cursor: pointer;
+    display: flex;
+}
+
+.footerItem {
+    background-color: #232a32;
+}
+
+.hd1,
+.hd3,
+.hd4,
+.hd5 {
+    flex-grow: 1;
+    justify-content: center;
+    display: flex;
+}
+
+.hd2 {
+    flex-grow: 3;
+    justify-content: center;
+    display: flex;
+}
+
+.depositeItem,
+.withdrawlItem {
+    width: 100%;
     font-size: 12px;
     border-bottom: 1px solid #262d36;
     cursor: pointer;
@@ -931,6 +1030,7 @@ align-items: center; */
     border: none;
     width: 100%;
     font-size: 12px;
+    text-indent: 20px;
 }
 
 .inputSports input::placeholder {
@@ -1408,6 +1508,35 @@ border-right: 1px solid #1e242c; */
     color: #16bdf9;
 }
 
+.menuItem {
+    background-color: #1F262F;
+    /* #27303a; */
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    margin-top: 5px;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.specDisp {
+    background-color: #303a46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+}
+
+.dispIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
  ::-webkit-scrollbar {
     width: 5px;
     border-radius: 30px;
@@ -1446,6 +1575,7 @@ border-right: 1px solid #1e242c; */
     font-size: 12px;
     padding: 10px;
     margin-right: 5px;
+    width: 100%;
 }
 
 .selectOptions:focus {
