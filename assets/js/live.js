@@ -805,9 +805,6 @@ function renderSidebar(leagueIndx, gameIndx) {
             let allBetsDiv = document.createElement('div');
             allBetsDiv.classList.add('finalOddWrapper');
             allBetsDiv.innerHTML = `
-
-
-
             <div class="odds1" id="${leagueIndx}-${gameIndx}">${val.oddName}   <span class="highlightOdd">
             ${val.odds}
             </span>

@@ -1597,6 +1597,21 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 
+    const loginBtn = document.querySelector('.loginBtn')
+    const sliderMenu = document.querySelector('.sliderMenu')
+    const sliderBackDrop = document.querySelector('.sliderMenuBackDrop')
+
+    loginBtn.addEventListener('click', function() {
+        sliderMenu.classList.add('sliderMenuActive')
+        sliderBackDrop.style.display = 'block'
+    })
+
+    sliderBackDrop.addEventListener('click', () => {
+        sliderMenu.classList.remove('sliderMenuActive')
+        sliderBackDrop.style.display = 'none'
+    })
+
+
 
     function setActiveButton(button) {
         // remove active class from all buttons

@@ -699,12 +699,23 @@ function reloadCard() {
 
 
 
-// function moveElement() {
-//     sidebar.style.left = '0';
-//     console.log('clicked')
-//         //  backdrop.style.display = 'block'
+const loginBtn = document.querySelector('.loginBtn')
+const sliderMenu = document.querySelector('.sliderMenu')
+const sliderBackDrop = document.querySelector('.sliderMenuBackDrop')
 
-// }
+loginBtn.addEventListener('click', function() {
+    sliderMenu.classList.add('sliderMenuActive')
+    sliderBackDrop.style.display = 'block'
+})
+
+sliderBackDrop.addEventListener('click', () => {
+    sliderMenu.classList.remove('sliderMenuActive')
+    sliderBackDrop.style.display = 'none'
+})
+
+
+
+
 const accord = document.querySelectorAll('.accordionOdd')
 
 
