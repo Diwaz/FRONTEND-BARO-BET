@@ -12,7 +12,9 @@ const selectOptions = document.querySelector('.selectOptions');
 const col4 = document.querySelector('.column4');
 const ExtraOddsWrapper = document.querySelector('.ExtraOddsWrapper');
 const noticeCancelBtn = document.querySelector('.noticeCancel');
+const depositeCancelBtn = document.querySelector('.depositeCancel');
 const backDrop = document.querySelector('.my-backdrop');
+const depositeBackDrop = document.querySelector('.depositeDrop');
 const noticeBody = document.querySelector('.noticeBody');
 const cartWrapper = document.querySelector('.cartWrapper');
 const cartBackdrop = document.querySelector('.cartBackdrop');
@@ -313,7 +315,7 @@ function generateHistoryTable2(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsEven';
-            item.innerHTML = 'Even';
+            item.innerHTML = 'E';
             element.appendChild(item);
             box.appendChild(element);
             consecutiveEven++;
@@ -322,7 +324,7 @@ function generateHistoryTable2(number) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
             item.className = 'oddsEven';
-            item.innerHTML = 'Even';
+            item.innerHTML = 'E';
             lastElement.appendChild(item);
             consecutiveEven++;
         } else {
@@ -331,7 +333,7 @@ function generateHistoryTable2(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsEven';
-            item.innerHTML = 'Even';
+            item.innerHTML = 'E';
             element.appendChild(item);
             box.appendChild(element);
             consecutiveEven = 0;
@@ -344,7 +346,7 @@ function generateHistoryTable2(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsOdd';
-            item.innerHTML = 'Odd';
+            item.innerHTML = 'O';
             element.appendChild(item);
             box.appendChild(element);
             consecutiveOdd++;
@@ -353,7 +355,7 @@ function generateHistoryTable2(number) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
             item.className = 'oddsOdd';
-            item.innerHTML = 'Odd';
+            item.innerHTML = 'O';
             lastElement.appendChild(item);
             consecutiveOdd++;
         } else if (consecutiveOdd = 6) {
@@ -362,7 +364,7 @@ function generateHistoryTable2(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsOdd';
-            item.innerHTML = 'Odd';
+            item.innerHTML = 'O';
             element.appendChild(item);
             box.appendChild(element);
             consecutiveOdd = 0;
@@ -618,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let nextWindow = document.createElement('div')
         nextWindow.classList.add('depositeItem')
         let oldWindow = document.querySelector('.withdrawlItem')
-        console.log(oldWindow)
+
 
         nextWindow.innerHTML = `
         <div class="menuItem">
@@ -1041,6 +1043,10 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 
+    depositeCancelBtn.addEventListener('click', function() {
+        depositeBackDrop.style.display = 'none'
+
+    })
 
     function setActiveButton(button) {
         // remove active class from all buttons

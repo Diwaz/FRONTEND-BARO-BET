@@ -4,11 +4,12 @@ const backdrop = document.querySelector('.my-backdrop');
 const leagueTable = document.querySelector('.gamesTable');
 const handiOdds = document.querySelector('.nestedOdds');
 const betOdds = document.querySelector('.betOdds');
-const extraOdd = document.querySelector('.extraOdd');
+const extraOdd = document.querySelectorAll('.extraOdd');
 const cartItemsWrapper = document.querySelector('.cartItemsWrapper');
 const OddsNumber = document.querySelector('.OddsNumber');
 const emptyCart = document.querySelector('.emptyCart');
 const selectOptions = document.querySelector('.selectOptions');
+const col2 = document.querySelector('.column2');
 
 
 
@@ -43,7 +44,84 @@ let soccerData = [
                     awayLogo: 'team2',
                     bets: [1.55, 2, 3.00],
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 6, 1],
-                    extra: '+78'
+                    extra: '+78',
+                    allBets: [{
+                            title: 'Total First',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                        {
+                            title: 'Home Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                        {
+                            title: ' Away Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                    ]
                 },
                 // {
                 //     home: 'Valencia',
@@ -78,7 +156,80 @@ let soccerData = [
                     awayLogo: 'team1',
                     bets: [3.5, 3.2, 3.00],
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 1, 7],
-                    extra: '+78'
+                    extra: '+78',
+                    allBets: [{
+                            title: 'Total First',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                        {
+                            title: 'Home Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                        {
+                            title: ' Away Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                    ]
                 },
                 {
                     gameId: 52134,
@@ -91,7 +242,80 @@ let soccerData = [
                     awayLogo: 'team3',
                     bets: [3.5, 3.2, 3.00],
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 8, 7],
-                    extra: '+78'
+                    extra: '+78',
+                    allBets: [{
+                            title: 'Total First',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                        {
+                            title: 'Home Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                        {
+                            title: ' Away Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                    ]
                 },
 
             ],
@@ -117,7 +341,80 @@ let soccerData = [
                     awayLogo: 'team4',
                     bets: [3.5, 3.2, 3.00],
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 2, 7],
-                    extra: '+78'
+                    extra: '+78',
+                    allBets: [{
+                            title: 'Total First',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                        {
+                            title: 'Home Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                        {
+                            title: ' Away Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                    ]
                 },
                 {
                     gameId: 12345,
@@ -130,7 +427,57 @@ let soccerData = [
                     awayLogo: 'team3',
                     bets: [3.5, 3.2, 3.00],
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 4, 7],
-                    extra: '+78'
+                    extra: '+78',
+                    allBets: [{
+                            title: 'Total First',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+
+                        {
+                            title: ' Away Total',
+                            odd1Name: 'over 3.5',
+                            odd2Name: 'under 3.5',
+                            odd1: 2.0,
+                            odd2: 1.65,
+                            totalBlocks: [{
+                                    oddName: 'Over 3.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 4.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 5.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                            ]
+                        },
+                    ]
                 },
 
             ],
@@ -167,10 +514,10 @@ function initApp() {
    `;
 
         //remove this comment debug mode
-        //  leagueTable.appendChild(newDiv);
+        leagueTable.appendChild(newDiv);
 
         let games = value.League.Game;
-        console.log(games)
+        console.log('games', games)
         games.forEach((val, indx) => {
             // For Games
             let gamesDiv = document.createElement('div');
@@ -220,8 +567,69 @@ function initApp() {
 </div>
    `;
             //remove this comment debug mode
-            // leagueTable.appendChild(gamesDiv);
+            leagueTable.appendChild(gamesDiv);
+            let accorDiv = document.createElement('div')
+            accorDiv.setAttribute('id', `${indx}${key}`)
+            accorDiv.classList.add('accordionOdd');
+
+            accorDiv.innerHTML = `
+    <div class="extraOddsContainer${indx}${key}">
+    </div>
+                `
+            leagueTable.appendChild(accorDiv);
+            console.log('val', val.allBets)
+            let allOdds = val.allBets;
+
+            let reps = allOdds.length
+            console.log('reps', reps)
+            for (i = 0; i < reps; i++) {
+
+
+                let allBetsDiv = document.createElement('div');
+                allBetsDiv.classList.add('extraOddsBody');
+                allBetsDiv.innerHTML = `
+                    
+                    <div class="oddsHeader fontBlue">${allOdds[i].title}</div>
+                    <div class="oddsFooter">
+                    </div>
+                    `
+                const extraOddsContainer = document.querySelector(`.extraOddsContainer${indx}${key}`);
+
+                //remove this comment
+                extraOddsContainer.appendChild(allBetsDiv)
+
+                const totalOdds = allOdds[i].totalBlocks
+                    // console.log('all odds here', totalOdds)
+                    // console.log('here again')
+                totalOdds.forEach((val, index) => {
+                    let allBetsDiv = document.createElement('div');
+                    allBetsDiv.classList.add('finalOddWrapper');
+                    allBetsDiv.innerHTML = `
+                        <div class="odds1" id="${indx}-${key}">${val.oddName}   <span class="highlightOdd">
+                        ${val.odds}
+                        </span>
+                        </div>
+                    `
+                    const oddsFooter = document.querySelectorAll('.oddsFooter');
+                    for (let i = 0; i < oddsFooter.length; i++) {
+
+                        oddsFooter[i].appendChild(allBetsDiv)
+                    }
+                    //remove this comment
+
+                })
+
+
+            }
+
+
         })
+
+
+
+
+
+
 
 
     })
@@ -297,11 +705,104 @@ function reloadCard() {
 //         //  backdrop.style.display = 'block'
 
 // }
-const accord = document.querySelector('.accordionOdd')
+const accord = document.querySelectorAll('.accordionOdd')
 
-extraOdd.addEventListener('click', function() {
+
+
+// extraOdd.addEventListener('click', function() {
+//     accord.classList.toggle('accordionActive')
+// })
+
+
+function setActiveButton(id) {
+    // remove active class from all buttons
+
+    let accord = document.getElementById(`${id}`);
     accord.classList.toggle('accordionActive')
-})
+        // const accordionOdd = document.querySelectorAll('.accordionOdd')
+        // accordionOdd.forEach(btn => btn.classList.remove('accordionActive'));
+
+    // // add active class to the clicked button
+    // accordi.classList.add('accordionActive');
+}
+
+col2.addEventListener('click', (event) => {
+    // Check if the clicked element is a button with the desired class
+    if (event.target.classList.contains('odds1')) {
+        // Handle the button click here
+        console.log('Button clicked:', event.target);
+        //
+        // setActiveButton(event.target);
+        event.target.classList.toggle('betActive');
+        // Toggle the 'button-active' class on the clicked button element
+
+        const gameIndex = event.target.id.split('-')[0]
+        const leagueIndex = event.target.id.split('-')[1]
+            // const oddIndex = event.target.id.split('-')[2]
+
+
+        // const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 3 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
+        const leagueName = soccerData[leagueIndex].League.leagueName;
+        const leagueLogo = soccerData[leagueIndex].League.leagueFlag;
+        const fullGame = soccerData[leagueIndex].League.Game[gameIndex].home + ' vs ' + soccerData[leagueIndex].League.Game[gameIndex].away;
+        const matchType = '1x2';
+        const matchTime = 'Live';
+        const rawContent = event.target.textContent.split(' ')
+        const cleanedArr = rawContent.filter(str => str.trim() !== '');
+        const selectedOdd = parseFloat(cleanedArr.pop());
+        const teamName = cleanedArr.join(' ');
+        //  selectedOdd = 0;
+        //  teamName = '';
+        // if (event.target.classList.contains('dice')) {
+        //     teamName = event.target.id.split('-')[1]
+        //     const rawContent = event.target.textContent.split(' ')
+        //     const cleanedArr = rawContent.filter(str => str.trim() !== '');
+        //     selectedOdd = parseFloat(cleanedArr.pop());
+
+        // } else {
+        //     const rawContent = event.target.textContent.split(' ')
+        //     const cleanedArr = rawContent.filter(str => str.trim() !== '');
+        //     selectedOdd = parseFloat(cleanedArr.pop());
+        //     teamName = cleanedArr.join(' ');
+        // }
+
+
+
+
+
+
+
+
+
+        const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + selectedOdd + matchTime + matchType + teamName;
+
+
+
+        let newObject = {
+            id: id, // generate unique id 
+            leagueLogo: leagueLogo,
+            leagueName: leagueName,
+            odds: selectedOdd,
+            teamName: teamName,
+            fullGame: fullGame,
+            matchType: matchType,
+            matchTime: matchTime
+        };
+        if (dataArray.some(obj => obj.id === id)) {
+            dataArray = dataArray.filter(obj => obj.id !== id);
+        } else {
+            dataArray.push(newObject);
+        }
+        reloadCard();
+
+
+        reloadCard();
+
+
+    }
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.handiOdds');
     const betOdds = document.querySelectorAll('.betOdds');
@@ -473,8 +974,9 @@ document.addEventListener('DOMContentLoaded', function() {
     extraOdd.forEach(function(extraOdd) {
         extraOdd.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
-            event.currentTarget.classList.toggle('betActive');
-
+            extraOdd.classList.toggle('betActive')
+            let id = event.target.id.split('-').join('')
+            setActiveButton(id)
 
 
 

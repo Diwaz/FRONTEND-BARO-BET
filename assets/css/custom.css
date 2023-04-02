@@ -808,6 +808,10 @@ body {
     font-weight: 300;
 }
 
+.finalOddWrapper {
+    width: 25%;
+}
+
 .extraOddsContainer {
     width: 100%;
 }
@@ -839,6 +843,10 @@ body {
 border-bottom: 1px solid #1e242c;
 border-right: 1px solid #1e242c; */
     cursor: pointer;
+}
+
+.odds1:hover {
+    box-shadow: inset 0 0 0 2px #1a99c7;
 }
 
 .accordionOdd {

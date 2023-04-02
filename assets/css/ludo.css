@@ -307,7 +307,7 @@ flex-direction: row-reverse;
 
 .historyBody {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     /* justify-content: center; */
     align-items: center;
     height: 100%;
@@ -568,7 +568,8 @@ height: 200px; */
     cursor: pointer;
 }
 
-.noticeCancel {
+.noticeCancel,
+.depositeCancel {
     position: relative;
     right: 0;
     margin-top: -35px;
