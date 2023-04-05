@@ -891,6 +891,21 @@ border-right: 1px solid #1e242c; */
     border-left: 5px solid #262d36;
 }
 
+.cartWrapper {
+    background-color: rgba(26, 153, 199, 0.4);
+    padding: 10px;
+    position: absolute;
+    border-radius: 10px;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.bi-cart3 {
+    font-size: 35px;
+}
+
 .sliderMenuActive {
     width: 350px;
 }
@@ -954,6 +969,32 @@ border-right: 1px solid #1e242c; */
     align-items: center;
     width: 100%;
     cursor: pointer;
+}
+
+.cartBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderMenuBackDrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .specDisp {
@@ -1129,6 +1170,9 @@ border-right: 1px solid #1e242c; */
         }
         .gameCol4 {
             display: none;
+        }
+        .cartWrapper {
+            display: block;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

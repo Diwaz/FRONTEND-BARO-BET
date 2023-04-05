@@ -1072,14 +1072,14 @@
         padding: 10px;
         position: absolute;
         border-radius: 10px;
-        bottom: 0;
-        left: 0;
+        bottom: 15px;
+        right: 15px;
         cursor: pointer;
         display: none;
     }
     
     .bi-cart3 {
-        font-size: 40px;
+        font-size: 35px;
     }
     
     .msgBack {

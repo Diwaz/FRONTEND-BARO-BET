@@ -10,7 +10,9 @@ const OddsNumber = document.querySelector('.OddsNumber');
 const emptyCart = document.querySelector('.emptyCart');
 const selectOptions = document.querySelector('.selectOptions');
 const col2 = document.querySelector('.column2');
-
+const col3 = document.querySelector('.column3');
+const cartWrapper = document.querySelector('.cartWrapper');
+const cartBackdrop = document.querySelector('.cartBackdrop');
 
 
 
@@ -713,10 +715,24 @@ sliderBackDrop.addEventListener('click', () => {
     sliderBackDrop.style.display = 'none'
 })
 
+cartWrapper.addEventListener('click', function() {
+    cartBackdrop.style.display = 'flex'
+    col3.style.display = 'flex'
+    col3.style.zIndex = 3
+
+})
+
+cartBackdrop.addEventListener('click', function() {
+    cartBackdrop.style.display = 'none'
+    col3.style.display = ''
+    col3.style.zIndex = 1
+})
+
 
 
 
 const accord = document.querySelectorAll('.accordionOdd')
+
 
 
 
