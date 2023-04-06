@@ -538,30 +538,30 @@ function initApp() {
 
     </div>
     <div class="gameCol2">
-        <div class="betOdds" id="${indx}-${key}-1">${val.bets[0]} </div>
-        <div class="betOdds" id="${indx}-${key}-2">${val.bets[1]}</div>
-        <div class="betOdds" id="${indx}-${key}-3">${val.bets[2]}</div>
+        <div class="betOdds" id="${indx}-${key}-1-1-pp">${val.bets[0]} </div>
+        <div class="betOdds" id="${indx}-${key}-1-2-pp">${val.bets[1]}</div>
+        <div class="betOdds" id="${indx}-${key}-1-3-pp">${val.bets[2]}</div>
     </div>
     <div class="gameCol3">
-        <div class="handiOdds"id="${indx}-${key}-1" >
-            <div class="nestedOdds fontOrange">${val.handiBets[0]}</div>
-            <div class="nestedOdds">${val.handiBets[1]}</div>
+        <div class="handiOdds"id="${indx}-${key}-1-1-nn" >
+            <div class="nestedOdds fontOrange" id="${indx}-${key}-1-1-nn">${val.handiBets[0]}</div>
+            <div class="nestedOdds" id="${indx}-${key}-1-1-nn">${val.handiBets[1]}</div>
         </div>
-        <div class="handiOdds" id="${indx}-${key}-2">
-            <div class="nestedOdds fontOrange">${val.handiBets[2]}</div>
-            <div class="nestedOdds">${val.handiBets[3]}</div>
+        <div class="handiOdds" id="${indx}-${key}-2-1">
+            <div class="nestedOdds fontOrange" id="${indx}-${key}-2-1"> ${val.handiBets[2]}</div>
+            <div class="nestedOdds" id="${indx}-${key}-2-1">${val.handiBets[3]}</div>
         </div>
 
 
     </div>
     <div class="gameCol4">
-        <div class="handiOdds" id="${indx}-${key}-3">
-            <div class="nestedOdds fontRed" >${val.handiBets[4]}</div>
-            <div class="nestedOdds">${val.handiBets[5]}</div>
+        <div class="ouOdds" id="${indx}-${key}-1-2">
+            <div class="nestedOdds fontRed" id="${indx}-${key}-1-2">${val.handiBets[4]}</div>
+            <div class="nestedOdds" id="${indx}-${key}-1-2">${val.handiBets[5]}</div>
         </div>
-        <div class="handiOdds" id="${indx}-${key}-1">
-            <div class="nestedOdds fontBlue" >${val.handiBets[6]}</div>
-            <div class="nestedOdds">${val.handiBets[7]}</div>
+        <div class="ouOdds" id="${indx}-${key}-2-2">
+            <div class="nestedOdds fontBlue" id="${indx}-${key}-2-2">${val.handiBets[6]}</div>
+            <div class="nestedOdds" id="${indx}-${key}-2-2">${val.handiBets[7]}</div>
         </div>
         <div class="extraOdd" id="${indx}-${key}">${val.extra}</div>
     </div>
@@ -654,6 +654,8 @@ function addToCard(key) {
 
 function reloadCard() {
     cartItemsWrapper.innerHTML = ''
+    let cartNumber = document.querySelector('.cartNumber')
+    cartNumber.innerHTML = dataArray.length
     if (dataArray.length > 0) {
         emptyCart.style.display = 'none';
     } else {
@@ -674,7 +676,7 @@ function reloadCard() {
             <img src="assets/images/${value.leagueLogo}.png" alt="" width="14" height="14" class="representLogo">${value.leagueName}
         </div>
 
-        <div class="exitLogo">
+        <div class="exitLogo" id="${key}">
             <i class="bi bi-x-lg"></i>
         </div>
     </div>
@@ -753,6 +755,46 @@ function setActiveButton(id) {
     // accordi.classList.add('accordionActive');
 }
 
+function setActiveOdd(button) {
+    // remove active class from all buttons
+    const buttons = document.querySelectorAll('.betOdds')
+    const buttons2 = document.querySelectorAll('.handiOdds')
+    const buttons3 = document.querySelectorAll('.ouOdds')
+    buttons.forEach(btn => btn.classList.remove('betActive'));
+    buttons2.forEach(btn => btn.classList.remove('betActive'));
+    buttons3.forEach(btn => btn.classList.remove('betActive'));
+
+    // add active class to the clicked button
+    button.classList.add('betActive');
+}
+
+function setActiveOdd2(button) {
+    // remove active class from all buttons
+    const buttons = document.querySelectorAll('.betOdds')
+
+    const buttons2 = document.querySelectorAll('.handiOdds')
+    const buttons3 = document.querySelectorAll('.ouOdds')
+    buttons.forEach(btn => btn.classList.remove('betActive'));
+    buttons2.forEach(btn => btn.classList.remove('betActive'));
+    buttons3.forEach(btn => btn.classList.remove('betActive'));
+
+    // add active class to the clicked button
+    button.classList.add('betActive');
+}
+
+function setActiveOdd3(button) {
+    // remove active class from all buttons
+    const buttons = document.querySelectorAll('.betOdds')
+    const buttons2 = document.querySelectorAll('.handiOdds')
+    const buttons3 = document.querySelectorAll('.ouOdds')
+    buttons.forEach(btn => btn.classList.remove('betActive'));
+    buttons2.forEach(btn => btn.classList.remove('betActive'));
+    buttons3.forEach(btn => btn.classList.remove('betActive'));
+
+    // add active class to the clicked button
+    button.classList.add('betActive');
+}
+
 col2.addEventListener('click', (event) => {
     // Check if the clicked element is a button with the desired class
     if (event.target.classList.contains('odds1')) {
@@ -823,7 +865,7 @@ col2.addEventListener('click', (event) => {
         reloadCard();
 
 
-        reloadCard();
+
 
 
     }
@@ -832,6 +874,7 @@ col2.addEventListener('click', (event) => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.handiOdds');
+    const ouButtons = document.querySelectorAll('.ouOdds');
     const betOdds = document.querySelectorAll('.betOdds');
     const extraOdd = document.querySelectorAll('.extraOdd');
     const leagueCol2 = document.querySelectorAll('.leagueCol2');
@@ -841,6 +884,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const gameCol2 = document.querySelectorAll('.gameCol2');
     const gameCol3 = document.querySelectorAll('.gameCol3');
     const gameCol4 = document.querySelectorAll('.gameCol4');
+    const empty = document.querySelector('.emptyAll');
+
+    empty.addEventListener('click', () => {
+        console.log('here')
+        dataArray.splice(0, dataArray.length)
+        reloadCard();
+    })
 
 
 
@@ -946,7 +996,118 @@ document.addEventListener('DOMContentLoaded', function() {
     buttons.forEach(function(button) {
         button.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
-            event.currentTarget.classList.toggle('betActive');
+            setActiveOdd2(event.target)
+            const gameIndex = event.target.id.split('-')[0]
+            const leagueIndex = event.target.id.split('-')[1]
+            const oddIndex = event.target.id.split('-')[2]
+            console.log('odd Inddd', oddIndex)
+            const leagueName = soccerData[leagueIndex].League.leagueName;
+            const leagueLogo = soccerData[leagueIndex].League.leagueFlag;
+            const fullGame = soccerData[leagueIndex].League.Game[gameIndex].home + ' vs ' + soccerData[leagueIndex].League.Game[gameIndex].away;
+            const matchType = 'Handicap';
+            const matchTime = 'Prematch';
+            const rawContent = event.target.textContent.split(' ')
+            const cleanedArr = rawContent.filter(str => str.trim() !== '');
+            const selectedOdd = parseFloat(cleanedArr.pop());
+            const sameOdd = gameIndex + leagueIndex + event.target.id.split('-')[3]
+            const teamOdd = cleanedArr.join(' ');
+            const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 2 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
+            const finalName = `${teamName}  (${teamOdd})`
+            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + matchTime;
+            console.log(id)
+
+            let newObject = {
+                id: id, // generate unique id 
+                leagueLogo: leagueLogo,
+                sameOdd: sameOdd,
+                leagueName: leagueName,
+                odds: selectedOdd,
+                teamName: finalName,
+                fullGame: fullGame,
+                matchType: matchType,
+                matchTime: matchTime
+            };
+            if (dataArray.some(obj => obj.id === id)) {
+                dataArray = dataArray.filter(obj => obj.id !== id);
+                console.log('didididi  ')
+                dataArray.push(newObject)
+            } else {
+                dataArray.push(newObject);
+            }
+
+            // if (dataArray.some(obj => obj.sameOdd === sameOdd)) {
+            //     dataArray = dataArray.filter(obj => obj.sameOdd !== sameOdd)
+            // }
+            reloadCard();
+            const exitLogo = document.querySelectorAll('.exitLogo')
+            exitLogo.forEach((exit) => {
+                exit.addEventListener('click', (event) => {
+                    let index = event.target.parentNode.id;
+                    dataArray.splice(index, 1)
+                    reloadCard();
+                    console.log(dataArray)
+                })
+            })
+
+
+
+        });
+    });
+    ouButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            // Toggle the 'button-active' class on the clicked button element
+            setActiveOdd3(event.target)
+            const gameIndex = event.target.id.split('-')[0]
+            const leagueIndex = event.target.id.split('-')[1]
+            const oddIndex = event.target.id.split('-')[2]
+            console.log('odd Inddd', oddIndex)
+            const leagueName = soccerData[leagueIndex].League.leagueName;
+            const leagueLogo = soccerData[leagueIndex].League.leagueFlag;
+            const fullGame = soccerData[leagueIndex].League.Game[gameIndex].home + ' vs ' + soccerData[leagueIndex].League.Game[gameIndex].away;
+            const matchType = 'Over/Under';
+            const matchTime = 'Prematch';
+            const rawContent = event.target.textContent.split(' ')
+            const cleanedArr = rawContent.filter(str => str.trim() !== '');
+            const selectedOdd = parseFloat(cleanedArr.pop());
+            const sameOdd = gameIndex + leagueIndex + event.target.id.split('-')[3]
+            const teamOdd = cleanedArr.join(' ');
+            const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 2 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
+            const finalName = `${teamName}  (${teamOdd})`
+            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + matchTime;
+            console.log(id)
+
+            let newObject = {
+                id: id, // generate unique id 
+                leagueLogo: leagueLogo,
+                sameOdd: sameOdd,
+                leagueName: leagueName,
+                odds: selectedOdd,
+                teamName: finalName,
+                fullGame: fullGame,
+                matchType: matchType,
+                matchTime: matchTime
+            };
+            if (dataArray.some(obj => obj.id === id)) {
+                dataArray = dataArray.filter(obj => obj.id !== id);
+                console.log('didididi  ')
+                dataArray.push(newObject)
+            } else {
+                dataArray.push(newObject);
+            }
+
+            // if (dataArray.some(obj => obj.sameOdd === sameOdd)) {
+            //     dataArray = dataArray.filter(obj => obj.sameOdd !== sameOdd)
+            // }
+            reloadCard();
+            const exitLogo = document.querySelectorAll('.exitLogo')
+            exitLogo.forEach((exit) => {
+                exit.addEventListener('click', (event) => {
+                    let index = event.target.parentNode.id;
+                    dataArray.splice(index, 1)
+                    reloadCard();
+                    console.log(dataArray)
+                })
+            })
 
 
 
@@ -955,10 +1116,12 @@ document.addEventListener('DOMContentLoaded', function() {
     betOdds.forEach(function(betOdds) {
         betOdds.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
-            event.currentTarget.classList.toggle('betActive');
+            setActiveOdd(event.target);
             const gameIndex = event.target.id.split('-')[0]
             const leagueIndex = event.target.id.split('-')[1]
-            const oddIndex = event.target.id.split('-')[2]
+            const sameOdd = gameIndex + leagueIndex + event.target.id.split('-')[2]
+            const oddIndex = event.target.id.split('-')[3]
+            const uniqueIndex = event.target.id.split('-')[4]
 
 
             const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 3 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
@@ -969,12 +1132,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const matchTime = 'Prematch';
             const selectedOdd = betOdds.textContent
 
-            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + selectedOdd + matchTime + matchType;
+            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + matchTime;
 
 
             console.log(selectedOdd)
             let newObject = {
+
                 id: id, // generate unique id 
+                sameOdd: sameOdd,
                 leagueLogo: leagueLogo,
                 leagueName: leagueName,
                 odds: selectedOdd,
@@ -983,16 +1148,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchType: matchType,
                 matchTime: matchTime
             };
+            console.log(id)
+
+
             if (dataArray.some(obj => obj.id === id)) {
                 dataArray = dataArray.filter(obj => obj.id !== id);
+                dataArray.push(newObject)
             } else {
-                dataArray.push(newObject);
+                dataArray.push(newObject)
             }
+            // if (dataArray.some(obj => obj.sameOdd === sameOdd)) {
+            //     dataArray = dataArray.filter(obj => obj.sameOdd !== sameOdd)
+            //     dataArray.push(newObject)
+            // }
+
             reloadCard();
             // push the new object into the array
             console.log(dataArray)
 
-            // console.log('team', soccerData[leagueIndex].League.Game[gameIndex].team);
+            const exitLogo = document.querySelectorAll('.exitLogo')
+            exitLogo.forEach((exit) => {
+                exit.addEventListener('click', (event) => {
+                    let index = event.target.parentNode.id;
+                    dataArray.splice(index, 1)
+                    reloadCard();
+                    console.log(dataArray)
+                })
+            })
 
 
 

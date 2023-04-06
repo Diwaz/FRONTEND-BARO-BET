@@ -797,7 +797,8 @@
         cursor: pointer;
     }
     
-    .handiOdds {
+    .handiOdds,
+    .ouOdds {
         display: flex;
         padding: 0 10px;
         align-items: center;
@@ -820,7 +821,8 @@
         background-color: #16bdf9;
     }
     
-    .handiOdds:hover {
+    .handiOdds:hover,
+    .ouOdds:hover {
         /* border: 1px solid blue; */
         background-color: #16bdf9;
         ;
@@ -864,9 +866,9 @@
     }
     
     .betActive {
-        box-shadow: inset 0 0 0 2px #1a99c7;
+        /* box-shadow: inset 0 0 0 2px #1a99c7;
         /* background-color: #16bdf9; */
-        color: white!important;
+        /* color: white!important; */
     }
     
     .cartItemsWrapper {}
@@ -1076,6 +1078,20 @@
         right: 15px;
         cursor: pointer;
         display: none;
+    }
+    
+    .cartNumber {
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 5px;
+        font-size: 14px;
+    }
+    
+    .exitLogo {
+        cursor: pointer;
+        padding: 10px;
     }
     
     .bi-cart3 {
