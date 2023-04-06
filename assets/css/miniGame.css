@@ -705,7 +705,8 @@ height: 200px; */
     padding: 5px
 }
 
-.OddsNumber {
+.OddsNumber,
+.OddsNumberAmnt {
     font-size: 12px;
     font-weight: 300;
     color: rgb(26, 153, 199)!important;

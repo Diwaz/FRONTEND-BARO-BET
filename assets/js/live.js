@@ -727,6 +727,7 @@ let soccerData = [
 
 let listCards = [];
 let dataArray = [];
+let selectedAmount = 0;
 
 
 //renderSidebar is only to render the sidebar for the first time

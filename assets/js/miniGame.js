@@ -765,6 +765,7 @@ let soccerData = [
 
 let dataArray = [];
 let cartItem = null;
+let selectedAmount = 0;
 
 
 
@@ -1137,30 +1138,33 @@ initApp();
 function reloadCard() {
     const cartItemsWrapper = document.querySelector('.cartItemsWrapper');
     const OddsNumber = document.querySelector('.OddsNumber');
-    cartItemsWrapper.innerHTML = ''
-        // if (dataArray.length > 0) {
-        //     emptyCart.style.display = 'none';
-        // } else {
-        //     emptyCart.style.display = 'flex'
-        // }
+    let totalPayout = document.querySelector('.OddsNumberAmnt')
+    if (cartItem !== null) {
 
-    //  let totalOdds = 1;
-    //  dataArray.forEach((value, key) => {
-    //     totalOdds = totalOdds * parseFloat(value.odds);
-    // count = count + value.quantity;
-    // if (value != null) {
-    let newDiv = document.createElement('div');
-    newDiv.classList.add('cartItem')
-    newDiv.innerHTML = `
+
+        let totalOdds = cartItem.odds;
+        let totalPrice = selectedAmount * totalOdds;
+        cartItemsWrapper.innerHTML = ''
+            // if (dataArray.length > 0) {
+            //     emptyCart.style.display = 'none';
+            // } else {
+            //     emptyCart.style.display = 'flex'
+            // }
+
+        //  dataArray.forEach((value, key) => {
+        //     totalOdds = totalOdds * parseFloat(value.odds);
+        // count = count + value.quantity;
+        // if (value != null) {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('cartItem')
+        newDiv.innerHTML = `
             <div class="line1">
         <div class="leftWrapper">
 
             <img src="assets/images/${cartItem.leagueLogo}.svg" alt="" width="14" height="14" class="representLogo">${cartItem.leagueName}
         </div>
 
-        <div class="exitLogo">
-            <i class="bi bi-x-lg"></i>
-        </div>
+        
     </div>
    
     <div class="line3">${cartItem.fullGame}</div>
@@ -1170,11 +1174,26 @@ function reloadCard() {
 </div>
     </div>
                 `;
-    cartItemsWrapper.appendChild(newDiv);
-    // }
-    //   })
-    //   OddsNumber.innerText = totalOdds.toLocaleString();
-    // quantity.innerText = count;
+        cartItemsWrapper.appendChild(newDiv);
+        // }
+        //   })
+        OddsNumber.innerText = totalOdds.toLocaleString();
+        // quantity.innerText = count;
+        totalPayout.innerHTML = totalPrice
+    } else {
+
+        cartItemsWrapper.innerHTML = ''
+
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('cartItem')
+        newDiv.innerHTML = `
+           
+                `;
+        cartItemsWrapper.appendChild(newDiv);
+
+
+    }
+
 }
 
 
@@ -1222,6 +1241,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const upperItem = document.querySelectorAll('.upperItem');
     const noticeItem = document.querySelectorAll('.noticeItem');
     const singleGame = document.querySelectorAll('.singleGame');
+
+
 
 
 
@@ -1487,6 +1508,37 @@ document.addEventListener('DOMContentLoaded', function() {
                     //remove this comment
 
                 })
+                const selectAmount = document.querySelectorAll('.amount1');
+                const maxAmnt = document.querySelector('.maxAmnt');
+                const resetAmnt = document.querySelector('.resetAmnt');
+
+
+                maxAmnt.addEventListener('click', () => {
+                    selectedAmount = 100
+                    reloadCard();
+                })
+                resetAmnt.addEventListener('click', () => {
+                    selectedAmount = 0
+                    reloadCard();
+                })
+                selectAmount.forEach((amount) => {
+                    amount.addEventListener('click', (event) => {
+                        // Remove the commas from the string using the replace method
+                        const numStr = event.target.textContent.replace(/,/g, '');
+
+                        // Convert the string into an integer using the parseInt method
+                        const num = parseInt(numStr);
+                        selectedAmount = num
+                        console.log(selectedAmount)
+                        reloadCard();
+                    })
+                })
+                const empty = document.querySelector('.emptyAll');
+                empty.addEventListener('click', () => {
+                    console.log('here')
+                    cartItem = null;
+                    reloadCard();
+                })
             }
 
             function replaceMode(modeIndex) {
@@ -1592,8 +1644,37 @@ document.addEventListener('DOMContentLoaded', function() {
                     //remove this comment
 
                 })
+                const selectAmount = document.querySelectorAll('.amount1');
+                const maxAmnt = document.querySelector('.maxAmnt');
+                const resetAmnt = document.querySelector('.resetAmnt');
 
 
+                maxAmnt.addEventListener('click', () => {
+                    selectedAmount = 100
+                    reloadCard();
+                })
+                resetAmnt.addEventListener('click', () => {
+                    selectedAmount = 0
+                    reloadCard();
+                })
+                selectAmount.forEach((amount) => {
+                    amount.addEventListener('click', (event) => {
+                        // Remove the commas from the string using the replace method
+                        const numStr = event.target.textContent.replace(/,/g, '');
+
+                        // Convert the string into an integer using the parseInt method
+                        const num = parseInt(numStr);
+                        selectedAmount = num
+                        console.log(selectedAmount)
+                        reloadCard();
+                    })
+                })
+                const empty = document.querySelector('.emptyAll');
+                empty.addEventListener('click', () => {
+                    console.log('here')
+                    cartItem = null;
+                    reloadCard();
+                })
 
             }
 
