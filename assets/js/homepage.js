@@ -880,7 +880,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const leagueCol2 = document.querySelectorAll('.leagueCol2');
     const leagueCol3 = document.querySelectorAll('.leagueCol3');
     const leagueCol4 = document.querySelectorAll('.leagueCol4');
-
+    const slipBody = document.querySelector('.slipBody')
     const gameCol2 = document.querySelectorAll('.gameCol2');
     const gameCol3 = document.querySelectorAll('.gameCol3');
     const gameCol4 = document.querySelectorAll('.gameCol4');
@@ -892,7 +892,17 @@ document.addEventListener('DOMContentLoaded', function() {
         reloadCard();
     })
 
+    slipBody.addEventListener('click', (event) => {
 
+        if (event.target.parentNode.matches('.exitLogo')) {
+            let id = event.target.parentNode.id;
+            console.log('from here', id)
+            dataArray.splice(id, 1)
+            reloadCard();
+        } else {
+            console.log('sad', event.target)
+        }
+    })
 
     selectOptions.addEventListener('change', function() {
 
@@ -1039,15 +1049,15 @@ document.addEventListener('DOMContentLoaded', function() {
             //     dataArray = dataArray.filter(obj => obj.sameOdd !== sameOdd)
             // }
             reloadCard();
-            const exitLogo = document.querySelectorAll('.exitLogo')
-            exitLogo.forEach((exit) => {
-                exit.addEventListener('click', (event) => {
-                    let index = event.target.parentNode.id;
-                    dataArray.splice(index, 1)
-                    reloadCard();
-                    console.log(dataArray)
-                })
-            })
+            // const exitLogo = document.querySelectorAll('.exitLogo')
+            // exitLogo.forEach((exit) => {
+            //     exit.addEventListener('click', (event) => {
+            //         let index = event.target.parentNode.id;
+            //         dataArray.splice(index, 1)
+            //         reloadCard();
+            //         console.log(dataArray)
+            //     })
+            // })
 
 
 
@@ -1099,15 +1109,15 @@ document.addEventListener('DOMContentLoaded', function() {
             //     dataArray = dataArray.filter(obj => obj.sameOdd !== sameOdd)
             // }
             reloadCard();
-            const exitLogo = document.querySelectorAll('.exitLogo')
-            exitLogo.forEach((exit) => {
-                exit.addEventListener('click', (event) => {
-                    let index = event.target.parentNode.id;
-                    dataArray.splice(index, 1)
-                    reloadCard();
-                    console.log(dataArray)
-                })
-            })
+            // const exitLogo = document.querySelectorAll('.exitLogo')
+            // exitLogo.forEach((exit) => {
+            //     exit.addEventListener('click', (event) => {
+            //         let index = event.target.parentNode.id;
+            //         dataArray.splice(index, 1)
+            //         reloadCard();
+            //         console.log(dataArray)
+            //     })
+            // })
 
 
 
@@ -1166,15 +1176,15 @@ document.addEventListener('DOMContentLoaded', function() {
             // push the new object into the array
             console.log(dataArray)
 
-            const exitLogo = document.querySelectorAll('.exitLogo')
-            exitLogo.forEach((exit) => {
-                exit.addEventListener('click', (event) => {
-                    let index = event.target.parentNode.id;
-                    dataArray.splice(index, 1)
-                    reloadCard();
-                    console.log(dataArray)
-                })
-            })
+            // const exitLogo = document.querySelectorAll('.exitLogo')
+            // exitLogo.forEach((exit) => {
+            //     exit.addEventListener('click', (event) => {
+            //         let index = event.target.parentNode.id;
+            //         dataArray.splice(index, 1)
+            //         reloadCard();
+            //         console.log(dataArray)
+            //     })
+            // })
 
 
 

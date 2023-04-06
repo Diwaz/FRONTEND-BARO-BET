@@ -1225,6 +1225,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectGame = document.querySelectorAll('.gameCol1');
     const extraOddBtn = document.querySelectorAll('.odds1');
     const col4 = document.querySelector('.column4');
+    const slipBody = document.querySelector('.slipBody')
     const noticeDownHeader = document.querySelector('.noticeDownHeader');
     const backBtn = document.querySelector('.msgBack');
     const upperItem = document.querySelectorAll('.upperItem');
@@ -1238,7 +1239,17 @@ document.addEventListener('DOMContentLoaded', function() {
         reloadCard();
     })
 
+    slipBody.addEventListener('click', (event) => {
 
+        if (event.target.parentNode.matches('.exitLogo')) {
+            let id = event.target.parentNode.id;
+            console.log('from here', id)
+            dataArray.splice(id, 1)
+            reloadCard();
+        } else {
+            console.log('sad', event.target)
+        }
+    })
 
 
 
@@ -1470,15 +1481,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //     dataArray = dataArray.filter(obj => obj.sameOdd !== sameOdd)
             // }
             reloadCard();
-            const exitLogo = document.querySelectorAll('.exitLogo')
-            exitLogo.forEach((exit) => {
-                exit.addEventListener('click', (event) => {
-                    let index = event.target.parentNode.id;
-                    dataArray.splice(index, 1)
-                    reloadCard();
-                    console.log(dataArray)
-                })
-            })
+
 
 
 
@@ -1530,15 +1533,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //     dataArray = dataArray.filter(obj => obj.sameOdd !== sameOdd)
             // }
             reloadCard();
-            const exitLogo = document.querySelectorAll('.exitLogo')
-            exitLogo.forEach((exit) => {
-                exit.addEventListener('click', (event) => {
-                    let index = event.target.parentNode.id;
-                    dataArray.splice(index, 1)
-                    reloadCard();
-                    console.log(dataArray)
-                })
-            })
+
 
 
 
@@ -1589,15 +1584,7 @@ document.addEventListener('DOMContentLoaded', function() {
             reloadCard();
             // push the new object into the array
 
-            const exitLogo = document.querySelectorAll('.exitLogo')
-            exitLogo.forEach((exit) => {
-                exit.addEventListener('click', (event) => {
-                    let index = event.target.parentNode.id;
-                    dataArray.splice(index, 1)
-                    reloadCard();
-                    console.log(dataArray)
-                })
-            })
+
 
             // console.log('team', soccerData[leagueIndex].League.Game[gameIndex].team);
 
