@@ -475,6 +475,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
     
     .ControlWrapper {
@@ -533,7 +534,8 @@
         padding: 5px
     }
     
-    .OddsNumber {
+    .OddsNumber,
+    .OddsNumberAmnt {
         font-size: 12px;
         font-weight: 300;
         color: rgb(26, 153, 199)!important;
@@ -869,6 +871,21 @@
         /* box-shadow: inset 0 0 0 2px #1a99c7;
         /* background-color: #16bdf9; */
         /* color: white!important; */
+    }
+    
+    .amount1,
+    .maxAmnt,
+    .resetAmnt {
+        background-color: rgb(48, 58, 70);
+        height: 35px;
+        margin: 1px;
+        font-size: 12px;
+        padding: 10px;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
     }
     
     .cartItemsWrapper {}

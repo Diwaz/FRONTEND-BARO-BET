@@ -1427,12 +1427,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="configBtn">
                             <div class="emptyAll"><i class="bi bi-trash"></i>Empty all</div>
                             <div class="IncDec">
-                                <div class="ControlWrapper">
-                                    <div class="inc"><i class="bi bi-dash"></i></div>
-                                    <div class="inc"><i class="bi bi-plus"></i></div>
-                                    <div class="amount">Amount</div>
-                                    <div class="erase"><i class="bi bi-eraser-fill"></i></div>
-                                </div>
+                            <div class="amount1">5,00</div>
+                            <div class="amount1">10,00</div>
+                            <div class="amount1">50,00</div>
+                            <div class="amount1">1,00,00</div>
+                            <div class="amount1">5,00,00</div>
+                            <div class="amount1">10,00,00</div>
+                            <div class="amount1">50,00,00</div>
+                            <div class="maxAmnt">MAX</div>
+                            <div class="resetAmnt">RESET</div>
                             </div>
                             <div class="betControl">
                                 <div class="totalOdds">Total Odds</div>
@@ -1440,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="betControl">
                                 <div class="totalOdds">Est. Payout</div>
-                                <div class="OddsNumber">0</div>
+                                <div class="OddsNumberAmnt">0</div>
                             </div>
 
                         </div>
@@ -1532,12 +1535,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="configBtn">
                             <div class="emptyAll"><i class="bi bi-trash"></i>Empty all</div>
                             <div class="IncDec">
-                                <div class="ControlWrapper">
-                                    <div class="inc"><i class="bi bi-dash"></i></div>
-                                    <div class="inc"><i class="bi bi-plus"></i></div>
-                                    <div class="amount">Amount</div>
-                                    <div class="erase"><i class="bi bi-eraser-fill"></i></div>
-                                </div>
+                            <div class="amount1">5,00</div>
+                            <div class="amount1">10,00</div>
+                            <div class="amount1">50,00</div>
+                            <div class="amount1">1,00,00</div>
+                            <div class="amount1">5,00,00</div>
+                            <div class="amount1">10,00,00</div>
+                            <div class="amount1">50,00,00</div>
+                            <div class="maxAmnt">MAX</div>
+                            <div class="resetAmnt">RESET</div>
                             </div>
                             <div class="betControl">
                                 <div class="totalOdds">Total Odds</div>
@@ -1545,7 +1551,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="betControl">
                                 <div class="totalOdds">Est. Payout</div>
-                                <div class="OddsNumber">0</div>
+                                <div class="OddsNumberAmnt">0</div>
                             </div>
 
                         </div>

@@ -1085,6 +1085,10 @@ renderSidebar(0, 0);
 function reloadCard() {
     cartItemsWrapper.innerHTML = ''
     const cartNumber = document.querySelector('.cartNumber')
+    let totalPayout = document.querySelector('.OddsNumberAmnt')
+    let totalPrice = selectedAmount;
+
+
     cartNumber.innerHTML = dataArray.length
     if (dataArray.length > 0) {
         emptyCart.style.display = 'none';
@@ -1127,7 +1131,8 @@ function reloadCard() {
         }
     })
     OddsNumber.innerText = totalOdds.toLocaleString();
-    // quantity.innerText = count;
+    totalPayout.innerHTML = selectedAmount * totalOdds
+        // quantity.innerText = count;
 }
 
 
@@ -1232,6 +1237,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const noticeItem = document.querySelectorAll('.noticeItem');
     const singleGame = document.querySelectorAll('.singleGame');
     const empty = document.querySelector('.emptyAll');
+    const selectAmount = document.querySelectorAll('.amount1');
+    const maxAmnt = document.querySelector('.maxAmnt');
+    const resetAmnt = document.querySelector('.resetAmnt');
+
+
+    maxAmnt.addEventListener('click', () => {
+        selectedAmount = 100
+        reloadCard();
+    })
+    resetAmnt.addEventListener('click', () => {
+        selectedAmount = 0
+        reloadCard();
+    })
+    selectAmount.forEach((amount) => {
+        amount.addEventListener('click', (event) => {
+            // Remove the commas from the string using the replace method
+            const numStr = event.target.textContent.replace(/,/g, '');
+
+            // Convert the string into an integer using the parseInt method
+            const num = parseInt(numStr);
+            selectedAmount = num
+            console.log(selectedAmount)
+            reloadCard();
+        })
+    })
 
     empty.addEventListener('click', () => {
         console.log('here')

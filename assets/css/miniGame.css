@@ -631,6 +631,22 @@ height: 200px; */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.amount1,
+.maxAmnt,
+.resetAmnt {
+    background-color: rgb(48, 58, 70);
+    height: 35px;
+    margin: 1px;
+    font-size: 12px;
+    padding: 10px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .ControlWrapper {
