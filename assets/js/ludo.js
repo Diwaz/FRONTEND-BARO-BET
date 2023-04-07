@@ -13,6 +13,7 @@ const col4 = document.querySelector('.column4');
 const ExtraOddsWrapper = document.querySelector('.ExtraOddsWrapper');
 const noticeCancelBtn = document.querySelector('.noticeCancel');
 const depositeCancelBtn = document.querySelector('.depositeCancel');
+const OddsNumber = document.querySelector('.OddsNumber');
 const backDrop = document.querySelector('.my-backdrop');
 const depositeBackDrop = document.querySelector('.depositeDrop');
 const noticeBody = document.querySelector('.noticeBody');
@@ -46,6 +47,7 @@ let consecutiveLowNumber = 0;
 let consecutiveOdd = 0;
 let consecutiveEven = 0;
 let totalHistory = 0;
+let selectedAmount = 0;
 
 
 let ludoData1 = {
@@ -211,7 +213,9 @@ function generateHistoryTable(number) {
     newHistory.classList = 'singleHistory'
     newHistory.innerHTML = `
     <div class="historyCol1">${totalHistory}</div>
-        <div class="historyCol1 ${number < 4 ?  'Under' : 'Over'}">${number < 4 ?  'Under' : 'Over'}</div>
+        <div class="historyCol1">
+        <i class="bi bi-caret-${number < 4  ?  'down' : 'up'}-fill"></i>
+         </div>
         <div class="historyCol1 ${number % 2 == 0 ?  'Even' : 'Odd'}">${number % 2 == 0 ?  'Even' : 'Odd'}</div>
         <div class="historyCol1">
             <i class="bi bi-dice-${number}-fill"></i>
@@ -464,13 +468,16 @@ initApp();
 
 function reloadCard() {
     cartItemsWrapper.innerHTML = ''
+
+    let totalPayout = document.querySelector('.OddsNumberAmnt')
+    let totalOdds = 1;
+    let totalPrice = selectedAmount;
     if (dataArray.length > 0) {
         emptyCart.style.display = 'none';
     } else {
         emptyCart.style.display = 'flex'
     }
 
-    let totalOdds = 1;
     dataArray.forEach((value, key) => {
         totalOdds = totalOdds * parseFloat(value.odds);
         // count = count + value.quantity;
@@ -500,6 +507,7 @@ function reloadCard() {
         }
     })
     OddsNumber.innerText = totalOdds.toLocaleString();
+    totalPayout.innerHTML = totalPrice * totalOdds;
 
 }
 
@@ -543,7 +551,49 @@ document.addEventListener('DOMContentLoaded', function() {
     const upperItem = document.querySelectorAll('.upperItem');
     const noticeItem = document.querySelectorAll('.noticeItem');
     const singleGame = document.querySelectorAll('.singleGame');
+    const selectAmount = document.querySelectorAll('.amount1');
+    const maxAmnt = document.querySelector('.maxAmnt');
+    const resetAmnt = document.querySelector('.resetAmnt');
 
+
+    maxAmnt.addEventListener('click', () => {
+        selectedAmount = 100
+        reloadCard();
+    })
+    resetAmnt.addEventListener('click', () => {
+        selectedAmount = 0
+        reloadCard();
+    })
+    selectAmount.forEach((amount) => {
+        amount.addEventListener('click', (event) => {
+            // Remove the commas from the string using the replace method
+            const numStr = event.target.textContent.replace(/,/g, '');
+
+            // Convert the string into an integer using the parseInt method
+            const num = parseInt(numStr);
+            selectedAmount = num
+            console.log(selectedAmount)
+            reloadCard();
+        })
+    })
+    const empty = document.querySelector('.emptyAll');
+    empty.addEventListener('click', () => {
+
+        dataArray.splice(0, dataArray.length)
+        reloadCard();
+    })
+    const slipBody = document.querySelector('.slipBody')
+    slipBody.addEventListener('click', (event) => {
+
+        if (event.target.parentNode.matches('.exitLogo')) {
+            let id = event.target.parentNode.id;
+            console.log('from here', id)
+            dataArray.splice(id, 1)
+            reloadCard();
+        } else {
+            console.log('sad', event.target)
+        }
+    })
 
 
 
@@ -751,297 +801,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     })
 
-    singleGame.forEach(function(game) {
-        game.addEventListener('click', function(event) {
 
-
-
-            const gameIndex = event.target.id;
-            console.log(miniGameData[gameIndex].Types)
-
-            for (let i = 0; i < singleGame.length; i++) {
-                singleGame[i].style.display = 'none'
-            }
-
-
-
-
-            let newDiv = document.createElement('div')
-            newDiv.classList.add('miniGamesWrapper')
-            newDiv.innerHTML = `
-               
-    <div class="gameBody">
-        <div class="playerHeader">
-            <div class="backHeader">
-                <i class="bi bi-caret-left"></i> Back to the game list</div>
-
-            <div class="gameListBody">
-
-                
-               
-                
-            </div>
-
-        </div>
-
-        
-    </div>
-
-
-                `
-                //remove point
-                //  gamesContainer.appendChild(newDiv)
-
-            let gameType = miniGameData[gameIndex].Types
-            console.log('Types', gameType)
-            let gameLength = miniGameData[gameIndex].Types.length
-            for (let i = 0; i < gameLength; i++) {
-                let modeDiv = document.createElement('div')
-                modeDiv.classList.add('gameMode')
-                modeDiv.setAttribute('id', `${i}`)
-                modeDiv.innerHTML = `
-               
-                    <div class="modeLogo" id="${i}">
-                        <img src="assets/images/${gameType[i].formatLogo}.svg" alt="" width="40" height="20">
-                    </div>
-                    <div class="modeName">
-                       ${ gameType[i].formatName}
-                    </div>
-                
-                `
-                let modeContainer = document.querySelector('.gameListBody')
-
-                //remove this cmnt
-                // modeContainer.appendChild(modeDiv);
-
-
-                const gameMode = document.querySelectorAll('.gameMode');
-                gameMode.forEach(function(mode) {
-                    mode.addEventListener('click', function(e) {
-                        console.log('noice', e.target.id)
-
-                        replaceMode(e.target.id);
-                    })
-                })
-
-
-            }
-            // selectedMode(0);
-
-            function selectedMode(modeIndex) {
-                let gameOdds = gameType[modeIndex].allBets
-                console.log('all odds', gameOdds)
-
-                let newDiv = document.createElement('div')
-                newDiv.classList.add('playerBodyContainer')
-                let modeTitle = miniGameData[gameIndex].Types[modeIndex].allBets[0].title
-                console.log('mode Name', modeTitle)
-                newDiv.innerHTML = `
-                <div class="playerPlaceholder">
-        <div class="Player"></div>
-    </div>
-    <div class="playerBetPlace">
-        <div class="playerOddsContainer">
-
-
-            <div class="extraOddsContainer">
-                <div class="extraOddsBody">
-                    <div class="oddsHeader fontBlue"> <img src="assets/images/mode1.svg" alt="" width="40" height="20">${modeTitle}
-                    </div>
-                    <div class="oddsFooter">
-                       
-                    </div>
-                </div>
-                <div class="fillers"></div>
-
-
-            </div>
-            <div class="playerBetSlip">
-                <div class="slipWrapper">
-                    <div class="slipHeader">
-                        <div class="HeaderTop">Betting Slip</div>
-
-                    </div>
-
-                    <div class="slipBody">
-                        <div class="cartItemsWrapper">
-                           
-                        </div>
-                    </div>
-                    <div class="slipFooter">
-                        <div class="configBtn">
-                            <div class="emptyAll"><i class="bi bi-trash"></i>Empty all</div>
-                            <div class="IncDec">
-                                <div class="ControlWrapper">
-                                    <div class="inc"><i class="bi bi-dash"></i></div>
-                                    <div class="inc"><i class="bi bi-plus"></i></div>
-                                    <div class="amount">Amount</div>
-                                    <div class="erase"><i class="bi bi-eraser-fill"></i></div>
-                                </div>
-                            </div>
-                            <div class="betControl">
-                                <div class="totalOdds">Total Odds</div>
-                                <div class="OddsNumber">x 1.00</div>
-                            </div>
-                            <div class="betControl">
-                                <div class="totalOdds">Est. Payout</div>
-                                <div class="OddsNumber">0</div>
-                            </div>
-
-                        </div>
-                        <div class="BetBtn">
-                            <div class="btnNew">
-                                Bet
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-                `
-                const gameBody = document.querySelector('.gameBody')
-                gameBody.appendChild(newDiv);
-
-                const totalOdds = miniGameData[gameIndex].Types[modeIndex].allBets[0].totalBlocks
-                    // console.log('all odds here', totalOdds)
-                    // console.log('here again')
-                totalOdds.forEach((val, indx) => {
-
-                    let allBetsDiv = document.createElement('div');
-                    allBetsDiv.classList.add('finalOddWrapper');
-                    allBetsDiv.innerHTML = `
-    
-    
-    
-                <div class="odds1" id="${gameIndex}-${modeIndex}-${indx}" >${val.oddName}   <span class="highlightOdd">
-                ${val.odds}
-                </span>
-                </div>
-            `
-
-                    const oddsFooter = document.querySelectorAll('.oddsFooter');
-                    for (let i = 0; i < oddsFooter.length; i++) {
-
-                        //remove this
-                        oddsFooter[i].appendChild(allBetsDiv)
-                    }
-                    //remove this comment
-
-                })
-            }
-
-            function replaceMode(modeIndex) {
-                let gameOdds = gameType[modeIndex].allBets
-                console.log('all odds', gameOdds)
-                let modeTitle = miniGameData[gameIndex].Types[modeIndex].allBets[0].title
-                console.log(modeTitle)
-
-                let oldComponent = document.querySelector('.playerBodyContainer')
-
-                let newDiv = document.createElement('div')
-                newDiv.classList.add('playerBodyContainer')
-                newDiv.innerHTML = `
-                <div class="playerPlaceholder">
-        <div class="Player"></div>
-    </div>
-    <div class="playerBetPlace">
-        <div class="playerOddsContainer">
-
-
-            <div class="extraOddsContainer">
-                <div class="extraOddsBody">
-                    <div class="oddsHeader fontBlue"> <img src="assets/images/mode1.svg" alt="" width="40" height="20">${modeTitle}
-                    </div>
-                    <div class="oddsFooter">
-                       
-                    </div>
-                </div>
-                <div class="fillers"></div>
-
-
-            </div>
-            <div class="playerBetSlip">
-                <div class="slipWrapper">
-                    <div class="slipHeader">
-                        <div class="HeaderTop">Betting Slip</div>
-
-                    </div>
-
-                    <div class="slipBody">
-                        <div class="cartItemsWrapper">
-                            
-                        </div>
-                    </div>
-                    <div class="slipFooter">
-                        <div class="configBtn">
-                            <div class="emptyAll"><i class="bi bi-trash"></i>Empty all</div>
-                            <div class="IncDec">
-                                <div class="ControlWrapper">
-                                    <div class="inc"><i class="bi bi-dash"></i></div>
-                                    <div class="inc"><i class="bi bi-plus"></i></div>
-                                    <div class="amount">Amount</div>
-                                    <div class="erase"><i class="bi bi-eraser-fill"></i></div>
-                                </div>
-                            </div>
-                            <div class="betControl">
-                                <div class="totalOdds">Total Odds</div>
-                                <div class="OddsNumber">x 1.00</div>
-                            </div>
-                            <div class="betControl">
-                                <div class="totalOdds">Est. Payout</div>
-                                <div class="OddsNumber">0</div>
-                            </div>
-
-                        </div>
-                        <div class="BetBtn">
-                            <div class="btnNew">
-                                Bet
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-                `
-                const gameBody = document.querySelector('.gameBody')
-                gameBody.replaceChild(newDiv, oldComponent);
-                const totalOdds = miniGameData[gameIndex].Types[modeIndex].allBets[0].totalBlocks
-                    // console.log('all odds here', totalOdds)
-                    // console.log('here again')
-                totalOdds.forEach((val, indx) => {
-                    let allBetsDiv = document.createElement('div');
-                    allBetsDiv.classList.add('finalOddWrapper');
-                    allBetsDiv.innerHTML = `
-
-
-
-                    <div class="odds1" id="${gameIndex}-${modeIndex}-${indx}" >${val.oddName}   <span class="highlightOdd">
-                    ${val.odds}
-                    </span>
-                    </div>
-        `
-                    const oddsFooter = document.querySelectorAll('.oddsFooter');
-                    for (let i = 0; i < oddsFooter.length; i++) {
-
-                        oddsFooter[i].appendChild(allBetsDiv)
-                    }
-                    //remove this comment
-
-                })
-
-
-
-            }
-
-
-
-
-        })
-    })
 
     depositeCancelBtn.addEventListener('click', function() {
         depositeBackDrop.style.display = 'none'
