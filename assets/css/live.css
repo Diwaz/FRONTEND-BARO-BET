@@ -1526,6 +1526,15 @@
     }
     /* END::Deposite and Withdraw Screen */
     
+    .limitPopUp {
+        font-size: 12px;
+        background-color: red;
+        width: 100%;
+        display: none;
+        justify-content: center;
+        border-radius: 3px;
+    }
+    
      ::-webkit-scrollbar {
         width: 5px;
         border-radius: 30px;

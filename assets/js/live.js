@@ -1003,37 +1003,37 @@ function initApp() {
     
         </div>
         <div class="gameCol2">
-            <div class="betOdds" id="${indx}-${key}-1-1-pp">
+            <div class="betOdds" id="${indx}-${key}-1-1-wl">
                
                 ${val.bets[0]}
             </div>
-            <div class="betOdds" id="${indx}-${key}-1-2-pp">
+            <div class="betOdds" id="${indx}-${key}-1-2-wl">
                 
                 ${val.bets[1]}</div>
-            <div class="betOdds" id="${indx}-${key}-1-3-pp">
+            <div class="betOdds" id="${indx}-${key}-1-3-wl">
                 
                 ${val.bets[2]}</div>
         </div>
         <div class="gameCol3">
-            <div class="handiOdds" id="${indx}-${key}-1-1-nn">
-                <div class="nestedOdds fontOrange" id="${indx}-${key}-1-1-nn">${val.handiBets[0]}</div>
-                <div class="nestedOdds" id="${indx}-${key}-1-1-nn">${val.handiBets[1]}</div>
+            <div class="handiOdds" id="${indx}-${key}-1-1-hc">
+                <div class="nestedOdds fontOrange" id="${indx}-${key}-1-1-hc">${val.handiBets[0]}</div>
+                <div class="nestedOdds" id="${indx}-${key}-1-1-hc">${val.handiBets[1]}</div>
             </div>
-            <div class="handiOdds" id="${indx}-${key}-2-1"> 
-                <div class="nestedOdds fontOrange" id="${indx}-${key}-2-1">${val.handiBets[2]}</div>
-                <div class="nestedOdds" id="${indx}-${key}-2-1">${val.handiBets[3]}</div>
+            <div class="handiOdds" id="${indx}-${key}-2-1-hc"> 
+                <div class="nestedOdds fontOrange" id="${indx}-${key}-2-1-hc">${val.handiBets[2]}</div>
+                <div class="nestedOdds" id="${indx}-${key}-2-1-hc">${val.handiBets[3]}</div>
             </div>
     
     
         </div>
         <div class="gameCol4">
-            <div class="ouOdds" id="${indx}-${key}-1-2">
-                <div class="nestedOdds fontRed" id="${indx}-${key}-1-2">${val.handiBets[4]}</div>
-                <div class="nestedOdds" id="${indx}-${key}-1-2">${val.handiBets[5]}</div>
+            <div class="ouOdds" id="${indx}-${key}-1-2-ou">
+                <div class="nestedOdds fontRed" id="${indx}-${key}-1-2-ou">${val.handiBets[4]}</div>
+                <div class="nestedOdds" id="${indx}-${key}-1-2-ou">${val.handiBets[5]}</div>
             </div>
-            <div class="ouOdds" id="${indx}-${key}-2-2">
-                <div class="nestedOdds fontBlue" id="${indx}-${key}-2-2">${val.handiBets[6]}</div>
-                <div class="nestedOdds" id="${indx}-${key}-2-2">${val.handiBets[7]}</div>
+            <div class="ouOdds" id="${indx}-${key}-2-2-ou">
+                <div class="nestedOdds fontBlue" id="${indx}-${key}-2-2-ou">${val.handiBets[6]}</div>
+                <div class="nestedOdds" id="${indx}-${key}-2-2-ou">${val.handiBets[7]}</div>
             </div>
     
         </div>
@@ -1272,6 +1272,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     empty.addEventListener('click', () => {
         console.log('here')
+        let popup = document.querySelector('.limitPopUp')
+        let totalOdds = document.querySelector('.OddsNumber')
+        if (totalOdds > 100) {
+            popup.style.display = 'flex'
+        }
+        popup.style.display = 'none'
         dataArray.splice(0, dataArray.length)
         reloadCard();
     })
@@ -1282,6 +1288,12 @@ document.addEventListener('DOMContentLoaded', function() {
             let id = event.target.parentNode.id;
             console.log('from here', id)
             dataArray.splice(id, 1)
+            let popup = document.querySelector('.limitPopUp')
+            let totalOdds = document.querySelector('.OddsNumber')
+            if (totalOdds > 100) {
+                popup.style.display = 'flex'
+            }
+            popup.style.display = 'none'
             reloadCard();
         } else {
             console.log('sad', event.target)
@@ -1646,13 +1658,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const teamOdd = cleanedArr.join(' ');
             const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 2 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
             const finalName = `${teamName}  (${teamOdd})`
-            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + matchTime;
+            const id = gameIndex + leagueIndex + sameOdd + oddIndex + event.target.id.split('-')[4]
+            const uniqueIndex = gameIndex + leagueIndex + event.target.id.split('-')[4]
             console.log(id)
 
             let newObject = {
                 id: id, // generate unique id 
                 leagueLogo: leagueLogo,
-                sameOdd: sameOdd,
+                sameOdd: uniqueIndex,
                 leagueName: leagueName,
                 odds: selectedOdd,
                 teamName: finalName,
@@ -1660,12 +1673,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchType: matchType,
                 matchTime: matchTime
             };
-            if (dataArray.some(obj => obj.id === id)) {
-                dataArray = dataArray.filter(obj => obj.id !== id);
-                console.log('didididi  ')
-                dataArray.push(newObject)
+            let popup = document.querySelector('.limitPopUp')
+            let totalOdds = selectedOdd;
+
+            dataArray.forEach((value, key) => {
+                totalOdds = totalOdds * parseFloat(value.odds);
+
+            })
+            if (totalOdds < 100) {
+                popup.style.display = 'none'
+                if (dataArray.some(obj => obj.sameOdd === uniqueIndex)) {
+                    dataArray = dataArray.filter(obj => obj.sameOdd !== uniqueIndex);
+                    dataArray.push(newObject)
+                } else {
+                    dataArray.push(newObject)
+                }
             } else {
-                dataArray.push(newObject);
+                popup.style.display = 'flex'
             }
 
             // if (dataArray.some(obj => obj.sameOdd === sameOdd)) {
@@ -1698,13 +1722,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const teamOdd = cleanedArr.join(' ');
             const teamName = oddIndex == 1 ? soccerData[leagueIndex].League.Game[gameIndex].home : oddIndex == 2 ? soccerData[leagueIndex].League.Game[gameIndex].away : 'draw';
             const finalName = `${teamName}  (${teamOdd})`
-            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + matchTime;
+            const id = gameIndex + leagueIndex + sameOdd + oddIndex + event.target.id.split('-')[4]
+            const uniqueIndex = gameIndex + leagueIndex + event.target.id.split('-')[4]
             console.log(id)
 
             let newObject = {
                 id: id, // generate unique id 
                 leagueLogo: leagueLogo,
-                sameOdd: sameOdd,
+                sameOdd: uniqueIndex,
                 leagueName: leagueName,
                 odds: selectedOdd,
                 teamName: finalName,
@@ -1712,12 +1737,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchType: matchType,
                 matchTime: matchTime
             };
-            if (dataArray.some(obj => obj.id === id)) {
-                dataArray = dataArray.filter(obj => obj.id !== id);
-                console.log('didididi  ')
-                dataArray.push(newObject)
+            let popup = document.querySelector('.limitPopUp')
+            let totalOdds = selectedOdd;
+
+            dataArray.forEach((value, key) => {
+                totalOdds = totalOdds * parseFloat(value.odds);
+
+            })
+            if (totalOdds < 100) {
+                popup.style.display = 'none'
+                if (dataArray.some(obj => obj.sameOdd === uniqueIndex)) {
+                    dataArray = dataArray.filter(obj => obj.sameOdd !== uniqueIndex);
+                    dataArray.push(newObject)
+                } else {
+                    dataArray.push(newObject)
+                }
             } else {
-                dataArray.push(newObject);
+                popup.style.display = 'flex'
             }
 
             // if (dataArray.some(obj => obj.sameOdd === sameOdd)) {
@@ -1738,7 +1774,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const leagueIndex = event.target.id.split('-')[1]
             const sameOdd = gameIndex + leagueIndex + event.target.id.split('-')[2]
             const oddIndex = event.target.id.split('-')[3]
-            const uniqueIndex = event.target.id.split('-')[4]
+
 
 
 
@@ -1750,13 +1786,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const matchTime = 'Live';
             const selectedOdd = betOdds.textContent
 
-            const id = soccerData[leagueIndex].League.Game[gameIndex].gameId + matchTime;
+            const id = gameIndex + leagueIndex + sameOdd + oddIndex + event.target.id.split('-')[4]
+            const uniqueIndex = gameIndex + leagueIndex + event.target.id.split('-')[4]
 
 
             console.log(selectedOdd)
             let newObject = {
                 id: id, // generate unique id 
-                sameOdd: sameOdd,
+                sameOdd: uniqueIndex,
                 leagueLogo: leagueLogo,
                 leagueName: leagueName,
                 odds: selectedOdd,
@@ -1765,12 +1802,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchType: matchType,
                 matchTime: matchTime
             };
-            if (dataArray.some(obj => obj.id === id)) {
-                dataArray = dataArray.filter(obj => obj.id !== id);
+            let popup = document.querySelector('.limitPopUp')
+            let totalOdds = selectedOdd;
 
-                dataArray.push(newObject)
+            dataArray.forEach((value, key) => {
+                totalOdds = totalOdds * parseFloat(value.odds);
+
+            })
+            if (totalOdds < 100) {
+                popup.style.display = 'none'
+                if (dataArray.some(obj => obj.sameOdd === uniqueIndex)) {
+                    dataArray = dataArray.filter(obj => obj.sameOdd !== uniqueIndex);
+                    dataArray.push(newObject)
+                } else {
+                    dataArray.push(newObject)
+                }
             } else {
-                dataArray.push(newObject);
+                popup.style.display = 'flex'
             }
             reloadCard();
             // push the new object into the array
@@ -1826,11 +1874,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchType: matchType,
                 matchTime: matchTime
             };
-            if (dataArray.some(obj => obj.id === id)) {
-                dataArray = dataArray.filter(obj => obj.id !== id);
+
+            let popup = document.querySelector('.limitPopUp')
+            let totalOdds = selectedOdd;
+
+            dataArray.forEach((value, key) => {
+                totalOdds = totalOdds * parseFloat(value.odds);
+
+            })
+            if (totalOdds < 100) {
+                popup.style.display = 'none'
+                if (dataArray.some(obj => obj.id === id)) {
+                    dataArray = dataArray.filter(obj => obj.id !== id);
+                } else {
+                    dataArray.push(newObject);
+                }
+
             } else {
-                dataArray.push(newObject);
+                popup.style.display = 'flex'
             }
+
+
             reloadCard();
             // push the new object into the array
             console.log(dataArray)
