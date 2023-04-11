@@ -569,14 +569,20 @@ diceBtn.addEventListener('click',
     function() {
 
         var randomNumber = Math.floor(Math.random() * 6) + 1;
+        var randomNumber2 = Math.floor(Math.random() * 6) + 1;
         var dice = document.querySelector('.dice')
+        var dice2 = document.querySelector('.dice2')
         dice.innerHTML = `
-
     <img src="assets/images/dice-${randomNumber}.png" alt="" width="120" height="120" class="diceLogo">
     `
+        dice2.innerHTML = `
+    <img src="assets/images/dice-${randomNumber2}.png" alt="" width="120" height="120" class="diceLogo">
+    `
         var resultElement = document.querySelector(".diceNumber");
+        var resultElement2 = document.querySelector(".diceNumber2");
         diceHistory.push(randomNumber);
         resultElement.innerHTML = randomNumber;
+        resultElement2.innerHTML = randomNumber2;
         generateHistoryTable1(randomNumber);
         generateHistoryTable2(randomNumber);
         generateHistoryTable(randomNumber);

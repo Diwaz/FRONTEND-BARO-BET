@@ -319,21 +319,51 @@ flex-direction: row-reverse;
     border-top: 1px solid #27303a;
 }
 
-.singleHistory {
-    border-top: 1px solid #27303a;
+.bi-caret-down-fill,
+.bi-caret-up-fill {
+    color: black
+}
+
+.bi-dice-1-fill,
+.bi-dice-2-fill,
+.bi-dice-3-fill,
+.bi-dice-4-fill,
+.bi-dice-5-fill,
+.bi-dice-6-fill {
+    color: black;
+}
+
+.diceDisplay,
+.diceNumberDisplay {
     display: flex;
-    padding: 10px;
+}
+
+.dice2 {
+    margin-left: 10px
+}
+
+.diceNumber2 {
+    margin-left: 10px
+}
+
+.dice1s {
+    color: white;
+}
+
+.singleHistory {
+    /* border-top: 1px solid #27303a; */
+    display: flex;
     width: 100%;
     justify-content: space-between;
 }
 
 .historyCol1 {
-    padding: 10px;
-    border: 1px solid white;
+    padding: 0px;
+    border: 1px solid #C3C3C3;
     width: 100%;
     display: flex;
     justify-content: center;
-    color: white;
+    color: black;
 }
 
 .newsContent {
@@ -506,7 +536,7 @@ height: 200px; */
 
 .diceHistory {
     height: 100%;
-    width: 40%;
+    width: 10%;
 }
 
 .dicePlaceHolder {
@@ -536,7 +566,8 @@ height: 200px; */
     display: flex;
 }
 
-.diceNumber {
+.diceNumber,
+.diceNumber2 {
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
@@ -740,7 +771,8 @@ height: 200px; */
 
 .historyWrapper {
     top: 0;
-    background-color: #1F262F;
+    background-color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1521,10 +1553,12 @@ padding: 5px;
 
 .Odd {
     color: #16bdf9;
+    font-weight: 700;
 }
 
 .Even {
-    color: greenyellow;
+    color: green;
+    font-weight: 700;
 }
 
 .oddsOver {
@@ -1789,6 +1823,13 @@ padding: 5px;
         }
         .selectOptions {
             display: block;
+        }
+        .historyCol1 {
+            font-size: 8px;
+        }
+        .oddsSelect {
+            font-size: 10px;
+            padding: 0px
         }
     }
     /* Styles for extra large screens (up to 1200px) */
