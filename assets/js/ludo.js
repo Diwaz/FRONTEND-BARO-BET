@@ -215,6 +215,7 @@ function generateHistoryTable(number) {
     <div class="historyCol1">${totalHistory}</div>
         <div class="historyCol1">
         <i class="bi bi-caret-${number < 4  ?  'down' : 'up'}-fill"></i>
+        
          </div>
         <div class="historyCol1 ${number % 2 == 0 ?  'Even' : 'Odd'}">${number % 2 == 0 ?  'Even' : 'Odd'}</div>
         <div class="historyCol1">
@@ -224,6 +225,8 @@ function generateHistoryTable(number) {
     historyBody.appendChild(newHistory)
     totalHistory = totalHistory + 1
 }
+
+
 
 function generateHistoryTable1(number) {
 
@@ -241,7 +244,11 @@ function generateHistoryTable1(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsUnder';
-            item.innerHTML = number;
+            item.innerHTML = `
+            <div class='oddsCollector collectUnder'>
+           ${number}
+            </div>
+            `;
             element.appendChild(item);
             box.appendChild(element);
             consecutiveLowNumber++;
@@ -250,7 +257,11 @@ function generateHistoryTable1(number) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
             item.className = 'oddsUnder';
-            item.innerHTML = number;
+            item.innerHTML = `
+            <div class='oddsCollector collectUnder'>
+           ${number}
+            </div>
+            `;
             lastElement.appendChild(item);
             consecutiveLowNumber++;
         } else {
@@ -259,7 +270,11 @@ function generateHistoryTable1(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsUnder';
-            item.innerHTML = number;
+            item.innerHTML = `
+            <div class='oddsCollector collectUnder'>
+           ${number}
+            </div>
+            `;
             element.appendChild(item);
             box.appendChild(element);
             consecutiveLowNumber = 0;
@@ -272,7 +287,11 @@ function generateHistoryTable1(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsOver';
-            item.innerHTML = number;
+            item.innerHTML = `
+            <div class='oddsCollector collectOver'>
+           ${number}
+            </div>
+            `;
             element.appendChild(item);
             box.appendChild(element);
             consecutiveHighNumber++;
@@ -281,7 +300,11 @@ function generateHistoryTable1(number) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
             item.className = 'oddsOver';
-            item.innerHTML = number;
+            item.innerHTML = `
+            <div class='oddsCollector collectOver'>
+           ${number}
+            </div>
+            `;
             lastElement.appendChild(item);
             consecutiveHighNumber++;
         } else {
@@ -290,7 +313,11 @@ function generateHistoryTable1(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsOver';
-            item.innerHTML = number;
+            item.innerHTML = `
+            <div class='oddsCollector collectOver'>
+           ${number}
+            </div>
+            `;
             element.appendChild(item);
             box.appendChild(element);
             consecutiveHighNumber = 0;
@@ -319,7 +346,12 @@ function generateHistoryTable2(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsEven';
-            item.innerHTML = 'E';
+            item.innerHTML = `
+            <div class='oddsCollector collectEven'>
+            E
+            </div>
+            `
+
             element.appendChild(item);
             box.appendChild(element);
             consecutiveEven++;
@@ -328,7 +360,11 @@ function generateHistoryTable2(number) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
             item.className = 'oddsEven';
-            item.innerHTML = 'E';
+            item.innerHTML = `
+            <div class='oddsCollector collectEven'>
+            E
+            </div>
+            `;
             lastElement.appendChild(item);
             consecutiveEven++;
         } else {
@@ -337,7 +373,11 @@ function generateHistoryTable2(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsEven';
-            item.innerHTML = 'E';
+            item.innerHTML = `
+            <div class='oddsCollector collectEven'>
+            E
+            </div>
+            `;
             element.appendChild(item);
             box.appendChild(element);
             consecutiveEven = 0;
@@ -350,7 +390,11 @@ function generateHistoryTable2(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsOdd';
-            item.innerHTML = 'O';
+            item.innerHTML = `
+            <div class='oddsCollector collectOdd'>
+            O
+            </div>
+            `;
             element.appendChild(item);
             box.appendChild(element);
             consecutiveOdd++;
@@ -359,7 +403,11 @@ function generateHistoryTable2(number) {
             const lastElement = box.lastElementChild;
             const item = document.createElement('div');
             item.className = 'oddsOdd';
-            item.innerHTML = 'O';
+            item.innerHTML = `
+            <div class='oddsCollector collectOdd'>
+            O
+            </div>
+            `;
             lastElement.appendChild(item);
             consecutiveOdd++;
         } else if (consecutiveOdd = 6) {
@@ -368,7 +416,11 @@ function generateHistoryTable2(number) {
             element.className = 'element';
             const item = document.createElement('div');
             item.className = 'oddsOdd';
-            item.innerHTML = 'O';
+            item.innerHTML = `
+            <div class='oddsCollector collectOdd'>
+            O
+            </div>
+            `;
             element.appendChild(item);
             box.appendChild(element);
             consecutiveOdd = 0;
@@ -394,11 +446,11 @@ function initApp() {
 ${ludoData1.Over}
     </span>
 </div>
-<div class="oddsSelect" id="1">Odd <span class="highlightOdd">
+<div class="oddsSelect" id="2">Odd <span class="highlightOdd">
 ${ludoData1.Odd}
     </span>
 </div>
-<div class="oddsSelect" id="1">Even <span class="highlightOdd">
+<div class="oddsSelect" id="2">Even <span class="highlightOdd">
 ${ludoData1.Even}
     </span>
 </div>
@@ -408,27 +460,27 @@ ${ludoData1.Even}
     let ludoOdds2Div = document.createElement('div')
     ludoOdds2Div.classList = 'oddsFooter'
     ludoOdds2Div.innerHTML = `
-    <div class="oddsSelect dice" id="2-1"><i class="bi bi-dice-1-fill"></i> <span class="highlightOdd">
+    <div class="oddsSelect dice" id="3-1"><i class="bi bi-dice-1-fill"></i> <span class="highlightOdd">
     ${ludoData2.dice1}
     </span>
 </div>
-<div class="oddsSelect dice" id="2-2"><i class="bi bi-dice-2-fill"></i> <span class="highlightOdd">
+<div class="oddsSelect dice" id="3-2"><i class="bi bi-dice-2-fill"></i> <span class="highlightOdd">
 ${ludoData2.dice2}
     </span>
 </div>
-<div class="oddsSelect dice" id="2-3"><i class="bi bi-dice-3-fill"></i> <span class="highlightOdd">
+<div class="oddsSelect dice" id="3-3"><i class="bi bi-dice-3-fill"></i> <span class="highlightOdd">
 ${ludoData2.dice3}
     </span>
 </div>
-<div class="oddsSelect dice" id="2-4"><i class="bi bi-dice-4-fill"></i> <span class="highlightOdd">
+<div class="oddsSelect dice" id="3-4"><i class="bi bi-dice-4-fill"></i> <span class="highlightOdd">
 ${ludoData2.dice4}
     </span>
 </div>
-<div class="oddsSelect dice" id="2-5"><i class="bi bi-dice-5-fill"></i> <span class="highlightOdd">
+<div class="oddsSelect dice" id="3-5"><i class="bi bi-dice-5-fill"></i> <span class="highlightOdd">
 ${ludoData2.dice5}
     </span>
 </div>
-<div class="oddsSelect dice" id="2-6"><i class="bi bi-dice-6-fill"></i> <span class="highlightOdd">
+<div class="oddsSelect dice" id="3-6"><i class="bi bi-dice-6-fill"></i> <span class="highlightOdd">
 ${ludoData2.dice6}
     </span>
 </div>
@@ -512,23 +564,27 @@ function reloadCard() {
 }
 
 const diceBtn = document.querySelector('.diceGenerator')
-diceBtn.addEventListener('click', function() {
+diceBtn.addEventListener('click',
 
-    var randomNumber = Math.floor(Math.random() * 6) + 1;
-    var dice = document.querySelector('.dice')
-    dice.innerHTML = `
-    
+    function() {
+
+        var randomNumber = Math.floor(Math.random() * 6) + 1;
+        var dice = document.querySelector('.dice')
+        dice.innerHTML = `
+
     <img src="assets/images/dice-${randomNumber}.png" alt="" width="120" height="120" class="diceLogo">
     `
-    var resultElement = document.querySelector(".diceNumber");
-    diceHistory.push(randomNumber);
-    resultElement.innerHTML = randomNumber;
-    generateHistoryTable1(randomNumber);
-    generateHistoryTable2(randomNumber);
-    generateHistoryTable(randomNumber);
-    //console.log(diceHistory)
+        var resultElement = document.querySelector(".diceNumber");
+        diceHistory.push(randomNumber);
+        resultElement.innerHTML = randomNumber;
+        generateHistoryTable1(randomNumber);
+        generateHistoryTable2(randomNumber);
+        generateHistoryTable(randomNumber);
+        //console.log(diceHistory)
 
-})
+    }
+
+)
 
 
 
@@ -800,13 +856,16 @@ document.addEventListener('DOMContentLoaded', function() {
         noticeBody.replaceChild(nextWindow, oldWindow)
 
     })
-
+    backDrop.addEventListener('click', () => {
+        backDrop.style.display = 'none'
+    })
 
 
     depositeCancelBtn.addEventListener('click', function() {
         depositeBackDrop.style.display = 'none'
 
     })
+
 
     function setActiveButton(button) {
         // remove active class from all buttons
@@ -910,14 +969,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             console.log('sO', id)
-
-
-
-
-
-
-
-
             let newObject = {
                 id: id, // generate unique id 
                 leagueLogo: leagueLogo,
@@ -927,12 +978,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 fullGame: fullGame,
 
             };
-            if (dataArray.some(obj => obj.id === id)) {
-                dataArray = dataArray.filter(obj => obj.id !== id);
-                dataArray.push(newObject);
+            const popup = document.querySelector('.limitPopUp')
+            if (dataArray.length < 2) {
+                popup.style.display = 'none'
+                if (dataArray.some(obj => obj.id === id)) {
+
+                    dataArray = dataArray.filter(obj => obj.id !== id);
+                    dataArray.push(newObject);
+
+                } else {
+                    dataArray.push(newObject);
+                }
             } else {
-                dataArray.push(newObject);
+                popup.style.display = 'flex'
             }
+
 
 
             reloadCard();

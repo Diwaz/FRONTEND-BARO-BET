@@ -410,6 +410,8 @@ height: 200px; */
     margin-top: 10px;
 }
 
+.depositeDrop {}
+
 .depositeDownHeader {
     font-size: 11px;
     font-weight: 500;
@@ -794,10 +796,19 @@ height: 200px; */
     overflow-y: auto;
     overflow-x: hidden;
     height: 220px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     display: flex;
     flex-direction: column;
+}
+
+.limitPopUp {
+    font-size: 12px;
+    background-color: red;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    border-radius: 3px;
 }
 
 .emptyCart {
@@ -1438,6 +1449,18 @@ padding: 5px;
     overflow-x: auto;
 }
 
+.oddsFooter2 {
+    display: flex;
+    background-color: #fff;
+    /* background-color: rgb(48, 59, 71); */
+    /* height: 40px; */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
 .finalOddWrapper {
     width: 25%;
 }
@@ -1447,17 +1470,28 @@ padding: 5px;
 .oddsOdd,
 .oddsOver,
 .oddsUnder {
-    width: 100%;
+    width: 30px;
     display: flex;
     justify-content: space-around;
     height: 30px;
-    border: 1px solid white;
+    font-weight: 800;
+    border: 2px solid #C3C3C3;
     align-items: center;
-    padding: 10px;
-    /* border-left: 1px solid #1e242c;
-border-bottom: 1px solid #1e242c;
-border-right: 1px solid #1e242c; */
+    /* padding: 10px; */
     cursor: pointer;
+}
+
+.oddsCollector {
+    background-color: red;
+    width: 100%;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graphTable {
+    color: black,
 }
 
 .oddsSelect {
@@ -1502,11 +1536,27 @@ border-right: 1px solid #1e242c; */
 }
 
 .oddsEven {
-    color: greenyellow;
+    color: green;
 }
 
 .oddsOdd {
     color: #16bdf9;
+}
+
+.collectOdd {
+    background-color: #16bdf9;
+}
+
+.collectEven {
+    background-color: green;
+}
+
+.collectOver {
+    background-color: #16bdf9;
+}
+
+.collectUnder {
+    background-color: red;
 }
 
 .incHeight1 {}
@@ -1555,6 +1605,12 @@ border-right: 1px solid #1e242c; */
     height: 100%;
     width: 50%;
 }
+
+
+/* START::Deposite and Withdraw Screen */
+
+
+/* END::Deposite and Withdraw Screen */
 
  ::-webkit-scrollbar {
     width: 5px;
