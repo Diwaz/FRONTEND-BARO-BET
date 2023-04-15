@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/ludo.css">
-    <title>Ludo</title>
+    <link rel="stylesheet" href="assets/css/dualLudo.css">
+    <title> Dual Ludo</title>
 </head>
 
 <body>
@@ -25,53 +25,124 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ">
 
-                    <li class="nav-item  mx-2">
-                        <a class="nav-link customUl" href="#">LIVE SPORTS</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link customUl" href="#">SPORTS</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link customUl" href="#">LIVE CASINO</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link customUl" href="#">EVENT</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link customUl" href="#">SLOT MACHINE</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link customUl" href="#">MINI GAMES</a>
+
+
+
+
+
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle customUl" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sports
+          </a>
+                        <ul class="dropdown-menu customDrop">
+                            <li><a class=" dropdown-item customDropper py-2 " href="homepage.html">Sports</a></li>
+                            <li><a class=" dropdown-item customDropper py-2 " href="sportsLive.html">Sport Live</a></li>
+                            <!-- <li><a class="dropdown-item customDropper py-2" href="#">Another action</a></li>
+                            <li><a class="dropdown-item customDropper py-2" href="#">Something else here</a></li> -->
+                        </ul>
                     </li>
                     <li class="nav-item dropdown mx-2">
                         <a class="nav-link dropdown-toggle customUl" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            SEE MORE
+            Esports
           </a>
                         <ul class="dropdown-menu customDrop">
-                            <li><a class=" dropdown-item customDropper py-2 " href="#">Action</a></li>
-                            <li><a class="dropdown-item customDropper py-2" href="#">Another action</a></li>
-                            <li><a class="dropdown-item customDropper py-2" href="#">Something else here</a></li>
+                            <li><a class=" dropdown-item customDropper py-2 " href="esports.html">Esports</a></li>
+                            <li><a class=" dropdown-item customDropper py-2 " href="esportsLive.html">Esport Live</a></li>
+                            <!-- <li><a class="dropdown-item customDropper py-2" href="#">Another action</a></li>
+                            <li><a class="dropdown-item customDropper py-2" href="#">Something else here</a></li> -->
                         </ul>
                     </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link customUl" href="#">SPORTS TOURNAMENT</a>
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle customUl" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            GAMES
+          </a>
+                        <ul class="dropdown-menu customDrop">
+                            <li><a class=" dropdown-item customDropper py-2 " href="miniGames.html">MiniGames</a></li>
+                            <!-- <li><a class="dropdown-item customDropper py-2" href="#">Another action</a></li>
+                            <li><a class="dropdown-item customDropper py-2" href="#">Something else here</a></li> -->
+                        </ul>
                     </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link customUl" href="#">
-                                    ⭐
-                        </a>
+                    <li class="nav-item  mx-2">
+                        <a class="nav-link customUl" href="Ludo.html">LUDO</a>
                     </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link customUl1" href="#">MEMBERSHIP</a>
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link dropdown-toggle customUl" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           BOARD
+          </a>
+                        <ul class="dropdown-menu customDrop">
+                            <li><a class=" dropdown-item customDropper py-2 " href="board.html">Notice</a></li>
+                            <li><a class="dropdown-item customDropper py-2" href="board.html">Events</a></li>
+
+                        </ul>
                     </li>
+
                     <li class="nav-item mx-2">
-                        <a class="nav-link customUl" href="#">LOGIN</a>
+                        <a class="nav-link customUl loginBtn" href="#"><i class="bi bi-person"></i></a>
                     </li>
+                    <div class="sliderMenu">
+                        <div class="menuWrapper">
+                            <div class="menuHeader">
+                                <div class="headerIcon"><i class="bi bi-trophy"></i></div>
+                                <div class="headerIcon">Gold</div>
+                                <div class="headerIcon fontBlue">EtherPot</div>
+                            </div>
+                            <div class="menuBody">
+
+                                <div class="noticeInterface">
+                                    <div class="menuItem">
+                                        <div class="dispIcon specDisp"><i class="bi bi-envelope"></i></div>
+                                        <div class="dispIcon">3</div>
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="dispIcon specDisp">Balance</div>
+                                        <div class="dispIcon">14000</div>
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="dispIcon specDisp">Casino</div>
+                                        <div class="dispIcon">0</div>
+                                    </div>
+                                    <div class="menuItem">
+                                        <div class="dispIcon specDisp">Point</div>
+                                        <div class="dispIcon">0</div>
+                                    </div>
+                                </div>
+                                <div class="noticeMenus">
+                                    <div class="impBtns slideDeposite">
+                                        Deposite & Withdrawl
+                                    </div>
+                                    <div class="impBtns">
+                                        Betting History
+                                    </div>
+                                    <div class="impBtns fontRed">
+                                        Logout
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="gameListBody">
+        <div class="gameListWrapper">
+            <div class="gameMode ludo1">
+                <div class="modeLogo"><i class="bi bi-dice-2-fill dice1l"></i></div>
+                <div class="modeName">Ludo 1</div>
+            </div>
+            <div class="gameMode ludo2">
+                <div class="modeLogo"><i class="bi bi-dice-4-fill dice1l"></i></div>
+                <div class="modeName">Ludo 2</div>
+            </div>
+        </div>
+
+    </div>
     <div class="bodyWrapper">
+        <div class="sliderMenuBackDrop">
+        </div>
+        <div class="cartBackdrop"></div>
         <div class="my-backdrop depositeDrop">
             <div class="NoticeWrapper">
                 <div class="noticeBody">
@@ -147,181 +218,6 @@
             </div>
         </div>
 
-
-        <!-- <div class="column2">
-            <div class="BoardnoticeWrapper">
-                <div class="boardBody">
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                    <div class="boardItem">
-                        <div class="upperItem fontSecondary">
-                            Rule
-                        </div>
-                        <div class="midItem">
-                            Rolling rules and deposit bonus information
-                        </div>
-                        <div class="lowerItem fontSecondary">
-                            2023-03-25 22:04:21
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div class="column4">
             <div class="gamesWrapper">
                 <div class="gamesContainer">
@@ -337,27 +233,15 @@
                                 <div class="playerPlaceholder">
                                     <div class="Player">
                                         <div class="dicePlaceHolder">
-                                            <div class="diceDisplay">
-                                                <div class="dice">
+                                            <div class="dice">
 
 
-                                                </div>
-                                                <div class="dice2">
-
-
-                                                </div>
                                             </div>
-                                            <div class="diceNumberDisplay">
-                                                <div class="diceNumber">
-                                                    Click ROLL to start
-                                                </div>
-                                                <div class="diceNumber2">
-
-                                                </div>
+                                            <div class="diceNumber">
+                                                Click ROLL to start ludo 1
                                             </div>
-
                                             <div class="diceGenerator">
-                                                ROll ON!
+                                                ROLL ON!
                                             </div>
                                         </div>
                                         <div class="diceHistory">
@@ -385,7 +269,10 @@
 
                                         <div class="extraOddsContainer">
                                             <div class="extraOddsBody">
-                                                <div class="oddsHeader fontBlue"> <img src="assets/images/mode1.svg" alt="" width="40" height="20">LUDO OVER/UNDER HISTORY
+                                                <div class="oddsHeader fontBlue"> LUDO OVER/UNDER HISTORY
+                                                    <div class="ddBtn">
+                                                        <i class="bi bi-caret-down-fill toggleDown"></i>
+                                                    </div>
                                                 </div>
                                                 <div class="oddsFooter2">
                                                     <div class="box">
@@ -397,9 +284,12 @@
                                                 </div>
                                             </div>
                                             <div class="extraOddsBody2">
-                                                <div class="oddsHeader fontBlue"> <img src="assets/images/mode1.svg" alt="" width="40" height="20">LUDO ODD/EVEN HISTORY
+                                                <div class="oddsHeader fontBlue">LUDO ODD/EVEN HISTORY
+                                                    <div class="ddBtn2">
+                                                        <i class="bi bi-caret-down-fill toggleDown"></i>
+                                                    </div>
                                                 </div>
-                                                <div class="oddsFooter2">
+                                                <div class="oddsFooter22">
                                                     <div class="boxOU">
 
                                                     </div>
@@ -422,12 +312,12 @@
 
                                         <div class="extraOddsContainer">
                                             <div class="extraOddsBody1">
-                                                <div class="oddsHeader fontBlue"> <img src="assets/images/mode1.svg" alt="" width="40" height="20">LUDO ODDS
+                                                <div class="oddsHeader fontBlue"> LUDO ODDS
                                                 </div>
 
                                             </div>
                                             <div class="extraOddsBody3">
-                                                <div class="oddsHeader fontBlue"> <img src="assets/images/mode1.svg" alt="" width="40" height="20">DICE PREDICTION
+                                                <div class="oddsHeader fontBlue"> DICE PREDICTION
                                                 </div>
 
                                             </div>
@@ -501,11 +391,280 @@
                 </div>
             </div>
         </div>
+        <div class="cartWrapper">
+            <i class="bi bi-cart3"></i>
+            <div class="cartNumber">
+                0
+            </div>
+        </div>
+
+    </div>
+    <div class="bodyWrapper2">
+        <div class="sliderMenuBackDrop">
+        </div>
+        <div class="cartBackdrop2"></div>
+        <div class="my-backdrop depositeDrop">
+            <div class="NoticeWrapper">
+                <div class="noticeBody">
+                    <div class="depositeCancel">
+                        <i class="bi bi-x-lg "></i>
+
+                    </div>
+                    <div class="noticeHeader">
+                        <div class="depositeUpHeader fontBlue">
+                            <div class="depositeUpHeader1 depositeActive ">Deposite</div>
+                            <div class="depositeUpHeader2">Withdrawl</div>
+                        </div>
+
+                    </div>
+                    <div class="depositeItem depositeBill">
+                        <div class="menuItem">
+                            <div class="dispIcon specDisp">Type</div>
+                            <div class="dispIcon">
+                                <select name="options" id="" class="selectOptions">
+                                    <option value="">Cash</option>
+                                    <option value="">Bitcoin</option>
+                                    <option value="">Wireless</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="menuItem">
+                            <div class="dispIcon specDisp">Home of Depositor</div>
+                            <div class="dispIcon">Helios Predator</div>
+                        </div>
+                        <div class="menuItem">
+                            <div class="dispIcon specDisp">Amount</div>
+                            <div class="dispIcon inputSports"><input type="text" name="amount" id="" placeholder="Please type in the deposite amount" class="inputLeague"></div>
+                        </div>
+                        <div class="menuItem">
+                            <div class="dispIcon specDisp">Apply for Bonus</div>
+                            <div class="dispIcon"> <select name="options" id="" class="selectOptions">
+                                <option value="">Cash</option>
+                                <option value="">Bitcoin</option>
+                                <option value="">Wireless</option>
+                            </select></div>
+                        </div>
+                        <div class="depositeBtn2">
+                            <div class="noticeBtn">Deposite Bill</div>
+                        </div>
+                        <div class="depositeHistory">
+                            <div class="historyHeader">Deposite History</div>
+                            <div class="headerItem">
+                                <div class="hd1">Select</div>
+                                <div class="hd2">Date</div>
+                                <div class="hd3">Type</div>
+                                <div class="hd4">Amount</div>
+                                <div class="hd5">Status</div>
+                            </div>
+                            <div class="footerItem">
+                                <div class="hd1"><input type="checkbox" name="" id=""></div>
+                                <div class="hd2">2023-03-18 19:32:56</div>
+                                <div class="hd3">CASH</div>
+                                <div class="hd4">30,000</div>
+                                <div class="hd5 fontBlue">Approved</div>
+                            </div>
+                            <div class="footerItem">
+                                <div class="hd1"><input type="checkbox" name="" id=""></div>
+                                <div class="hd2">2023-03-12 9:32:56</div>
+                                <div class="hd3">CASH</div>
+                                <div class="hd4">30,000</div>
+                                <div class="hd5 fontRed">Rejected</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="column42">
+            <div class="gamesWrapper">
+                <div class="gamesContainer">
+                    <div class="miniGamesWrapper">
+                        <div class="gameBody">
+                            <div class="playerHeader">
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
-        <script src="assets/js/dualLudo.js"></script>
+
+                            </div>
+                            <div class="playerBodyContainer">
+                                <div class="playerPlaceholder">
+                                    <div class="Player">
+                                        <div class="dicePlaceHolder">
+                                            <div class="dice2">
+
+
+                                            </div>
+                                            <div class="diceNumber2">
+                                                Click ROLL to start ludo 2
+                                            </div>
+                                            <div class="diceGenerator2">
+                                                ROLL ON!
+                                            </div>
+                                        </div>
+                                        <div class="diceHistory">
+                                            <div class="historyWrapper">
+                                                <div class="slipHistoryWrapper">
+                                                    <div class="slipHeader">
+                                                        <div class="HeaderTop">History</div>
+
+                                                    </div>
+                                                    <div class="historyWrapper">
+                                                        <div class="historyBody2">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="playerBetPlace">
+                                    <div class="playerOddsContainer">
+
+
+                                        <div class="extraOddsContainer">
+                                            <div class="extraOddsBody">
+                                                <div class="oddsHeader fontBlue"> LUDO OVER/UNDER HISTORY
+                                                    <div class="ddBtn3">
+                                                        <i class="bi bi-caret-down-fill toggleDown"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="oddsFooter3">
+                                                    <div class="box2">
+
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="extraOddsBody2">
+                                                <div class="oddsHeader fontBlue">LUDO ODD/EVEN HISTORY
+                                                    <div class="ddBtn4">
+                                                        <i class="bi bi-caret-down-fill toggleDown"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="oddsFooter33">
+                                                    <div class="boxOU2">
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="playerBetPlace">
+                                    <div class="playerOddsContainer">
+
+
+                                        <div class="extraOddsContainer">
+                                            <div class="extraOddsBody12">
+                                                <div class="oddsHeader fontBlue"> LUDO ODDS
+                                                </div>
+
+                                            </div>
+                                            <div class="extraOddsBody32">
+                                                <div class="oddsHeader fontBlue"> DICE PREDICTION
+                                                </div>
+
+                                            </div>
+
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="column32">
+            <div class="betSlip">
+                <div class="slipWrapper">
+                    <div class="slipHeader">
+                        <div class="HeaderTop">Betting Slip</div>
+
+                    </div>
+
+                    <div class="slipBody2">
+                        <div class="cartItemsWrapper2">
+
+                        </div>
+                        <div class="emptyCart2">
+                            <i class="bi bi-dash-circle"></i>
+                            <div class="infoEmpty">The betting cart is empty</div>
+                        </div>
+                        <div class="limitPopUp2">
+                            Cannot place more than 2 bets
+                        </div>
+                    </div>
+                    <div class="slipFooter">
+                        <div class="configBtn">
+                            <div class="emptyAll2"><i class="bi bi-trash"></i>Empty all</div>
+                            <div class="IncDec">
+                                <div class="amount1">5,00</div>
+                                <div class="amount1">10,00</div>
+                                <div class="amount1">50,00</div>
+                                <div class="amount1">1,00,00</div>
+                                <div class="amount1">5,00,00</div>
+                                <div class="amount1">10,00,00</div>
+                                <div class="amount1">50,00,00</div>
+                                <div class="maxAmnt">MAX</div>
+                                <div class="resetAmnt">RESET</div>
+                            </div>
+                            <div class="betControl">
+                                <div class="totalOdds">Total Odds</div>
+                                <div class="OddsNumber">x 1.00</div>
+                            </div>
+                            <div class="betControl">
+                                <div class="totalOdds">Est. Payout</div>
+                                <div class="OddsNumberAmnt2">0</div>
+                            </div>
+
+                        </div>
+                        <div class="BetBtn">
+                            <div class="btnNew">
+                                Bet
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cartWrapper2">
+            <i class="bi bi-cart3"></i>
+            <div class="cartNumber2">
+                0
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <script src="assets/js/dualLudo.js"></script>
 </body>
 
 </html>
