@@ -1646,6 +1646,99 @@ padding: 5px;
 
 /* END::Deposite and Withdraw Screen */
 
+
+/* START::   Slider menu Point */
+
+.sliderMenuBackDrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderMenu {
+    position: absolute;
+    height: 100vh;
+    background-color: rgb(39, 48, 58);
+    z-index: 2;
+    width: 0px;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    border-left: 5px solid #262d36;
+}
+
+.menuWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    height: 100%;
+}
+
+.menuHeader {
+    display: flex;
+    width: 60%;
+}
+
+.menuBody {
+    margin-top: 10px;
+    height: 100%;
+}
+
+.noticeMenus {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.impBtns {
+    background-color: #303a46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 48%;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.impBtns:hover {
+    color: #129ed1;
+}
+
+.specDisp {
+    background-color: #303a46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+}
+
+.bi-trophy {
+    color: gold;
+}
+
+.headerIcon {
+    margin-right: 10px;
+}
+
+.sliderMenuActive {
+    width: 350px;
+}
+
+
+/* END point slider menu */
+
  ::-webkit-scrollbar {
     width: 5px;
     border-radius: 30px;
