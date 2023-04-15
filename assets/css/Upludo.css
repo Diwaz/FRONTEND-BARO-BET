@@ -1471,7 +1471,7 @@ padding: 5px;
     padding: 10px;
     border-bottom: 1px solid #1e242c;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .oddsFooter {
@@ -1485,16 +1485,41 @@ padding: 5px;
     overflow-x: auto;
 }
 
-.oddsFooter2 {
+.toggleDown {
+    color: white;
+}
+
+.ddActive {
+    transition: 0.5s all;
+    transform: rotateZ(180deg);
+}
+
+.toggleDown2 {
+    color: white;
+}
+
+.ddActive2 {
+    transition: 0.5s all;
+    transform: rotateZ(180deg);
+}
+
+.oddsFooter2,
+.oddsFooter22 {
     display: flex;
     background-color: #fff;
     /* background-color: rgb(48, 59, 71); */
     /* height: 40px; */
     justify-content: space-around;
-    align-items: center;
+    align-items: start;
     width: 100%;
     overflow-y: hidden;
     overflow-x: auto;
+    height: 0;
+}
+
+.oddsFooterActive {
+    height: 100%;
+    transition: 0.5s all;
 }
 
 .finalOddWrapper {
@@ -2017,6 +2042,43 @@ height: 200px; */
     outline: none;
 }
 
+.cartBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartWrapper {
+    background-color: rgba(26, 153, 199, 0.4);
+    padding: 10px;
+    position: absolute;
+    border-radius: 10px;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.bi-cart3 {
+    font-size: 35px;
+}
+
+.cartNumber {
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 14px;
+}
+
 @media (max-width: 1500px) {
     /* Add additional styles as needed */
     /* .column2 {
@@ -2057,6 +2119,9 @@ height: 200px; */
     }
     .column2 {
         max-width: none;
+    }
+    .cartWrapper {
+        display: block;
     }
 }
 
@@ -2133,6 +2198,17 @@ height: 200px; */
         }
         .column4 {
             display: 100%;
+        }
+        .extraOddsContainer {
+            flex-direction: column;
+        }
+        .extraOddsBody {
+            width: 100%;
+        }
+        .extraOddsBody2,
+        .extraOddsBody1,
+        .extraOddsBody3 {
+            width: 100%;
         }
     }
     /* Styles for large screens (up to 992px) */

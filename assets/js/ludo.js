@@ -24,7 +24,10 @@ const gamesContainer = document.querySelector('.gamesContainer')
 const slideDeposite = document.querySelector('.slideDeposite')
 const depositeDrop = document.querySelector('.depositeDrop')
 const mainHeaderBtn1 = document.querySelector('.depositeUpHeader1')
+
 const mainHeaderBtn2 = document.querySelector('.depositeUpHeader2')
+
+
 
 
 
@@ -521,10 +524,12 @@ initApp();
 
 function reloadCard() {
     cartItemsWrapper.innerHTML = ''
+    let cartNumber = document.querySelector('.cartNumber')
 
     let totalPayout = document.querySelector('.OddsNumberAmnt')
     let totalOdds = 1;
     let totalPrice = selectedAmount;
+    cartNumber.innerHTML = dataArray.length
     if (dataArray.length > 0) {
         emptyCart.style.display = 'none';
     } else {
@@ -601,6 +606,40 @@ sliderBackDrop.addEventListener('click', () => {
     sliderBackDrop.style.display = 'none'
 })
 
+
+const ddBtn = document.querySelector('.ddBtn')
+const ddBtn2 = document.querySelector('.ddBtn2')
+
+const oddsFooter = document.querySelector('.oddsFooter2')
+const oddsFooter2 = document.querySelector('.oddsFooter22')
+ddBtn.addEventListener('click', () => {
+
+    oddsFooter.classList.toggle('oddsFooterActive')
+    ddBtn.classList.toggle('ddActive')
+})
+ddBtn2.addEventListener('click', () => {
+
+        oddsFooter2.classList.toggle('oddsFooterActive')
+        ddBtn2.classList.toggle('ddActive')
+    })
+    // oddsHeader.forEach((dropdown) => {
+    //     dropdown.addEventListener('click', (e) => {
+    //         oddsFooter.classList.toggle('oddsFooterActive')
+    //     })
+    // })
+cartWrapper.addEventListener('click', function() {
+    cartBackdrop.style.display = 'flex'
+    col3.style.display = 'flex'
+    col3.style.zIndex = 3
+
+})
+
+
+cartBackdrop.addEventListener('click', function() {
+    cartBackdrop.style.display = 'none'
+    col3.style.display = ''
+    col3.style.zIndex = 1
+})
 
 
 document.addEventListener('DOMContentLoaded', function() {

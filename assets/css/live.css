@@ -259,19 +259,6 @@
         align-items: center;
     }
     
-    .sliderMenuBackDrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 2;
-        display: none;
-        justify-content: center;
-        align-items: center;
-    }
-    
     .NoticeWrapper,
     .NoticeWrapper2 {
         display: flex;
@@ -1209,6 +1196,20 @@
         justify-content: space-between;
         height: 20px;
     }
+    /* START::   Slider menu Point */
+    
+    .sliderMenuBackDrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
     
     .sliderMenu {
         position: absolute;
@@ -1283,6 +1284,7 @@
     .sliderMenuActive {
         width: 350px;
     }
+    /* END point slider menu */
     
     .navbar-collapse {
         flex-direction: row-reverse!important;
