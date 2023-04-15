@@ -1039,10 +1039,14 @@ cartBackdrop2.addEventListener('click', function() {
 ludo1.addEventListener('click', () => {
     wrapper1.style.display = 'flex'
     wrapper2.style.display = 'none'
+    ludo1.classList.add('betActive')
+    ludo2.classList.remove('betActive')
 })
 ludo2.addEventListener('click', () => {
     wrapper1.style.display = 'none'
     wrapper2.style.display = 'flex'
+    ludo2.classList.add('betActive')
+    ludo1.classList.remove('betActive')
 })
 
 document.addEventListener('DOMContentLoaded', function() {
