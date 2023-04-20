@@ -16,6 +16,8 @@ const cartBackdrop = document.querySelector('.cartBackdrop');
 const noticeCancelBtn = document.querySelector('.noticeCancel');
 const slideDeposite = document.querySelector('.slideDeposite')
 const depositeDrop = document.querySelector('.depositeDrop')
+const matchHistory = document.querySelector('.matchHistory')
+const historyDrop = document.querySelector('.my-backdrop3')
 
 
 
@@ -979,6 +981,16 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     //Deposite Popup
+    matchHistory.addEventListener('click', () => {
+        historyDrop.style.display = 'flex'
+
+        let historyCancelBtn = document.querySelector('.historyCancel')
+        historyCancelBtn.addEventListener('click', function() {
+            historyDrop.style.display = 'none'
+
+        })
+
+    })
     slideDeposite.addEventListener('click', () => {
         depositeDrop.style.display = 'flex';
         sliderBackDrop.style.display = 'none'
@@ -1132,6 +1144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             depositeDrop.style.display = 'none'
 
         })
+
 
     })
 
