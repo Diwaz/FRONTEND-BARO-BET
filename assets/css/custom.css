@@ -225,6 +225,10 @@ body {
     font-size: 12px;
 }
 
+.navLogo1 {
+    margin-right: 5px;
+}
+
 .my-backdrop {
     position: fixed;
     top: 0;

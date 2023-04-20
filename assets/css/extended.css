@@ -1,0 +1,138 @@
+.my-backdrop2,
+.my-backdrop3,
+.my-backdrop4,
+.my-backdrop5,
+.my-backdrop6 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.my-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+.specDisp2 {
+    background-color: #303a46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+}
+
+.submitReportBtn {
+    background-color: rgb(39, 48, 58);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.depositeBtn2,
+.submitIssueBtn {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+
+.inputSports input:focus {
+    outline: none;
+}
+
+.inputSports3 input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 12px;
+}
+
+.inputSports3 input::placeholder {
+    font-size: 12px;
+}
+
+.inputSports3 input:focus {
+    outline: none;
+}
+
+.dispIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.inputLeague {
+    text-indent: 5px;
+}
+
+.dispIcon2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+}
+
+.inputSports3 {
+    width: 80%;
+}
+
+.hd1s {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+}
+
+.depositeUpHeader1,
+.depositeUpHeader2,
+.historyUpHeader3,
+.historyUpHeader4,
+.historyUpHeader1,
+.historyUpHeader2 {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.depositeUpHeader,
+.historyUpHeader {
+    display: flex;
+    justify-content: space-around;
+}
+
+.NoticeWrapper,
+.NoticeWrapper2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+}
+
+.navLogo1 {
+    margin-right: 5px;
+}

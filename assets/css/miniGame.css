@@ -450,7 +450,31 @@ height: 200px; */
     cursor: pointer;
 }
 
-.noticeCancel {
+.depositeUpHeader1,
+.depositeUpHeader2,
+.historyUpHeader3,
+.historyUpHeader4,
+.historyUpHeader1,
+.historyUpHeader2 {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.depositeUpHeader,
+.historyUpHeader {
+    display: flex;
+    justify-content: space-around;
+}
+
+.noticeCancel,
+.depositeCancel,
+.historyCancel,
+.infoCancel,
+.customerCancel1,
+.customerCancel2 {
     position: relative;
     right: 0;
     margin-top: -35px;
@@ -1394,6 +1418,304 @@ border-right: 1px solid #1e242c; */
 .selectOptions:focus {
     outline: none;
 }
+
+
+/* START::Deposite and Withdraw Screen */
+
+.depositeDrop {
+    display: none;
+}
+
+.my-backdrop2,
+.my-backdrop3,
+.my-backdrop4,
+.my-backdrop5,
+.my-backdrop6 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.inputLeague {
+    text-indent: 5px;
+}
+
+.noticeBody,
+.noticeBodyNew {
+    background-color: #1F262F;
+    /* width: 500px;
+height: 200px; */
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+    width: 100%;
+}
+
+.noticeCancel,
+.depositeCancel,
+.historyCancel,
+.infoCancel,
+.customerCancel1,
+.customerCancel2 {
+    position: relative;
+    right: 0;
+    margin-top: -35px;
+    background-color: #16bdf9;
+    padding: 10px;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+}
+
+.slipCancel {
+    position: relative;
+    left: 0;
+    background-color: #16bdf9;
+    padding: 10px;
+    display: none;
+    width: 35px;
+    cursor: pointer;
+}
+
+.depositeUpHeader1,
+.depositeUpHeader2,
+.historyUpHeader3,
+.historyUpHeader4,
+.historyUpHeader1,
+.historyUpHeader2 {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.depositeUpHeader,
+.historyUpHeader {
+    display: flex;
+    justify-content: space-around;
+}
+
+.depositeItem,
+.withdrawlItem {
+    width: 100%;
+    font-size: 12px;
+    border-bottom: 1px solid #262d36;
+    cursor: pointer;
+}
+
+.menuItem {
+    background-color: #1F262F;
+    /* #27303a; */
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    margin-top: 5px;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.menuItem:hover {
+    color: #129ed1;
+}
+
+.dispIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.specDisp {
+    background-color: #303a46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+}
+
+.dispIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+.selectOptions2 {
+    background-color: rgb(34, 42, 51);
+    border: none;
+    font-size: 12px;
+    padding: 10px;
+    margin-right: 5px;
+    width: 100%;
+}
+
+.selectOptions2:focus {
+    outline: none;
+}
+
+.inputSports {
+    width: 50%;
+}
+
+.inputSports2 {
+    width: 20%;
+}
+
+.inputSports3 {
+    width: 80%;
+}
+
+.inputSports input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 12px;
+}
+
+.inputSports input::placeholder {
+    font-size: 12px;
+}
+
+.inputSports input:focus {
+    outline: none;
+}
+
+.inputSports3 input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 12px;
+}
+
+.inputSports3 input::placeholder {
+    font-size: 12px;
+}
+
+.inputSports3 input:focus {
+    outline: none;
+}
+
+.depositeBtn2,
+.submitIssueBtn {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+
+.noticeBtn,
+.submitReportBtn {
+    background-color: rgb(39, 48, 58);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.depositeHistory {
+    margin-top: 10px;
+}
+
+.historyHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.historyHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.headerItem,
+.footerItem {
+    background-color: #394552;
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #262d36;
+    cursor: pointer;
+    display: flex;
+}
+
+.footerItem {
+    background-color: #232a32;
+}
+
+.hd1,
+.hd3,
+.hd4,
+.hd5 {
+    flex-grow: 1;
+    justify-content: center;
+    display: flex;
+}
+
+.hd1s {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+}
+
+.hd2 {
+    flex-grow: 3;
+    justify-content: center;
+    display: flex;
+}
+
+.depositeBtn0,
+.depositeBtn1,
+.withdrawlBtn0,
+.withdrawlBtn1 {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.depositeBtn0:hover {
+    color: #16bdf9;
+}
+
+.depositeBtn1:hover {
+    color: #16bdf9;
+}
+
+.depositeActive {
+    border-bottom: 1px solid #16bdf9;
+}
+
+.NoticeWrapper,
+.NoticeWrapper2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+}
+
+
+/* END::Deposite and Withdraw Screen */
 
 @media (max-width: 1500px) {
     /* Add additional styles as needed */
