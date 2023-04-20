@@ -20,7 +20,10 @@ const matchHistory = document.querySelector('.matchHistory')
 const infoHistory = document.querySelector('.infoHistory')
 const historyDrop = document.querySelector('.my-backdrop3')
 const infoDrop = document.querySelector('.my-backdrop4')
+const customerDrop1 = document.querySelector('.my-backdrop5')
+const customerDrop2 = document.querySelector('.my-backdrop6')
 const changeInfoBtn = document.querySelector('.changeBtn')
+const customerToggleBtn = document.querySelector('.customerBtn')
 const slipCancel = document.querySelector('.slipCancel')
 
 
@@ -1002,10 +1005,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     })
     changeInfoBtn.addEventListener('click', () => {
-            infoDrop.style.display = 'flex'
-            changeCancel = document.querySelector('.infoCancel')
+        infoDrop.style.display = 'flex'
+        changeCancel = document.querySelector('.infoCancel')
+        changeCancel.addEventListener('click', () => {
+            infoDrop.style.display = 'none'
+        })
+    })
+    customerToggleBtn.addEventListener('click', () => {
+            console.log('asdasd')
+            customerDrop1.style.display = 'flex'
+            const changeCancel = document.querySelector('.customerCancel1')
             changeCancel.addEventListener('click', () => {
-                infoDrop.style.display = 'none'
+                customerDrop1.style.display = 'none'
+            })
+
+            const btn1 = document.querySelector('.submitReportBtn')
+            const btn2 = document.querySelector('.submitIssueBtn')
+            btn1.addEventListener('click', () => {
+                customerDrop2.style.display = 'flex'
+                const changeCancel = document.querySelector('.customerCancel2')
+                changeCancel.addEventListener('click', () => {
+                    customerDrop2.style.display = 'none'
+                })
+            })
+            btn2.addEventListener('click', () => {
+                customerDrop2.style.display = 'none'
             })
         })
         //Deposite Popup

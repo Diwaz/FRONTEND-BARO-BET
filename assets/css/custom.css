@@ -1044,12 +1044,29 @@ border-right: 1px solid #1e242c; */
     width: 40%;
 }
 
+.specDisp2 {
+    background-color: #303a46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+}
+
 .dispIcon {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 50%;
+}
+
+.dispIcon2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
 }
 
 .navMsgBar {
@@ -1065,7 +1082,9 @@ border-right: 1px solid #1e242c; */
 
 .my-backdrop2,
 .my-backdrop3,
-.my-backdrop4 {
+.my-backdrop4,
+.my-backdrop5,
+.my-backdrop6 {
     position: fixed;
     top: 0;
     left: 0;
@@ -1099,7 +1118,9 @@ height: 200px; */
 .noticeCancel,
 .depositeCancel,
 .historyCancel,
-.infoCancel {
+.infoCancel,
+.customerCancel1,
+.customerCancel2 {
     position: relative;
     right: 0;
     margin-top: -35px;
@@ -1205,6 +1226,14 @@ height: 200px; */
     width: 50%;
 }
 
+.inputSports2 {
+    width: 20%;
+}
+
+.inputSports3 {
+    width: 80%;
+}
+
 .inputSports input {
     background-color: transparent;
     border: none;
@@ -1220,7 +1249,23 @@ height: 200px; */
     outline: none;
 }
 
-.depositeBtn2 {
+.inputSports3 input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 12px;
+}
+
+.inputSports3 input::placeholder {
+    font-size: 12px;
+}
+
+.inputSports3 input:focus {
+    outline: none;
+}
+
+.depositeBtn2,
+.submitIssueBtn {
     font-size: 13px;
     font-weight: 500;
     display: flex;
@@ -1231,7 +1276,8 @@ height: 200px; */
     margin-top: 10px;
 }
 
-.noticeBtn {
+.noticeBtn,
+.submitReportBtn {
     background-color: rgb(39, 48, 58);
     padding: 5px;
     cursor: pointer;
@@ -1280,6 +1326,11 @@ height: 200px; */
 }
 
 .hd1s {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     font-size: 8px;
 }
 
