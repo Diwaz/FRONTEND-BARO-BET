@@ -26,6 +26,7 @@ const depositeDrop = document.querySelector('.depositeDrop')
 const mainHeaderBtn1 = document.querySelector('.depositeUpHeader1')
 
 const mainHeaderBtn2 = document.querySelector('.depositeUpHeader2')
+const slipCancel = document.querySelector('.slipCancel')
 
 
 
@@ -627,10 +628,17 @@ ddBtn2.addEventListener('click', () => {
     //         oddsFooter.classList.toggle('oddsFooterActive')
     //     })
     // })
+
 cartWrapper.addEventListener('click', function() {
     cartBackdrop.style.display = 'flex'
     col3.style.display = 'flex'
     col3.style.zIndex = 3
+
+    slipCancel.addEventListener('click', () => {
+        cartBackdrop.style.display = 'none'
+        col3.style.display = ''
+        col3.style.zIndex = 1
+    })
 
 })
 

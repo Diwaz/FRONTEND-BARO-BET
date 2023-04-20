@@ -1064,7 +1064,8 @@ border-right: 1px solid #1e242c; */
 }
 
 .my-backdrop2,
-.my-backdrop3 {
+.my-backdrop3,
+.my-backdrop4 {
     position: fixed;
     top: 0;
     left: 0;
@@ -1076,6 +1077,10 @@ border-right: 1px solid #1e242c; */
     justify-content: center;
     align-items: center;
     display: none;
+}
+
+.inputLeague {
+    text-indent: 5px;
 }
 
 .noticeBody,
@@ -1093,13 +1098,24 @@ height: 200px; */
 
 .noticeCancel,
 .depositeCancel,
-.historyCancel {
+.historyCancel,
+.infoCancel {
     position: relative;
     right: 0;
     margin-top: -35px;
     background-color: #16bdf9;
     padding: 10px;
     display: block;
+    width: 35px;
+    cursor: pointer;
+}
+
+.slipCancel {
+    position: relative;
+    left: 0;
+    background-color: #16bdf9;
+    padding: 10px;
+    display: none;
     width: 35px;
     cursor: pointer;
 }
@@ -1480,6 +1496,12 @@ height: 200px; */
         }
         .cartWrapper {
             display: block;
+        }
+        .slipCancel {
+            display: block;
+        }
+        .slipHeader {
+            justify-content: space-between;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

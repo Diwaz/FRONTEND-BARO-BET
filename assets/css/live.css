@@ -1350,6 +1350,16 @@
         cursor: pointer;
     }
     
+    .slipCancel {
+        position: relative;
+        left: 0;
+        background-color: #16bdf9;
+        padding: 10px;
+        display: none;
+        width: 35px;
+        cursor: pointer;
+    }
+    
     .depositeUpHeader1,
     .depositeUpHeader2 {
         cursor: pointer;
@@ -1718,6 +1728,12 @@
                 display: block;
             }
             .cartWrapper {
+                display: block;
+            }
+            .slipHeader {
+                justify-content: space-between;
+            }
+            .slipCancel {
                 display: block;
             }
         }

@@ -672,6 +672,17 @@ height: 200px; */
     cursor: pointer;
 }
 
+.slipCancel,
+.slipCancel2 {
+    position: relative;
+    left: 0;
+    background-color: #16bdf9;
+    padding: 10px;
+    display: none;
+    width: 35px;
+    cursor: pointer;
+}
+
 .depositeHistory {
     margin-top: 10px;
 }
@@ -2326,6 +2337,15 @@ height: 200px; */
         .oddsSelect2 {
             font-size: 10px;
             padding: 0px
+        }
+        .slipHeader {
+            justify-content: space-between;
+        }
+        .slipCancel {
+            display: block;
+        }
+        .slipCancel2 {
+            display: block;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

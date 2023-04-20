@@ -39,6 +39,8 @@ const ludo1 = document.querySelector('.ludo1')
 const ludo2 = document.querySelector('.ludo2')
 const wrapper1 = document.querySelector('.bodyWrapper')
 const wrapper2 = document.querySelector('.bodyWrapper2')
+const slipCancel = document.querySelector('.slipCancel')
+const slipCancel2 = document.querySelector('.slipCancel2')
 
 
 
@@ -1012,16 +1014,36 @@ ddBtn4.addEventListener('click', () => {
     ddBtn4.classList.toggle('ddActive')
 })
 
+
 cartWrapper.addEventListener('click', function() {
     cartBackdrop.style.display = 'flex'
     col3.style.display = 'flex'
     col3.style.zIndex = 3
+
+    slipCancel.addEventListener('click', () => {
+        cartBackdrop.style.display = 'none'
+        col3.style.display = ''
+        col3.style.zIndex = 1
+    })
 
 })
 cartWrapper2.addEventListener('click', function() {
     cartBackdrop2.style.display = 'flex'
     col32.style.display = 'flex'
     col32.style.zIndex = 3
+
+})
+
+cartWrapper2.addEventListener('click', function() {
+    cartBackdrop2.style.display = 'flex'
+    col32.style.display = 'flex'
+    col32.style.zIndex = 3
+
+    slipCancel2.addEventListener('click', () => {
+        cartBackdrop2.style.display = 'none'
+        col32.style.display = ''
+        col32.style.zIndex = 1
+    })
 
 })
 

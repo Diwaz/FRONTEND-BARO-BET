@@ -17,7 +17,12 @@ const noticeCancelBtn = document.querySelector('.noticeCancel');
 const slideDeposite = document.querySelector('.slideDeposite')
 const depositeDrop = document.querySelector('.depositeDrop')
 const matchHistory = document.querySelector('.matchHistory')
+const infoHistory = document.querySelector('.infoHistory')
 const historyDrop = document.querySelector('.my-backdrop3')
+const infoDrop = document.querySelector('.my-backdrop4')
+const changeInfoBtn = document.querySelector('.changeBtn')
+const slipCancel = document.querySelector('.slipCancel')
+
 
 
 
@@ -747,6 +752,12 @@ cartWrapper.addEventListener('click', function() {
     col3.style.display = 'flex'
     col3.style.zIndex = 3
 
+    slipCancel.addEventListener('click', () => {
+        cartBackdrop.style.display = 'none'
+        col3.style.display = ''
+        col3.style.zIndex = 1
+    })
+
 })
 
 
@@ -980,7 +991,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 
-    //Deposite Popup
     matchHistory.addEventListener('click', () => {
         historyDrop.style.display = 'flex'
 
@@ -991,6 +1001,14 @@ document.addEventListener('DOMContentLoaded', function() {
         })
 
     })
+    changeInfoBtn.addEventListener('click', () => {
+            infoDrop.style.display = 'flex'
+            changeCancel = document.querySelector('.infoCancel')
+            changeCancel.addEventListener('click', () => {
+                infoDrop.style.display = 'none'
+            })
+        })
+        //Deposite Popup
     slideDeposite.addEventListener('click', () => {
         depositeDrop.style.display = 'flex';
         sliderBackDrop.style.display = 'none'
