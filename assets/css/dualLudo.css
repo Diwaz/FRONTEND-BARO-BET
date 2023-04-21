@@ -2327,8 +2327,11 @@ height: 200px; */
         .selectOptions {
             display: block;
         }
+        .diceHistory {
+            width: 25%;
+        }
         .historyCol1 {
-            font-size: 8px;
+            font-size: 12px;
         }
         .oddsSelect {
             font-size: 10px;
