@@ -750,6 +750,15 @@ sliderBackDrop.addEventListener('click', () => {
     sliderBackDrop.style.display = 'none'
 })
 
+
+const sliderCancel = document.querySelector('.sliderCancel')
+sliderCancel.addEventListener('click', () => {
+    sliderMenu.classList.remove('sliderMenuActive')
+    sliderBackDrop.style.display = 'none'
+})
+
+
+
 cartWrapper.addEventListener('click', function() {
     cartBackdrop.style.display = 'flex'
     col3.style.display = 'flex'

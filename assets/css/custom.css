@@ -963,7 +963,11 @@ border-right: 1px solid #1e242c; */
 
 .menuHeader {
     display: flex;
-    width: 60%;
+    width: 100%;
+}
+
+.part1 {
+    display: flex;
 }
 
 .headerIcon {
@@ -1135,7 +1139,8 @@ height: 200px; */
     cursor: pointer;
 }
 
-.slipCancel {
+.slipCancel,
+.sliderCancel {
     position: relative;
     left: 0;
     background-color: #16bdf9;
@@ -1554,6 +1559,12 @@ height: 200px; */
         }
         .slipCancel {
             display: block;
+        }
+        .sliderCancel {
+            display: block;
+        }
+        .menuHeader {
+            justify-content: space-between;
         }
         .slipHeader {
             justify-content: space-between;

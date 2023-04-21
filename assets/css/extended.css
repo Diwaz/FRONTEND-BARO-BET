@@ -136,3 +136,33 @@
 .navLogo1 {
     margin-right: 5px;
 }
+
+.slipCancel,
+.sliderCancel {
+    position: relative;
+    left: 0;
+    background-color: #16bdf9;
+    padding: 10px;
+    display: none;
+    width: 35px;
+    cursor: pointer;
+}
+
+.menuHeader {
+    display: flex;
+    width: 100%;
+}
+
+.part1 {
+    display: flex;
+}
+
+@media (max-width: 852px) {
+    /* Add additional styles as needed */
+    .sliderCancel {
+        display: block;
+    }
+    .menuHeader {
+        justify-content: space-between;
+    }
+}

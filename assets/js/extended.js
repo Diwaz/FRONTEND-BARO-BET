@@ -6,7 +6,12 @@ const customerDrop1 = document.querySelector('.my-backdrop5')
 const customerDrop2 = document.querySelector('.my-backdrop6')
 const changeInfoBtn = document.querySelector('.changeBtn')
 const customerToggleBtn = document.querySelector('.customerBtn')
+const sliderCancel = document.querySelector('.sliderCancel')
 
+sliderCancel.addEventListener('click', () => {
+    sliderMenu.classList.remove('sliderMenuActive')
+    sliderBackDrop.style.display = 'none'
+})
 
 
 
