@@ -10,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/Upludo.css">
-    <link rel="stylesheet" href="assets/css/extended.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/overall.css">
-    <title>Ludo</title>
+    <link rel="stylesheet" href="assets/css/myBets.css">
+    <title>Homepage</title>
 </head>
 
 <body>
@@ -148,85 +148,94 @@
             </div>
         </div>
     </nav>
+    <h2 style="color:white;text-align: center;">My Bets</h2>   
+    <div class="HistoryWrap">
+         
+        <div class="container mx-auto tab-trot-container">
+            
+          
+          <div class="table-responsive ">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Time</th>
+                  <th scope="col">Bet type</th>
+                  <th scope="col">League</th>
+                  <th scope="col">Home</th>
+                  <th scope="col">Draw/Hancicap</th>
+                  <th scope="col">Away</th>
+                  <th scope="col">Score</th>
+                  <th scope="col">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2023-03-08 23:57:22</td>
+                  <td>Win</td>
+                  <td>Premier League</td>
+                  <td>Arsenal</td>
+                  <td>-0.5</td>
+                  <td>Manchester United</td>
+                  <td>1-2</td>
+                  <td>Lost</td>
+                </tr>
+                <tr>
+                  <td>2023-03-08 20:12:05</td>
+                  <td>Draw</td>
+                  <td>La Liga</td>
+                  <td>Real Madrid</td>
+                  <td>0</td>
+                  <td>Barcelona</td>
+                  <td>2-2</td>
+                  <td>Won</td>
+                </tr>
+                <tr>
+                  <td>2023-03-07 18:25:40</td>
+                  <td>Handicap</td>
+                  <td>Serie A</td>
+                  <td>Juventus</td>
+                  <td>-1.5</td>
+                  <td>AC Milan</td>
+                  <td>3-1</td>
+                  <td>Won</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            <div class="row">
+              <div class="col-6" style="font-size: small;">
+                <p>Bet Time : 2023-03-08 23:57:22</p>
+                <p>Amount : 1,000</p>
+                <p>Ratio : 15.36</p>
+                <p>Win Prediction Amount : 15,360</p>
+                <p>Win Ratio : 0</p>
+                <p>Win Amount : 0</p>
+                <p>Status : PROCEED</p>
+              </div>
+              <div class="col-2">
+                <button type="button" class=" impBtns btbt">Cancel Bet</button>
+               
+              </div>
+              <div class="col-2">
+                
+                <button type="button" class="impBtns btbt">Add Board</button>
+                
+              </div>
+              <div class="col-2">
+               
+                <button type="button" class="impBtns btbt">Add CS</button>
+              </div>
+            </div>
+          </div>
+          
+    </div>
     <div class="bodyWrapper">
+        <!-- <div class="my-backdrop"></div> -->
+
         <div class="sliderMenuBackDrop">
+
         </div>
         <div class="cartBackdrop"></div>
-        <div class="my-backdrop depositeDrop">
-
-            <div class="NoticeWrapper">
-                <div class="noticeBody">
-                    <div class="depositeCancel">
-                        <i class="bi bi-x-lg "></i>
-
-                    </div>
-                    <div class="noticeHeader">
-                        <div class="depositeUpHeader fontBlue">
-                            <div class="depositeUpHeader1 depositeActive ">Deposite</div>
-                            <div class="depositeUpHeader2">Withdrawl</div>
-                        </div>
-
-                    </div>
-                    <div class="depositeItem depositeBill">
-                        <div class="menuItem">
-                            <div class="dispIcon specDisp">Type</div>
-                            <div class="dispIcon">
-                                <select name="options" id="" class="selectOptions">
-                                    <option value="">Cash</option>
-                                    <option value="">Bitcoin</option>
-                                    <option value="">Wireless</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="menuItem">
-                            <div class="dispIcon specDisp">Home of Depositor</div>
-                            <div class="dispIcon">Helios Predator</div>
-                        </div>
-                        <div class="menuItem">
-                            <div class="dispIcon specDisp">Amount</div>
-                            <div class="dispIcon inputSports"><input type="text" name="amount" id="" placeholder="Please type in the deposite amount" class="inputLeague"></div>
-                        </div>
-                        <div class="menuItem">
-                            <div class="dispIcon specDisp">Apply for Bonus</div>
-                            <div class="dispIcon"> <select name="options" id="" class="selectOptions">
-                                <option value="">Cash</option>
-                                <option value="">Bitcoin</option>
-                                <option value="">Wireless</option>
-                            </select></div>
-                        </div>
-                        <div class="depositeBtn2">
-                            <div class="noticeBtn">Deposite Bill</div>
-                        </div>
-                        <div class="depositeHistory">
-                            <div class="historyHeader">Deposite History</div>
-                            <div class="headerItem">
-                                <div class="hd1">Select</div>
-                                <div class="hd2">Date</div>
-                                <div class="hd3">Type</div>
-                                <div class="hd4">Amount</div>
-                                <div class="hd5">Status</div>
-                            </div>
-                            <div class="footerItem">
-                                <div class="hd1"><input type="checkbox" name="" id=""></div>
-                                <div class="hd2">2023-03-18 19:32:56</div>
-                                <div class="hd3">CASH</div>
-                                <div class="hd4">30,000</div>
-                                <div class="hd5 fontBlue">Approved</div>
-                            </div>
-                            <div class="footerItem">
-                                <div class="hd1"><input type="checkbox" name="" id=""></div>
-                                <div class="hd2">2023-03-12 9:32:56</div>
-                                <div class="hd3">CASH</div>
-                                <div class="hd4">30,000</div>
-                                <div class="hd5 fontRed">Rejected</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
         <div class="my-backdrop2 depositeDrop">
             <div class="NoticeWrapper2">
                 <div class="noticeBodyNew">
@@ -517,134 +526,134 @@
 
             </div>
         </div>
-        <div class="column4">
-            <div class="gamesWrapper">
-                <div class="gamesContainer">
-                    <div class="miniGamesWrapper">
-                        <div class="gameBody">
-                            <div class="playerHeader">
+        <div class="column2" style="display:none;">
+            <div class="chooseSports">
+                <div class="sportsWrapper">
+                    <div class="topSideWrapper bbcolor">
 
 
-
-
+                        <div class="topSideSports">
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Soccer</div>
                             </div>
-                            <div class="playerBodyContainer">
-                                <div class="playerPlaceholder">
-                                    <div class="Player">
-                                        <div class="dicePlaceHolder">
-                                            <div class="dice">
-
-
-                                            </div>
-                                            <div class="diceNumber">
-                                                Click ROLL to start
-                                            </div>
-                                            <div class="diceGenerator">
-                                                ROLL ON!
-                                            </div>
-                                        </div>
-                                        <div class="diceHistory">
-                                            <div class="historyWrapper">
-                                                <div class="slipHistoryWrapper">
-                                                    <div class="slipHeader">
-                                                        <div class="HeaderTop">History</div>
-
-
-                                                    </div>
-                                                    <div class="historyWrapper">
-                                                        <div class="historyBody">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="playerBetPlace">
-                                    <div class="playerOddsContainer">
-
-
-                                        <div class="extraOddsContainer">
-                                            <div class="extraOddsBody">
-                                                <div class="oddsHeader fontBlue"> LUDO OVER/UNDER HISTORY
-                                                    <div class="ddBtn">
-                                                        <i class="bi bi-caret-down-fill toggleDown"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="oddsFooter2">
-                                                    <div class="box">
-
-                                                    </div>
-
-
-
-                                                </div>
-                                            </div>
-                                            <div class="extraOddsBody2">
-                                                <div class="oddsHeader fontBlue">LUDO ODD/EVEN HISTORY
-                                                    <div class="ddBtn2">
-                                                        <i class="bi bi-caret-down-fill toggleDown"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="oddsFooter22">
-                                                    <div class="boxOU">
-
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-
-
-
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <div class="playerBetPlace">
-                                    <div class="playerOddsContainer">
-
-
-                                        <div class="extraOddsContainer">
-                                            <div class="extraOddsBody1">
-                                                <div class="oddsHeader fontBlue"> LUDO ODDS
-                                                </div>
-
-                                            </div>
-                                            <div class="extraOddsBody3">
-                                                <div class="oddsHeader fontBlue"> DICE PREDICTION
-                                                </div>
-
-                                            </div>
-
-
-
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/7.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Basketball</div>
                             </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/6.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Tennis</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/5.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Handball</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/4.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Golf</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/3.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Boxing</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/2.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Rugby</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/1.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Snooker</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/9.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Golf</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/10.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Boxing</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/11.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Rugby</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/12.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Snooker</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/13.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Boxing</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/14.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Rugby</div>
+                            </div>
+                            <div class="singleSport">
+                                <div class="sportLogo"><img src="assets/SVGs/15.svg" alt="" width="40" height="20"></div>
+                                <div class="sportName">Snooker</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomSideWrapper btSpecColor">
+
+                        <div class="downSideSports">
+                            <div class="inputSports">
+                                <input type="text" name="Sport" id="" placeholder="Please enter team name or league name" class="inputLeague">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sortWrapper">
+                    <div class="sortButtons">
+                        <div class="btn1"><i class="bi bi-bookmark"></i>Select league</div>
+                        <div class="btn2 active"><i class="bi bi-sort-down"></i>Sort time</div>
+                        <div class="btn3"><i class="bi bi-sort-up"></i>Sort league</div>
+                    </div>
+                    <div class="displayTable">
+                        <div class="selectWrapper">
+                            <select name="oddsType" id="" class="selectOptions">
+                                <option value="winner">Winner</option>
+                                <option value="handicap">Handicap</option>
+                                <option value="overUnder">Over/Under</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="gamesWrapper">
+                    <div class="gamesTable">
+                        <div class="leagueTable">
+
+
+
 
                         </div>
                     </div>
-
                 </div>
+
             </div>
+
+
+
+
+
+        </div>
+        <div class="column4">
+
         </div>
         <div class="column3">
-            <div class="betSlip">
+            <div class="betSlip" style="display:none;">
                 <div class="slipWrapper">
-                    <div class="slipHeader">
-                        <div class="HeaderTop">Betting Slip</div>
-                        <div class="slipCancel">
-                            <i class="bi bi-x-lg "></i>
+                    <div class="slipHeaderWrapper">
+                        <div class="slipHeader">
+                            <div class="HeaderTop">Betting Slip</div>
+                            <div class="slipCancel">
+                                <i class="bi bi-x-lg "></i>
+                            </div>
+                        </div>
+                        <div class="HeaderBottom">
+                            <!-- <div class="op1">Single</div>
+                            <div class="op1">Multi</div> -->
 
                         </div>
                     </div>
@@ -653,16 +662,17 @@
                         <div class="cartItemsWrapper">
 
                         </div>
-                        <div class="emptyCart">
+                        <div class="emptyCart ">
                             <i class="bi bi-dash-circle"></i>
                             <div class="infoEmpty">The betting cart is empty</div>
                         </div>
-                        <div class="limitPopUp">
-                            Cannot place more than 2 bets
-                        </div>
+
                     </div>
                     <div class="slipFooter">
                         <div class="configBtn">
+                            <div class="limitPopUp">
+                                Odds limit exceed should be less than 100
+                            </div>
                             <div class="emptyAll"><i class="bi bi-trash"></i>Empty all</div>
                             <div class="IncDec">
                                 <div class="amount1">5,00</div>
@@ -677,7 +687,7 @@
                             </div>
                             <div class="betControl">
                                 <div class="totalOdds">Total Odds</div>
-                                <div class="OddsNumber">x 1.00</div>
+                                <div class="OddsNumber"> 1</div>
                             </div>
                             <div class="betControl">
                                 <div class="totalOdds">Est. Payout</div>
@@ -694,21 +704,18 @@
                 </div>
             </div>
         </div>
-        <div class="cartWrapper">
-            <i class="bi bi-cart3"></i>
-            <div class="cartNumber">
-                0
-            </div>
-        </div>
 
     </div>
+    <div class="cartWrapper" style="display: none;">
 
-
+        <i class="bi bi-cart3"></i>
+        <div class="cartNumber">
+            0
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
-    <script src="assets/js/ludo.js"></script>
-    <script src="assets/js/extended.js"></script>
+    <script src="assets/js/homepage.js"></script>
 </body>
 
 </html>

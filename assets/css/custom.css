@@ -20,6 +20,10 @@ body {
     align-items: center;
 }
 
+.customMainColour {
+    background-color: rgb(31, 38, 47)!important;
+}
+
 .customNav {
     background-color: rgb(31, 38, 47)!important;
     border-width: 1px 0;
@@ -562,10 +566,17 @@ body {
 
 .sortWrapper {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     width: 99%;
     margin-top: 10px;
     justify-content: space-between;
+}
+@media (max-width: 991.98px) {
+    .sortWrapper {
+      
+        align-items: center;
+        
+    }
 }
 
 .sortButtons {
