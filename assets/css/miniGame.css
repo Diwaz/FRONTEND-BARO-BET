@@ -355,7 +355,7 @@ height: 200px; */
 .gamesContainer {
     display: flex;
     flex-wrap: wrap;
-    height: 90vh;
+    height: 50vh;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 5px;

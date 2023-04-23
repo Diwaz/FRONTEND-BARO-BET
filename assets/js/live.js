@@ -990,15 +990,15 @@ function initApp() {
             <div class="gameCol1" id='${indx}-${key}'>
 
             <div class="teamRow1">
-                <div class="nestedRow"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
+                <div class="nestedRow1"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
                 <div class="nestedRow fontBlue">${val.homeGoal}</div>
             </div>
             <div class="teamRow1">
-                <div class="nestedRow"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
+                <div class="nestedRow1"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
                 <div class="nestedRow fontBlue">${val.awayGoal}</div>
             </div>
             <div class="teamRow1">
-                <div class="nestedRow specWidth"><i class="bi bi-stopwatch "></i> 1st half of <span class="fontBlue"> 37:31'</span></div>
+                <div class="nestedRow1 specWidth"><i class="bi bi-stopwatch "></i> <span class="fontBlue"> 37:31'</span></div>
                 <div class="nestedRow fontBlue">+48</div>
             </div>
     

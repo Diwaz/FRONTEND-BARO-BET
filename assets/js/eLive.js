@@ -570,7 +570,7 @@ function initApp() {
                 <div class="nestedRow fontBlue">${val.awayGoal}</div>
             </div>
             <div class="teamRow1">
-                <div class="nestedRow specWidth"><i class="bi bi-stopwatch "></i> 1st half of <span class="fontBlue"> 37:31'</span></div>
+                <div class="nestedRow specWidth"><i class="bi bi-stopwatch "></i>  <span class="fontBlue"> 37:31'</span></div>
                 <div class="nestedRow fontBlue">+48</div>
             </div>
     

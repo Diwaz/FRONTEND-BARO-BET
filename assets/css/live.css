@@ -919,7 +919,8 @@
     .specWidth {
         width: 40%!important;
         display: flex!important;
-        justify-content: space-around!important;
+        justify-content: flex-start!important;
+        padding-right: 20px;
     }
     
     .betActive {
@@ -983,8 +984,8 @@
         justify-content: space-between;
     }
     
-    .bi-stopwath {
-        margin-right: 2px;
+    .bi-stopwatch {
+        margin-right: 5px;
     }
     
     .nestedRow {
@@ -992,6 +993,12 @@
         width: 30%;
         display: flex;
         justify-content: space-between;
+    }
+    
+    .nestedRow1 {
+        padding: 5px;
+        width: 30%;
+        display: flex;
     }
     
     .gameCol2 {

@@ -1,0 +1,65 @@
+.teamRow1 {
+    width: 90%;
+}
+
+.gameCol1 {
+    width: 15%;
+    flex-grow: 1;
+}
+
+.leagueCol1 {
+    width: 15%;
+    flex-grow: 1;
+}
+
+.nestedRow {
+    width: 20%;
+}
+
+.nestedRow1 {
+    width: 80%;
+    padding: 5px;
+}
+
+.betSlipActive {
+    transition: 0.5s all;
+    transform: translateY(0px);
+}
+
+@media (max-width: 1450px) {
+    /* Add additional styles as needed */
+    .betSlip {
+        position: absolute;
+        right: 35%;
+        width: 30%;
+        bottom: 0;
+        height: 500px;
+        transition: 0.5s all;
+    }
+}
+
+@media (max-width: 1050px) {
+    /* Add additional styles as needed */
+    .betSlip {
+        position: absolute;
+        right: 35%;
+        width: 40%;
+        bottom: 0;
+        height: 500px;
+    }
+    .slipHeader {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 850px) {
+    /* Add additional styles as needed */
+    .betSlip {
+        position: absolute;
+        right: 25%;
+        width: 60%;
+        bottom: 0;
+        height: 500px;
+        transition: 0.5s all;
+    }
+}

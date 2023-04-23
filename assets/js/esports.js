@@ -282,11 +282,11 @@ function initApp() {
 
         <div class="teamRow1">
             <div class="nestedRow">03/11</div>
-            <div class="nestedRow"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
+            <div class="nestedRow1"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
         </div>
         <div class="teamRow1">
             <div class="nestedRow">6:00</div>
-            <div class="nestedRow"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
+            <div class="nestedRow1"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
         </div>
 
     </div>
