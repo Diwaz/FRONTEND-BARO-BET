@@ -900,6 +900,7 @@
         margin-left: 5px;
         height: 75px;
         cursor: pointer;
+        display: none;
     }
     
     .gameCol1 {
@@ -1057,6 +1058,17 @@
         padding: 15px;
         justify-content: space-between;
         margin-top: 5px;
+    }
+    
+    .exitDetail {
+        width: 15%;
+        background-color: rgb(39, 48, 58);
+        display: flex;
+        font-size: 12px;
+        padding: 10px;
+        justify-content: space-between;
+        cursor: pointer;
+        display: none;
     }
     
     .LowerHeader {
@@ -1571,6 +1583,10 @@
         border-radius: 3px;
     }
     
+    .maxWidth {
+        max-width: 100%;
+    }
+    
      ::-webkit-scrollbar {
         width: 5px;
         border-radius: 30px;
@@ -1667,8 +1683,14 @@
         .column4 {
             max-width: 40%;
         }
+        .maxWidth {
+            max-width: 100%;
+        }
         .column2 {
             max-width: 60%;
+        }
+        .maxWidth {
+            max-width: 100%;
         }
     }
     /* Add additional styles as needed */
@@ -1743,6 +1765,12 @@
             }
             .column4 {
                 display: none;
+            }
+            .extraOdd {
+                display: flex;
+            }
+            .exitDetail {
+                display: flex;
             }
         }
         /* Styles for large screens (up to 992px) */

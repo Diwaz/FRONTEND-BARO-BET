@@ -748,6 +748,9 @@ function renderSidebar(leagueIndx, gameIndx) {
     detailDiv.classList.add('ExtraOddsWrapper');
     detailDiv.innerHTML = `
     <div class="ExtrasHeader">
+    <div class="exitDetail">
+    <i class="bi bi-chevron-left chevronLogo "></i>Back
+    </div>
     <div class="upperHeader">
         <div class="sports">
             <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="30" height="16"></div>${sport}</div>
@@ -842,6 +845,12 @@ function replaceSidebar(leagueIndx, gameIndx) {
     newComponent.classList.add('ExtraOddsWrapper');
     newComponent.innerHTML = `
     <div class="ExtrasHeader">
+    <div class="exitDetail">
+    <i class="bi bi-chevron-left  ">
+    
+    </i>
+    Back
+    </div>
     <div class="upperHeader">
         <div class="sports">
             <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="30" height="16"></div>Soccer</div>
@@ -990,15 +999,15 @@ function initApp() {
             gamesDiv.innerHTML = `
             <div class="gameCol1" id='${indx}-${key}'>
 
-            <div class="teamRow1">
+            <div class="teamRow1" id='${indx}-${key}' >
                 <div class="nestedRow1"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
                 <div class="nestedRow fontBlue">${val.homeGoal}</div>
             </div>
-            <div class="teamRow1">
+            <div class="teamRow1" id='${indx}-${key}'>
                 <div class="nestedRow1"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
                 <div class="nestedRow fontBlue">${val.awayGoal}</div>
             </div>
-            <div class="teamRow1">
+            <div class="teamRow1" id='${indx}-${key}'>
                 <div class="nestedRow1 specWidth"><i class="bi bi-stopwatch "></i> <span class="fontBlue"> 37:31'</span></div>
                 <div class="nestedRow fontBlue">+48</div>
             </div>
@@ -1039,13 +1048,13 @@ function initApp() {
             </div>
     
         </div>
-        
+        <div class="gameCol5">
+        <div class="extraOdd" id="${indx}-${key}"><i class="bi bi-chevron-right chevronLogo "></i></div>
+        </div>
         <div class="gameOdds"></div>
    `;
 
-            //    <div class="gameCol5">
-            //     <div class="extraOdd" id="${indx}-${key}">${val.extra}</div>
-            //     </div>
+
             leagueTable.appendChild(gamesDiv);
 
             //         let accorDiv = document.createElement('div')
@@ -1296,8 +1305,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const gameCol3 = document.querySelectorAll('.gameCol3');
     const gameCol4 = document.querySelectorAll('.gameCol4');
     const selectGame = document.querySelectorAll('.gameCol1');
+    const selectGame2 = document.querySelectorAll('.teamRow1');
     const extraOddBtn = document.querySelectorAll('.odds1');
     const col4 = document.querySelector('.column4');
+    const col2 = document.querySelector('.column2');
+    const col3 = document.querySelector('.column3');
     const slipBody = document.querySelector('.slipBody')
     const noticeDownHeader = document.querySelector('.noticeDownHeader');
     const backBtn = document.querySelector('.msgBack');
@@ -1305,9 +1317,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const noticeItem = document.querySelectorAll('.noticeItem');
     const singleGame = document.querySelectorAll('.singleGame');
     const empty = document.querySelector('.emptyAll');
+
     const selectAmount = document.querySelectorAll('.amount1');
     const maxAmnt = document.querySelector('.maxAmnt');
     const resetAmnt = document.querySelector('.resetAmnt');
+
 
 
     maxAmnt.addEventListener('click', () => {
@@ -1589,6 +1603,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     selectGame.forEach(function(selectGame) {
+        selectGame.addEventListener('click', function(event) {
+
+            const gameIndex = event.target.parentNode.id.split('-')[0]
+            const leagueIndex = event.target.parentNode.id.split('-')[1]
+                //  console.log(gameIndex, leagueIndex)
+            replaceSidebar(leagueIndex, gameIndex);
+
+        })
+    })
+    selectGame2.forEach(function(selectGame) {
         selectGame.addEventListener('click', function(event) {
 
             const gameIndex = event.target.parentNode.id.split('-')[0]
@@ -1974,10 +1998,43 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
     extraOdd.forEach(function(extraOdd) {
         extraOdd.addEventListener('click', function(event) {
-            // Toggle the 'button-active' class on the clicked button element
-            extraOdd.classList.toggle('betActive')
-            let id = event.target.id.split('-').join('')
-            setActiveButton(id)
+            let p = 1
+
+
+
+            let leagueIndx = event.target.id.split('-').join('')[0]
+            let gameIndx = event.target.id.split('-').join('')[1]
+            replaceSidebar(gameIndx, leagueIndx)
+            col2.style.display = 'none'
+            col4.style.display = 'flex'
+            col4.classList.add('maxWidth');
+            const exitDetail = document.querySelector('.exitDetail');
+
+            exitDetail.addEventListener('click', () => {
+                p = p + 1
+                console.log('aa')
+                col2.style.display = ''
+                col4.style.display = 'none'
+                col4.classList.remove('maxWidth');
+
+
+
+            })
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1008) {
+                    col4.style.display = 'flex'
+                    col2.style.display = ''
+
+                } else {
+                    col4.style.display = 'none'
+                    col2.style.display = ''
+                }
+            })
+
+
+
+
 
 
 
