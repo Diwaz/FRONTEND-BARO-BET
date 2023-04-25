@@ -1501,9 +1501,7 @@ height: 200px; */
     .column4 {
         display: none;
     }
-    .betSlip {
-        transform: translateY(400px);
-    }
+    .betSlip {}
 }
 
 @media (max-width: 1450px) {

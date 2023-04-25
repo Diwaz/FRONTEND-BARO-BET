@@ -1680,6 +1680,9 @@
             display: none;
             flex-basis: 0px;
         }
+        .cartWrapper {
+            display: block;
+        }
         .column4 {
             max-width: 40%;
         }
@@ -1691,6 +1694,12 @@
         }
         .maxWidth {
             max-width: 100%;
+        }
+        .slipHeader {
+            justify-content: space-between;
+        }
+        .slipCancel {
+            display: block;
         }
     }
     /* Add additional styles as needed */
@@ -1777,15 +1786,6 @@
         @media (max-width: 852px) {
             /* Add additional styles as needed */
             .selectOptions {
-                display: block;
-            }
-            .cartWrapper {
-                display: block;
-            }
-            .slipHeader {
-                justify-content: space-between;
-            }
-            .slipCancel {
                 display: block;
             }
             .sliderMenuActive {

@@ -1,14 +1,14 @@
 /* CSS for offcanvas menu */
+
 .offcanvas-start {
-    width: 70% !important; /* Set the width of the sidebar to 50% */
-  }
-  
-  .customMainColour
-  {
+    width: 70% !important;
+    /* Set the width of the sidebar to 50% */
+}
+
+.customMainColour {
     background-color: #1F262F !important;
-   
-  }
-  
+}
+
 .slipCancel {
     position: relative;
     left: 0;
@@ -23,12 +23,16 @@
     display: block;
 }
 
-@media not all and (max-width: 991.98px) {
+@media not all and (max-width: 1400px) {
     .slipCancel {
         display: none;
     }
-   
+    .slipHeader {
+        justify-content: space-between;
+    }
 }
+
+
 /* 
 @media (max-width: 768px) {
     .full-top{
@@ -48,7 +52,6 @@
     display: none;
 } */
 
-.sortWrapper
-{
+.sortWrapper {
     flex-direction: column !important;
 }

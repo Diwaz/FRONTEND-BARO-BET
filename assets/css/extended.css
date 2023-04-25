@@ -198,13 +198,21 @@
     .odds1 {
         font-size: 10px;
     }
+    .exitDetail {
+        font-size: 8px;
+    }
+    .upperHeader,
+    .LowerHeader {
+        font-size: 8px;
+        padding: 10px
+    }
 }
 
 @media (max-width: 400px) {
     /* Add additional styles as needed */
-    .nestedRow {
+    /* .nestedRow {
         display: none;
-    }
+    } */
     .odds1 {
         font-size: 8px;
     }
