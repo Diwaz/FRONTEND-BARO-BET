@@ -1235,7 +1235,7 @@ border-right: 1px solid #1e242c; */
 }
 
 .sliderMenuActive {
-    width: 350px;
+    width: 30%;
 }
 
 .fontOrange {
@@ -1417,6 +1417,9 @@ border-right: 1px solid #1e242c; */
         /* Add additional styles as needed */
         .selectOptions {
             display: block;
+        }
+        .sliderMenuActive {
+            width: 60%;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

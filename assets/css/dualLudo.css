@@ -1838,7 +1838,7 @@ padding: 5px;
 }
 
 .sliderMenuActive {
-    width: 350px;
+    width: 30%;
 }
 
 
@@ -2349,6 +2349,9 @@ height: 200px; */
         }
         .slipCancel2 {
             display: block;
+        }
+        .sliderMenuActive {
+            width: 60%;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

@@ -355,7 +355,7 @@ height: 200px; */
 .gamesContainer {
     display: flex;
     flex-wrap: wrap;
-    height: 50vh;
+    /* height: 90vh; */
     overflow-y: auto;
     overflow-x: hidden;
     padding: 5px;
@@ -1330,7 +1330,7 @@ border-right: 1px solid #1e242c; */
 }
 
 .sliderMenuActive {
-    width: 350px;
+    width: 30%;
 }
 
 .menuWrapper {
@@ -1849,6 +1849,9 @@ height: 200px; */
         }
         .selectOptions {
             display: block;
+        }
+        .sliderMenuActive {
+            width: 60%;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

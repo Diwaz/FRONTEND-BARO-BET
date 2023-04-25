@@ -980,6 +980,7 @@ function initApp() {
 
         leagueTable.appendChild(newDiv);
 
+
         let games = value.League.Game;
         //  console.log(games)
         games.forEach((val, indx) => {
@@ -1038,30 +1039,65 @@ function initApp() {
             </div>
     
         </div>
+        <div class="gameCol5">
+    <div class="extraOdd" id="${indx}-${key}">${val.extra}</div>
+    </div>
         <div class="gameOdds"></div>
    `;
             leagueTable.appendChild(gamesDiv);
 
-            // let allBets = val.allBets;
-            // console.log(allBets)
+            let accorDiv = document.createElement('div')
+            accorDiv.setAttribute('id', `${indx}${key}`)
+            accorDiv.classList.add('accordionOdd');
 
-            // allBets.forEach((v, k) => {
-            //     // For Games
-            //     let allBetsDiv = document.createElement('div');
-            //     allBetsDiv.classList.add('extraOddsBody');
-            //     allBetsDiv.innerHTML = `
-            //                 <div class="oddsHeader fontBlue">1x2</div>
-            //                 <div class="oddsFooter">
-            //                     <div class="odds1">FCB 1.90
-            //                     </div>
+            accorDiv.innerHTML = `
+    <div class="extraOddsContainer${indx}${key}">
+    </div>
+                `
+            leagueTable.appendChild(accorDiv);
+            let allOdds = val.allBets;
 
-            //                     <div class="odds1">RMA 4.10</div>
-            //                 </div>`;
-
-            //     ExtraOddsWrapper.appendChild(allBetsDiv);
+            let reps = allOdds.length
+            console.log('reps', reps)
+            for (i = 0; i < reps; i++) {
 
 
-            // })
+                let allBetsDiv = document.createElement('div');
+                allBetsDiv.classList.add('extraOddsBody');
+                allBetsDiv.innerHTML = `
+                    
+                    <div class="oddsHeader fontBlue">${allOdds[i].title}</div>
+                    <div class="oddsFooter">
+                    </div>
+                    `
+                const extraOddsContainer = document.querySelector(`.extraOddsContainer${indx}${key}`);
+
+                //remove this comment
+                extraOddsContainer.appendChild(allBetsDiv)
+
+                const totalOdds = allOdds[i].totalBlocks
+                    // console.log('all odds here', totalOdds)
+                    // console.log('here again')
+                totalOdds.forEach((val, index) => {
+                    let allBetsDiv = document.createElement('div');
+                    allBetsDiv.classList.add('finalOddWrapper');
+                    allBetsDiv.innerHTML = `
+                        <div class="odds1" id="${indx}-${key}">${val.oddName}   <span class="highlightOdd">
+                        ${val.odds}
+                        </span>
+                        </div>
+                    `
+                    const oddsFooter = document.querySelectorAll('.oddsFooter');
+                    for (let i = 0; i < oddsFooter.length; i++) {
+
+                        oddsFooter[i].appendChild(allBetsDiv)
+                    }
+
+
+                })
+
+
+            }
 
         })
 
@@ -1190,6 +1226,21 @@ cartBackdrop.addEventListener('click', function() {
     col3.style.display = ''
     col3.style.zIndex = 1
 })
+const accord = document.querySelectorAll('.accordionOdd')
+
+function setActiveButton(id) {
+    // remove active class from all buttons
+
+    let accord = document.getElementById(`${id}`);
+    accord.classList.toggle('accordionActive')
+        // const accordionOdd = document.querySelectorAll('.accordionOdd')
+        // accordionOdd.forEach(btn => btn.classList.remove('accordionActive'));
+
+    // // add active class to the clicked button
+    // accordi.classList.add('accordionActive');
+}
+
+
 
 function setActiveOdd(button) {
     // remove active class from all buttons
@@ -1467,7 +1518,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     selectOptions.addEventListener('change', function() {
-
+        console.log('here')
         if (selectOptions.value == 'winner') {
 
             for (let i = 0; i < leagueCol3.length; i++) {
@@ -1922,8 +1973,9 @@ document.addEventListener('DOMContentLoaded', function() {
     extraOdd.forEach(function(extraOdd) {
         extraOdd.addEventListener('click', function(event) {
             // Toggle the 'button-active' class on the clicked button element
-
-
+            extraOdd.classList.toggle('betActive')
+            let id = event.target.id.split('-').join('')
+            setActiveButton(id)
 
 
 

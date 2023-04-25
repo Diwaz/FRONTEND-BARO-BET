@@ -22,7 +22,10 @@ const historyDrop = document.querySelector('.my-backdrop3')
 const infoDrop = document.querySelector('.my-backdrop4')
 const customerDrop1 = document.querySelector('.my-backdrop5')
 const customerDrop2 = document.querySelector('.my-backdrop6')
+const betsDrop = document.querySelector('.my-backdrop7')
 const changeInfoBtn = document.querySelector('.changeBtn')
+
+const myBetsBtn = document.querySelector('.myBetsBtn')
 const customerToggleBtn = document.querySelector('.customerBtn')
 const slipCancel = document.querySelector('.slipCancel')
 
@@ -173,7 +176,7 @@ let soccerData = [
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 1, 7],
                     extra: '+78',
                     allBets: [{
-                            title: 'Total First',
+                            title: 'Total second',
                             odd1Name: 'over 3.5',
                             odd2Name: 'under 3.5',
                             odd1: 2.0,
@@ -577,7 +580,11 @@ function initApp() {
             <div class="nestedOdds fontBlue" id="${indx}-${key}-2-2-ou">${val.handiBets[6]}</div>
             <div class="nestedOdds" id="${indx}-${key}-2-2-ou">${val.handiBets[7]}</div>
         </div>
-        <div class="extraOdd" id="${indx}-${key}">${val.extra}</div>
+        
+    </div>
+
+    <div class="gameCol5">
+    <div class="extraOdd" id="${indx}-${key}">${val.extra}</div>
     </div>
     <div class="gameOdds"></div>
 </div>
@@ -955,6 +962,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resetAmnt = document.querySelector('.resetAmnt');
 
 
+
     maxAmnt.addEventListener('click', () => {
         selectedAmount = 100
         reloadCard();
@@ -1016,17 +1024,84 @@ document.addEventListener('DOMContentLoaded', function() {
         })
 
     })
+    let pageNo = 1;
     changeInfoBtn.addEventListener('click', () => {
         infoDrop.style.display = 'flex'
+        sliderBackDrop.style.display = 'none'
+        sliderMenu.classList.remove('sliderMenuActive')
         changeCancel = document.querySelector('.infoCancel')
         changeCancel.addEventListener('click', () => {
             infoDrop.style.display = 'none'
         })
     })
+    myBetsBtn.addEventListener('click', () => {
+        betsDrop.style.display = 'flex'
+        sliderBackDrop.style.display = 'none'
+        sliderMenu.classList.remove('sliderMenuActive')
+        changeCancel = document.querySelector('#cancel7')
+        changeCancel.addEventListener('click', () => {
+            betsDrop.style.display = 'none'
+        })
+
+        let totalPage = 10
+
+        let e = document.querySelector('#mini1')
+        let pageLimit = e.options[e.selectedIndex].text
+        e.addEventListener('change', () => {
+            pageLimit = e.value
+
+        })
+        let pgN = document.querySelector('#miniPN1');
+        let lBtn = document.querySelector('#lbtn1')
+        let rBtn = document.querySelector('#rbtn1')
+
+        const left = () => {
+            pageNo = pageNo - 1;
+            pgN.innerHTML = pageNo
+            if (pageNo == 1) {
+                lBtn.classList.add('deactive')
+                rBtn.classList.remove('deactive')
+            }
+            if (pageNo + 1 == totalPage) {
+                rBtn.classList.add('deactive')
+                lBtn.classList.remove('deactive')
+            }
+            if (pageNo != 1) {
+                rBtn.classList.remove('deactive')
+                lBtn.classList.remove('deactive')
+            }
+        }
+
+        const right = () => {
+            pageNo = pageNo + 1;
+            pgN.innerHTML = pageNo
+            if (pageNo == 1) {
+                lBtn.classList.add('deactive')
+                rBtn.classList.remove('deactive')
+            }
+            if (pageNo != 1) {
+                rBtn.classList.remove('deactive')
+                lBtn.classList.remove('deactive')
+            }
+            if (pageNo + 1 == totalPage) {
+                rBtn.classList.add('deactive')
+                lBtn.classList.remove('deactive')
+            }
+
+
+        }
+        lBtn.addEventListener('click', left)
+        rBtn.addEventListener('click', right)
+        console.log(pageNo)
+
+    })
     customerToggleBtn.addEventListener('click', () => {
-            console.log('asdasd')
+            sliderBackDrop.style.display = 'none'
+            sliderMenu.classList.remove('sliderMenuActive')
             customerDrop1.style.display = 'flex'
             const changeCancel = document.querySelector('.customerCancel1')
+            const footer = document.querySelector('#footer5')
+            const input = document.querySelector('#input5')
             changeCancel.addEventListener('click', () => {
                 customerDrop1.style.display = 'none'
             })
@@ -1035,6 +1110,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const btn2 = document.querySelector('.submitIssueBtn')
             btn1.addEventListener('click', () => {
                 customerDrop2.style.display = 'flex'
+                const changeCancel = document.querySelector('.customerCancel2')
+                changeCancel.addEventListener('click', () => {
+                    customerDrop2.style.display = 'none'
+                })
+            })
+
+            footer.addEventListener('click', () => {
+                customerDrop2.style.display = 'flex'
+                input.value = 'random'
                 const changeCancel = document.querySelector('.customerCancel2')
                 changeCancel.addEventListener('click', () => {
                     customerDrop2.style.display = 'none'
