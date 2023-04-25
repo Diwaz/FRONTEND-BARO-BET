@@ -913,7 +913,7 @@ border-right: 1px solid #1e242c; */
 }
 
 .accordionActive {
-    height: 200px;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
 }

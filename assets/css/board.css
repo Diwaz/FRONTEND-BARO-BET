@@ -1408,8 +1408,17 @@ border-right: 1px solid #1e242c; */
         .column2 {
             max-width: 100%;
         }
+        .bodyWrapper {
+            flex-direction: column;
+        }
+        .BoardnoticeWrapper {
+            height: 25vh;
+        }
+        .boardBody {
+            display: flex;
+        }
         .column4 {
-            display: none;
+            max-width: 100%;
         }
     }
     /* Styles for large screens (up to 992px) */

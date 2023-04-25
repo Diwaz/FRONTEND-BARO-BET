@@ -1039,65 +1039,67 @@ function initApp() {
             </div>
     
         </div>
-        <div class="gameCol5">
-    <div class="extraOdd" id="${indx}-${key}">${val.extra}</div>
-    </div>
+        
         <div class="gameOdds"></div>
    `;
+
+            //    <div class="gameCol5">
+            //     <div class="extraOdd" id="${indx}-${key}">${val.extra}</div>
+            //     </div>
             leagueTable.appendChild(gamesDiv);
 
-            let accorDiv = document.createElement('div')
-            accorDiv.setAttribute('id', `${indx}${key}`)
-            accorDiv.classList.add('accordionOdd');
+            //         let accorDiv = document.createElement('div')
+            //         accorDiv.setAttribute('id', `${indx}${key}`)
+            //         accorDiv.classList.add('accordionOdd');
 
-            accorDiv.innerHTML = `
-    <div class="extraOddsContainer${indx}${key}">
-    </div>
-                `
-            leagueTable.appendChild(accorDiv);
-            let allOdds = val.allBets;
+            //         accorDiv.innerHTML = `
+            // <div class="extraOddsContainer${indx}${key}">
+            // </div>
+            //             `
+            //         leagueTable.appendChild(accorDiv);
+            //         let allOdds = val.allBets;
 
-            let reps = allOdds.length
-            console.log('reps', reps)
-            for (i = 0; i < reps; i++) {
-
-
-                let allBetsDiv = document.createElement('div');
-                allBetsDiv.classList.add('extraOddsBody');
-                allBetsDiv.innerHTML = `
-                    
-                    <div class="oddsHeader fontBlue">${allOdds[i].title}</div>
-                    <div class="oddsFooter">
-                    </div>
-                    `
-                const extraOddsContainer = document.querySelector(`.extraOddsContainer${indx}${key}`);
-
-                //remove this comment
-                extraOddsContainer.appendChild(allBetsDiv)
-
-                const totalOdds = allOdds[i].totalBlocks
-                    // console.log('all odds here', totalOdds)
-                    // console.log('here again')
-                totalOdds.forEach((val, index) => {
-                    let allBetsDiv = document.createElement('div');
-                    allBetsDiv.classList.add('finalOddWrapper');
-                    allBetsDiv.innerHTML = `
-                        <div class="odds1" id="${indx}-${key}">${val.oddName}   <span class="highlightOdd">
-                        ${val.odds}
-                        </span>
-                        </div>
-                    `
-                    const oddsFooter = document.querySelectorAll('.oddsFooter');
-                    for (let i = 0; i < oddsFooter.length; i++) {
-
-                        oddsFooter[i].appendChild(allBetsDiv)
-                    }
+            //         let reps = allOdds.length
+            //         console.log('reps', reps)
+            //         for (i = 0; i < reps; i++) {
 
 
-                })
+            //             let allBetsDiv = document.createElement('div');
+            //             allBetsDiv.classList.add('extraOddsBody');
+            //             allBetsDiv.innerHTML = `
+
+            //                 <div class="oddsHeader fontBlue">${allOdds[i].title}</div>
+            //                 <div class="oddsFooter">
+            //                 </div>
+            //                 `
+            //             const extraOddsContainer = document.querySelector(`.extraOddsContainer${indx}${key}`);
+
+            //             //remove this comment
+            //             extraOddsContainer.appendChild(allBetsDiv)
+
+            //             const totalOdds = allOdds[i].totalBlocks
+            //                 // console.log('all odds here', totalOdds)
+            //                 // console.log('here again')
+            //             totalOdds.forEach((val, index) => {
+            //                 let allBetsDiv = document.createElement('div');
+            //                 allBetsDiv.classList.add('finalOddWrapper');
+            //                 allBetsDiv.innerHTML = `
+            //                     <div class="odds1" id="${indx}-${key}">${val.oddName}   <span class="highlightOdd">
+            //                     ${val.odds}
+            //                     </span>
+            //                     </div>
+            //                 `
+            //                 const oddsFooter = document.querySelectorAll('.oddsFooter');
+            //                 for (let i = 0; i < oddsFooter.length; i++) {
+
+            //                     oddsFooter[i].appendChild(allBetsDiv)
+            //                 }
 
 
-            }
+            //             })
+
+
+            //         }
 
         })
 
