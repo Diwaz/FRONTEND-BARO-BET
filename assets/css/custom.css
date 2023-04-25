@@ -1634,6 +1634,12 @@ height: 200px; */
         .odds1 {
             font-size: 10px;
         }
+        .headerItem {
+            font-size: 8px;
+        }
+        .footerItem {
+            font-size: 8px;
+        }
     }
     @media (max-width: 400px) {
         /* Add additional styles as needed */
