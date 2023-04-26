@@ -88,13 +88,13 @@ body {
 .column3 {
     /* background-color: rgb(31, 38, 47); */
     /* flex-basis: 350px; */
-    /* flex-grow: 1; */
+    flex-grow: 1;
 }
 
 .column4 {
     flex-grow: 1;
     display: flex;
-    max-width: 77%;
+    max-width: 70%;
 }
 
 .sidebar {
@@ -253,6 +253,7 @@ flex-direction: row-reverse;
 
 .noticeViewWrapper {
     padding: 10px;
+    width: 100%;
 }
 
 .noticeViewer {
@@ -301,6 +302,7 @@ flex-direction: row-reverse;
 
 .singleEvent {
     border-top: 1px solid #27303a;
+    display: flex;
 }
 
 .newsContent {
@@ -346,108 +348,6 @@ height: 200px; */
     width: 100%;
     justify-content: space-between;
     padding: 10px;
-}
-
-.gamesWrapper {
-    padding: 10px;
-}
-
-.gamesContainer {
-    display: flex;
-    flex-wrap: wrap;
-    /* height: 90vh; */
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 5px;
-}
-
-.miniGamesWrapper {
-    width: 100%;
-}
-
-.gameBody {
-    display: flex;
-    flex-direction: column;
-    font-size: 13px;
-    font-weight: 300;
-}
-
-.playerHeader {}
-
-.playerBetSlip {
-    width: 40%;
-}
-
-.backHeader {
-    padding: 10px;
-    background-color: rgb(34, 42, 51);
-    width: 15%;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.gameListBody {
-    background-color: rgb(34, 42, 51);
-    padding: 10px;
-    display: flex;
-}
-
-.fillers {
-    background-color: rgb(48, 59, 71);
-}
-
-.gameMode {
-    width: 20%;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.modeName {
-    margin-top: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.playerPlaceholder {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    /* align-items: center; */
-}
-
-.Player {
-    background-color: rgb(34, 42, 51);
-    height: 600px;
-    width: 90%;
-    border: 5px solid white;
-}
-
-.playerBetPlace {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.playerOddsContainer {
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.singleGame {
-    background-color: #1F262F;
-    display: flex;
-    border-radius: 10px;
-    height: 140px;
-    align-items: center;
-    margin: 10px;
-    cursor: pointer;
 }
 
 .depositeUpHeader1,
@@ -523,10 +423,11 @@ height: 200px; */
 .boardItem {
     background-color: #1D232A;
     width: 100%;
-    padding: 15px;
+    padding-left: 5px;
     font-size: 12px;
     border-bottom: 1px solid #262d36;
     cursor: pointer;
+    display: flex;
 }
 
 .noticeItem:hover {
@@ -549,7 +450,7 @@ height: 200px; */
 
 .betSlip {
     position: fixed;
-    background-color: rgb(31, 38, 47);
+    /* background-color: rgb(31, 38, 47); */
     width: 350px;
     height: 100vh;
     overflow: auto;
@@ -560,6 +461,7 @@ height: 200px; */
 
 .slipWrapper {
     top: 0;
+    width: 326px;
     background-color: #1F262F;
     display: flex;
     flex-direction: column;
@@ -605,9 +507,9 @@ height: 200px; */
 
 .slipBody {
     border-bottom: 1px solid #1e242c;
+    flex-grow: 7;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 120px;
 }
 
 .emptyCart {
@@ -655,22 +557,6 @@ height: 200px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-}
-
-.amount1,
-.maxAmnt,
-.resetAmnt {
-    background-color: rgb(48, 58, 70);
-    height: 35px;
-    margin: 1px;
-    font-size: 12px;
-    padding: 10px;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }
 
 .ControlWrapper {
@@ -729,8 +615,7 @@ height: 200px; */
     padding: 5px
 }
 
-.OddsNumber,
-.OddsNumberAmnt {
+.OddsNumber {
     font-size: 12px;
     font-weight: 300;
     color: rgb(26, 153, 199)!important;
@@ -920,6 +805,7 @@ align-items: center; */
 .gamesWrapper {
     background-color: rgb(23, 28, 34);
     width: 99%;
+    margin-top: 10px;
 }
 
 .gamesTable {
@@ -1193,9 +1079,7 @@ padding: 5px;
     margin-bottom: 10px;
 }
 
-.extraOddsContainer {
-    width: 60%;
-}
+.extraOddsContainer {}
 
 .extraOddsBody {
     display: flex;
@@ -1246,54 +1130,8 @@ border-right: 1px solid #1e242c; */
     cursor: pointer;
 }
 
-.incHeight1 {}
-
-.incHeight1 {}
-
-.incHeight1 {}
-
-.fontOrange {
-    color: orange;
-}
-
-.fontRed {
-    color: red;
-}
-
-.fontBlue {
-    color: #16bdf9;
-}
-
- ::-webkit-scrollbar {
-    width: 5px;
-    border-radius: 30px;
-}
-
- ::-webkit-scrollbar-thumb {
-    background-color: rgb(54, 60, 68);
-}
-
-
-/* Styles for small screens (up to 576px) */
-
-@media (max-width: 576px) {
-    /* Add additional styles as needed */
-    .credUsername {
-        border: none;
-        width: 50%;
-    }
-    .credPassword {
-        width: 50%;
-    }
-    .savedCred {
-        padding: 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(26, 153, 199) !important;
-        width: 80%;
-        height: 70px;
-    }
+.headerIcon {
+    margin-right: 10px;
 }
 
 .sliderMenuBackDrop {
@@ -1307,10 +1145,6 @@ border-right: 1px solid #1e242c; */
     display: none;
     justify-content: center;
     align-items: center;
-}
-
-.headerIcon {
-    margin-right: 10px;
 }
 
 .navbar-collapse {
@@ -1327,10 +1161,6 @@ border-right: 1px solid #1e242c; */
     right: 0;
     top: 0;
     border-left: 5px solid #262d36;
-}
-
-.sliderMenuActive {
-    width: 30%;
 }
 
 .menuWrapper {
@@ -1407,16 +1237,20 @@ border-right: 1px solid #1e242c; */
     width: 50%;
 }
 
-.selectOptions {
-    background-color: rgb(34, 42, 51);
-    border: none;
-    font-size: 12px;
-    padding: 10px;
-    margin-right: 5px;
+.sliderMenuActive {
+    width: 30%;
 }
 
-.selectOptions:focus {
-    outline: none;
+.fontOrange {
+    color: orange;
+}
+
+.fontRed {
+    color: red;
+}
+
+.fontBlue {
+    color: #16bdf9;
 }
 
 
@@ -1714,8 +1548,59 @@ height: 200px; */
     width: 600px;
 }
 
+.accessEvent {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
 
 /* END::Deposite and Withdraw Screen */
+
+ ::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 30px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: rgb(54, 60, 68);
+}
+
+
+/* Styles for small screens (up to 576px) */
+
+@media (max-width: 576px) {
+    /* Add additional styles as needed */
+    .credUsername {
+        border: none;
+        width: 50%;
+    }
+    .credPassword {
+        width: 50%;
+    }
+    .savedCred {
+        padding: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(26, 153, 199) !important;
+        width: 80%;
+        height: 70px;
+    }
+}
+
+.selectOptions {
+    background-color: rgb(34, 42, 51);
+    border: none;
+    font-size: 12px;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.selectOptions:focus {
+    outline: none;
+}
 
 @media (max-width: 1500px) {
     /* Add additional styles as needed */
@@ -1753,10 +1638,10 @@ height: 200px; */
         flex-basis: 0px;
     }
     .column4 {
-        max-width: 100%;
+        max-width: 80%;
     }
     .column2 {
-        max-width: none;
+        max-width: 20%;
     }
 }
 
@@ -1829,24 +1714,24 @@ height: 200px; */
         display: flex;
     } */
         .column2 {
-            max-width: none;
+            max-width: 100%;
+        }
+        .bodyWrapper {
+            flex-direction: column;
+        }
+        .BoardnoticeWrapper {
+            height: 25vh;
+        }
+        .boardBody {
+            display: flex;
         }
         .column4 {
-            display: 100%;
+            max-width: 100%;
         }
     }
     /* Styles for large screens (up to 992px) */
     @media (max-width: 852px) {
         /* Add additional styles as needed */
-        .playerOddsContainer {
-            flex-direction: column;
-        }
-        .playerBetSlip {
-            width: 100%;
-        }
-        .extraOddsContainer {
-            width: 100%;
-        }
         .selectOptions {
             display: block;
         }

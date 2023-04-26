@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/extendedv2.css">
     <link rel="stylesheet" href="assets/css/pagination.css">
     <link rel="stylesheet" href="assets/css/overall.css">
+    <link rel="stylesheet" href="assets/css/messages.css">
     <title> Dual Ludo</title>
 </head>
 
@@ -45,7 +46,7 @@
                     <div class="menuBody">
 
                         <div class="noticeInterface">
-                            <div class="menuItem">
+                            <div class="menuItem" id="messages">
                                 <div class="dispIcon specDisp"><i class="bi bi-envelope"></i></div>
                                 <div class="dispIcon">3</div>
                             </div>
@@ -124,7 +125,7 @@
                             <a class="nav-link customUl" href="dualLudo.html"><i class="bi bi-dice-6-fill navLogo1"></i><i class="bi bi-ladder navLogo1"></i>Dual</a>
                         </li>
                         <li class="nav-item  mx-2">
-                            <a class="nav-link customUl" href="Ludo.html"><img src="assets/images/navLogo.png" alt="" width="18" height="15">&nbsp;Bet365</a>
+                            <a class="nav-link customUl" href="bet365.html"><img src="assets/images/navLogo.png" alt="" width="18" height="15">&nbsp;Bet365</a>
                         </li>
                         <li class="nav-item  mx-2">
                             <a class="nav-link customUl matchHistory" href="#"><i class="bi bi-graph-up-arrow navLogo1"></i>Match History</a>
@@ -162,10 +163,33 @@
         </div>
 
     </div>
+    <div class="my-backdrop0">
+        <div class="NoticeWrapper">
+            <div class="noticeBody" id="msgBody">
+                <div class="noticeCancel" id="msgCancel">
+                    <i class="bi bi-x-lg "></i>
+
+                </div>
+                <div class="noticeHeader">
+                    <div class="noticeUpHeader fontBlue">
+                        Message
+                    </div>
+                    <div class="noticeDownHeader">
+                        <div class="noticeBtn">Mark all messages as read</div>
+                        <div class="noticeBtn">Delete selected messages</div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
     <div class="bodyWrapper">
         <div class="sliderMenuBackDrop">
         </div>
         <div class="cartBackdrop"></div>
+
         <div class="my-backdrop depositeDrop">
             <div class="NoticeWrapper">
                 <div class="noticeBody">
@@ -696,6 +720,7 @@
 
     <script src="assets/js/dualLudo.js"></script>
     <script src="assets/js/extended.js"></script>
+    <script src="assets/js/messages.js"></script>
 </body>
 
 </html>

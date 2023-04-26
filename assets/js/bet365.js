@@ -210,42 +210,7 @@ let miniGameData = [
     },
 
 ]
-let messageData = [{
-        msgType: 'notification',
-        title: 'Bank check Type Information',
-        message: ' 23: 30 ~ 00: 05 is bank check time, so charging is not possible.When depositing during bank inspection time (deposit account may change), it is difficult to check It may take a long time to confirm payment.If you make a linked deposit rather than a registered account, it will be cumbersome to check every time. Please make a deposit to the account you registered when you registered as a member.',
-        date: '2023-03-26 22:40:44',
-        status: 'Unread',
-        color: 'Red'
-    },
-    {
-        msgType: 'notification',
-        title: 'Bet Fraud',
-        message: ' 23: 30 ~ 00: 05 is bank check time, so charging is not possible.When depositing during bank inspection time (deposit account may change), it is difficult to check It may take a long time to confirm payment.If you make a linked deposit rather than a registered account, it will be cumbersome to check every time. Please make a deposit to the account you registered when you registered as a member.',
 
-        date: '2023-03-26 22:40:44',
-        status: 'Unread',
-        color: 'Red'
-    },
-    {
-        msgType: 'notification',
-        title: 'Barcelona wins another classico',
-        message: ' 23: 30 ~ 00: 05 is bank check time, so charging is not possible.When depositing during bank inspection time (deposit account may change), it is difficult to check It may take a long time to confirm payment.If you make a linked deposit rather than a registered account, it will be cumbersome to check every time. Please make a deposit to the account you registered when you registered as a member.',
-
-        date: '2023-03-26 22:40:44',
-        status: 'Read',
-        color: 'Blue'
-    },
-    {
-        msgType: 'notification',
-        title: 'Hello there!',
-        message: ' 23: 30 ~ 00: 05 is bank check time, so charging is not possible.When depositing during bank inspection time (deposit account may change), it is difficult to check It may take a long time to confirm payment.If you make a linked deposit rather than a registered account, it will be cumbersome to check every time. Please make a deposit to the account you registered when you registered as a member.',
-
-        date: '2023-03-26 22:40:44',
-        status: 'Unread',
-        color: 'Red'
-    },
-]
 
 let soccerData = [
 
@@ -1263,48 +1228,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    upperItem.forEach(function(upperItem) {
-        upperItem.addEventListener('click', function(event) {
 
-
-            const msgIndex = event.target.id;
-            console.log(msgIndex)
-            for (let i = 0; i < noticeItem.length; i++) {
-                noticeItem[i].style.display = 'none'
-            }
-            noticeDownHeader.style.display = 'none'
-
-
-
-            const msgContent = messageData[msgIndex].message;
-            const msgType = messageData[msgIndex].msgType;
-            const msgTitle = messageData[msgIndex].title;
-            const msgDate = messageData[msgIndex].date;
-            messageData[msgIndex].status = 'Read'
-            messageData[msgIndex].color = 'Blue'
-
-            console.log(messageData[msgIndex])
-
-            let newDiv = document.createElement('div')
-            newDiv.classList.add('msgBody')
-            newDiv.innerHTML = `
-            <div class="msgHeader bbcolor">
-            <div class="up">[${msgType}] ${msgTitle}</div>
-            <div class="down fontSecondary">
-                ${msgDate}
-            </div>
-        </div>
-        <div class="msgContent btcolor">
-           ${msgContent}
-        </div>
-    
-            `
-                //remove this comment
-                // noticeBody.appendChild(newDiv)
-
-
-        })
-    })
 
 
 
@@ -1330,14 +1254,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-            //     const msgContent = messageData[msgIndex].message;
-            //     const msgType = messageData[msgIndex].msgType;
-            //     const msgTitle = messageData[msgIndex].title;
-            //     const msgDate = messageData[msgIndex].date;
-            //     messageData[msgIndex].status = 'Read'
-            //     messageData[msgIndex].color = 'Blue'
-
-            //     console.log(messageData[msgIndex])
 
             let newDiv = document.createElement('div')
             newDiv.classList.add('miniGamesWrapper')
