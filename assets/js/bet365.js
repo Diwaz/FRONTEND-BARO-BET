@@ -990,7 +990,7 @@ function initApp() {
         newDiv.classList.add('LeagueMode');
         newDiv.setAttribute('id', `${key}`)
         newDiv.innerHTML = `
-        <div class="LmodeName" id="${key}">
+        <div class="LmodeName ${key==0?'fontBlue':''}" id="${key}">
         ${value.League.leagueName}
                                         </div>
    `;
@@ -1010,7 +1010,7 @@ function initApp() {
         gamesDiv.classList.add('gameMode');
         gamesDiv.setAttribute('id', `${activeLeague}-${indx}`)
         gamesDiv.innerHTML = `
-            <div class="modeName" id="${activeLeague}-${indx}">
+            <div class="modeName ${indx==0?'':''}" id="${activeLeague}-${indx}">
             ${val.home}
                                         </div>
     `;
@@ -1035,7 +1035,7 @@ function replaceGames() {
         gamesDiv.classList.add('gameMode');
         gamesDiv.setAttribute('id', `${activeLeague}-${indx}`)
         gamesDiv.innerHTML = `
-        <div class="modeName" id="${activeLeague}-${indx}">
+        <div class="modeName ${indx==0?'':''}" id="${activeLeague}-${indx}">
         ${val.home}
                                     </div>
 `;
@@ -1183,21 +1183,53 @@ document.addEventListener('DOMContentLoaded', function() {
         game.addEventListener('click', (e) => {
             const gameIndex = e.target.id.split('-')[0]
             const leagueIndex = e.target.id.split('-')[1]
+                // setActiveGame(e.target)
             console.log(gameIndex, leagueIndex)
             replaceSidebar(gameIndex, leagueIndex)
         })
     })
     selectLeague.forEach((league) => {
         league.addEventListener('click', (e) => {
+            // const child = e.target.querySelector('.LmodeName');
+            // child.classList.add('fontBlue')
+            setActive(e.target);
             console.log('clicked')
             activeLeague = e.target.id;
             replaceGames(activeLeague)
 
         })
     })
+
+    function setActive(button) {
+        // remove active class from all buttons
+        const buttons = document.querySelectorAll('.LmodeName')
+        buttons.forEach(btn => btn.classList.remove('fontBlue'));
+
+        // add active class to the clicked button
+        button.querySelector('.LmodeName').classList.add('fontBlue');
+    }
+
+    function setActiveById(button) {
+        // remove active class from all buttons
+        const buttons = document.querySelectorAll('.LmodeName')
+        buttons.forEach(btn => btn.classList.remove('fontBlue'));
+
+        // add active class to the clicked button
+        button.classList.add('fontBlue');
+    }
+
+    // function setActiveGame(button) {
+    //     // remove active class from all buttons
+    //     const buttons = document.querySelectorAll('.modeName')
+    //     buttons.forEach(btn => btn.classList.remove('fontBlue'));
+
+    //     // add active class to the clicked button
+    //     button.querySelector('.modeName').classList.add('fontBlue');
+    // }
     selectLeaguebyId.forEach((league) => {
         league.addEventListener('click', (e) => {
             console.log('clicked')
+            setActive(e.target)
             activeLeague = e.target.id;
             replaceGames(activeLeague)
 

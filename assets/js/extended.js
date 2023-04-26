@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     customerToggleBtn.addEventListener('click', () => {
             sliderMenu.classList.remove('sliderMenuActive')
             sliderBackDrop.style.display = 'none'
-
+            const footer = document.querySelectorAll('#footer5')
             console.log('asdasd')
             customerDrop1.style.display = 'flex'
             const changeCancel = document.querySelector('.customerCancel1')
@@ -121,6 +121,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 const changeCancel = document.querySelector('.customerCancel2')
                 changeCancel.addEventListener('click', () => {
                     customerDrop2.style.display = 'none'
+                })
+            })
+            footer.forEach((footer) => {
+                footer.addEventListener('click', () => {
+                    customerDrop2.style.display = 'flex'
+
+                    const changeCancel = document.querySelector('.customerCancel2')
+                    changeCancel.addEventListener('click', () => {
+                        customerDrop2.style.display = 'none'
+                    })
                 })
             })
             btn2.addEventListener('click', () => {
