@@ -38,6 +38,9 @@
         bottom: 0;
         height: 500px;
     }
+    .slipHeader {
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 1050px) {

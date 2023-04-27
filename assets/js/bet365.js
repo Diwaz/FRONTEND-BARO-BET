@@ -24,6 +24,7 @@ const loginBtn = document.querySelector('.loginBtn')
 const sliderMenu = document.querySelector('.sliderMenu')
 const sliderBackDrop = document.querySelector('.sliderMenuBackDrop')
 const depositeDrop = document.querySelector('.depositeDrop')
+const slipCancel = document.querySelector('.slipCancel')
 
 
 
@@ -1147,12 +1148,25 @@ function reloadCard() {
 
 // })
 
-// cartBackdrop.addEventListener('click', function() {
-//     cartBackdrop.style.display = 'none'
-//     col3.style.display = ''
-//     col3.style.zIndex = 1
-// })
 
+
+cartWrapper.addEventListener('click', function() {
+    cartBackdrop.style.display = 'flex'
+    col3.style.display = 'flex'
+    col3.style.zIndex = 3
+
+    slipCancel.addEventListener('click', () => {
+        cartBackdrop.style.display = 'none'
+        col3.style.display = ''
+        col3.style.zIndex = 1
+    })
+
+})
+cartBackdrop.addEventListener('click', function() {
+    cartBackdrop.style.display = 'none'
+    col3.style.display = ''
+    col3.style.zIndex = 1
+})
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.handiOdds');
     const betOdds = document.querySelectorAll('.betOdds');
@@ -1176,6 +1190,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectLeaguebyId = document.querySelectorAll('.LmodeName');
     const selectGamebyId = document.querySelectorAll('.modeName');
     const selectTime = document.querySelectorAll('.gameMode');
+
 
 
 
