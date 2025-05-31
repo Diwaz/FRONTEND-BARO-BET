@@ -1838,7 +1838,7 @@ padding: 5px;
 }
 
 .sliderMenuActive {
-    width: 350px;
+    width: 30%;
 }
 
 
@@ -2212,6 +2212,9 @@ height: 200px; */
     .cartWrapper2 {
         display: block;
     }
+    .slipHeader {
+        justify-content: space-between;
+    }
 }
 
 
@@ -2341,14 +2344,14 @@ height: 200px; */
             font-size: 10px;
             padding: 0px
         }
-        .slipHeader {
-            justify-content: space-between;
-        }
         .slipCancel {
             display: block;
         }
         .slipCancel2 {
             display: block;
+        }
+        .sliderMenuActive {
+            width: 60%;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

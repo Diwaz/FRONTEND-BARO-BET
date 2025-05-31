@@ -1290,7 +1290,7 @@ border-right: 1px solid #1e242c; */
 }
 
 .sliderMenuActive {
-    width: 350px;
+    width: 30%;
 }
 
 .navbar-collapse {
@@ -1754,6 +1754,9 @@ height: 200px; */
         }
         .cartWrapper {
             display: block;
+        }
+        .sliderMenuActive {
+            width: 60%;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

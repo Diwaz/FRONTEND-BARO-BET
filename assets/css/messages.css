@@ -1,0 +1,119 @@
+.my-backdrop0 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.noticeUpHeader {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    border-bottom: 1px solid #16bdf9;
+}
+
+.noticeDownHeader {
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.noticeBtn {
+    background-color: rgb(39, 48, 58);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.depositeActive {
+    border-bottom: 1px solid #16bdf9;
+}
+
+.noticeDownHeader {
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.depositeBtn2 {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: row-reverse;
+    margin-top: 10px;
+}
+
+.depositeDownHeader {
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.depositeHistory {
+    margin-top: 10px;
+}
+
+.fontSecondary {
+    color: rgb(134, 140, 148);
+    font-weight: 500!important;
+}
+
+.noticeItem {
+    background-color: #1D232A;
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #262d36;
+    cursor: pointer;
+}
+
+.noticeItem:hover {
+    background-color: #222a33;
+    box-shadow: inset 2px 0 #1a99c7;
+    /* box-shadow: inset 0 0 0 2px #1a99c7; */
+}
+
+.upperItem,
+.lowerItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.msgBody {
+    display: flex;
+    flex-direction: column;
+    background-color: #27303a;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.msgContent {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 200px;
+    padding: 10px;
+}
+
+.msgHeader {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}

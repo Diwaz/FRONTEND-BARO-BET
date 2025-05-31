@@ -7,6 +7,9 @@ const customerDrop2 = document.querySelector('.my-backdrop6')
 const changeInfoBtn = document.querySelector('.changeBtn')
 const customerToggleBtn = document.querySelector('.customerBtn')
 const sliderCancel = document.querySelector('.sliderCancel')
+const myBetsBtn = document.querySelector('.myBetsBtn')
+const betsDrop = document.querySelector('.my-backdrop7')
+
 
 sliderCancel.addEventListener('click', () => {
     sliderMenu.classList.remove('sliderMenuActive')
@@ -25,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
         sliderBackDrop.style.display = 'none'
     })
 
+    let pageNo = 1;
     matchHistory.addEventListener('click', () => {
+        sliderBackDrop.style.display = 'none'
         sliderMenu.classList.remove('sliderMenuActive')
         historyDrop.style.display = 'flex'
 
@@ -35,8 +40,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
         })
 
+        let totalPage = 10
+
+        let e = document.querySelector('#mini1')
+        let pageLimit = e.options[e.selectedIndex].text
+        e.addEventListener('change', () => {
+            pageLimit = e.value
+
+        })
+        let pgN = document.querySelector('#miniPN1');
+        let lBtn = document.querySelector('#lbtn1')
+        let rBtn = document.querySelector('#rbtn1')
+
+        const left = () => {
+            pageNo = pageNo - 1;
+            pgN.innerHTML = pageNo
+            if (pageNo == 1) {
+                lBtn.classList.add('deactive')
+                rBtn.classList.remove('deactive')
+            }
+            if (pageNo + 1 == totalPage) {
+                rBtn.classList.add('deactive')
+                lBtn.classList.remove('deactive')
+            }
+            if (pageNo != 1) {
+                rBtn.classList.remove('deactive')
+                lBtn.classList.remove('deactive')
+            }
+        }
+
+        const right = () => {
+            pageNo = pageNo + 1;
+            pgN.innerHTML = pageNo
+            if (pageNo == 1) {
+                lBtn.classList.add('deactive')
+                rBtn.classList.remove('deactive')
+            }
+            if (pageNo != 1) {
+                rBtn.classList.remove('deactive')
+                lBtn.classList.remove('deactive')
+            }
+            if (pageNo + 1 == totalPage) {
+                rBtn.classList.add('deactive')
+                lBtn.classList.remove('deactive')
+            }
+
+
+        }
+        lBtn.addEventListener('click', left)
+        rBtn.addEventListener('click', right)
+        console.log(pageNo)
+
+
     })
     changeInfoBtn.addEventListener('click', () => {
+        sliderBackDrop.style.display = 'none'
         sliderMenu.classList.remove('sliderMenuActive')
         console.log('here')
         infoDrop.style.display = 'flex'
@@ -47,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     customerToggleBtn.addEventListener('click', () => {
             sliderMenu.classList.remove('sliderMenuActive')
+            sliderBackDrop.style.display = 'none'
+            const footer = document.querySelectorAll('#footer5')
             console.log('asdasd')
             customerDrop1.style.display = 'flex'
             const changeCancel = document.querySelector('.customerCancel1')
@@ -61,6 +121,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 const changeCancel = document.querySelector('.customerCancel2')
                 changeCancel.addEventListener('click', () => {
                     customerDrop2.style.display = 'none'
+                })
+            })
+            footer.forEach((footer) => {
+                footer.addEventListener('click', () => {
+                    customerDrop2.style.display = 'flex'
+
+                    const changeCancel = document.querySelector('.customerCancel2')
+                    changeCancel.addEventListener('click', () => {
+                        customerDrop2.style.display = 'none'
+                    })
                 })
             })
             btn2.addEventListener('click', () => {
@@ -226,6 +296,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     })
 
-
+    myBetsBtn.addEventListener('click', () => {
+        betsDrop.style.display = 'flex'
+        sliderBackDrop.style.display = 'none'
+        sliderMenu.classList.remove('sliderMenuActive')
+        changeCancel = document.querySelector('#cancel7')
+        changeCancel.addEventListener('click', () => {
+            betsDrop.style.display = 'none'
+        })
+    })
 
 });

@@ -1,7 +1,8 @@
 const triggerSidebar = document.querySelector('.tooglebarSegment');
 const sidebar = document.querySelector('.sidebar');
 const backdrop = document.querySelector('.my-backdrop');
-const leagueTable = document.querySelector('.gamesTable');
+const leagueTable = document.querySelector('.leagueListBody');
+const gameTable = document.querySelector('.gameListBody');
 const handiOdds = document.querySelector('.nestedOdds');
 const betOdds = document.querySelector('.betOdds');
 const extraOdd = document.querySelector('.extraOdd');
@@ -23,6 +24,7 @@ const loginBtn = document.querySelector('.loginBtn')
 const sliderMenu = document.querySelector('.sliderMenu')
 const sliderBackDrop = document.querySelector('.sliderMenuBackDrop')
 const depositeDrop = document.querySelector('.depositeDrop')
+const slipCancel = document.querySelector('.slipCancel')
 
 
 
@@ -257,6 +259,22 @@ let soccerData = [
                                     oddName: 'Over 6.5',
                                     odds: 3.5
                                 },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
+                                {
+                                    oddName: 'Over 6.5',
+                                    odds: 3.5
+                                },
                             ]
                         },
                         {
@@ -331,7 +349,7 @@ let soccerData = [
                             odd1: 2.0,
                             odd2: 1.65,
                             totalBlocks: [{
-                                    oddName: 'Over 3.5',
+                                    oddName: 'Over 3.5 valencia',
                                     odds: 3.5
                                 },
                                 {
@@ -458,8 +476,8 @@ let soccerData = [
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 1, 7],
                     extra: '+78',
                     allBets: [{
-                            title: 'Total',
-                            odd1Name: 'over 3.5',
+                            title: 'Total arsenal',
+                            odd1Name: 'over 3.5 arsenal',
                             odd2Name: 'under 3.5',
                             odd1: 2.0,
                             odd2: 1.65,
@@ -547,13 +565,13 @@ let soccerData = [
                     handiBets: [-1.5, 2, 10, 1, 5, 1, 8, 7],
                     extra: '+78',
                     allBets: [{
-                            title: 'Total',
+                            title: 'Total city',
                             odd1Name: 'over 3.5',
                             odd2Name: 'under 3.5',
                             odd1: 2.0,
                             odd2: 1.65,
                             totalBlocks: [{
-                                    oddName: 'Over 3.5',
+                                    oddName: 'Over 3.5 city',
                                     odds: 3.5
                                 },
                                 {
@@ -736,28 +754,154 @@ let soccerData = [
 let dataArray = [];
 let cartItem = null;
 let selectedAmount = 0;
-
+let activeLeague = 0;
 
 
 //renderSidebar is only to render the sidebar for the first time
 //then if a user clicks another game then instead of appending on the parent it should replace the current component
 //so replaceSidebar (another funtion) is used .
-// function renderSidebar(leagueIndx, gameIndx) {
+function renderSidebar(leagueIndx, gameIndx) {
 
-//     //get the index of the first game of the first League
+    //get the index of the first game of the first League
 
+    let gameObject = soccerData[leagueIndx].League.Game[gameIndx];
+    let leagueObject = soccerData[leagueIndx].League
+    let sport = soccerData[leagueIndx].League.Sports
+    let allBets = soccerData[leagueIndx].League.Game[gameIndx].allBets;
+    // console.log(gameObject)
+
+
+    let reps = allBets.length
+
+    for (i = 0; i < reps; i++) {
+
+
+        let allBetsDiv = document.createElement('div');
+        allBetsDiv.classList.add('extraOddsBody');
+        allBetsDiv.innerHTML = `
+            
+            <div class="oddsHeader fontBlue">${allBets[i].title}</div>
+            <div class="oddsFooter">
+               
+    
+    
+            </div>
+        
+       
+            `
+        const extraOddsContainer = document.querySelector('.extraOddsContainer');
+
+        //remove this comment
+        extraOddsContainer.appendChild(allBetsDiv)
+
+        const totalOdds = allBets[i].totalBlocks
+            // console.log('all odds here', totalOdds)
+            // console.log('here again')
+        totalOdds.forEach((val, indx) => {
+            let allBetsDiv = document.createElement('div');
+            allBetsDiv.classList.add('finalOddWrapper');
+            allBetsDiv.innerHTML = `
+            <div class="odds1" id="${leagueIndx}-${gameIndx}">${val.oddName}   <span class="highlightOdd">
+            ${val.odds}
+            </span>
+            </div>
+        `
+            const oddsFooter = document.querySelectorAll('.oddsFooter');
+            for (let i = 0; i < oddsFooter.length; i++) {
+
+                oddsFooter[i].appendChild(allBetsDiv)
+            }
+            //remove this comment
+
+        })
+
+
+    }
+
+
+
+
+
+}
+
+function replaceSidebar(leagueIndx, gameIndx) {
+
+    //get the index of the first game of the first League
+
+
+
+    let allBets = soccerData[leagueIndx].League.Game[gameIndx].allBets;
+    // console.log(gameObject)
+    const extraOddsContainer = document.querySelector('.extraOddsContainer');
+    extraOddsContainer.innerHTML = ``;
+
+    let reps = allBets.length
+
+    for (i = 0; i < reps; i++) {
+
+
+        let allBetsDiv = document.createElement('div');
+        allBetsDiv.classList.add('extraOddsBody');
+        allBetsDiv.innerHTML = `
+            
+            <div class="oddsHeader fontBlue">${allBets[i].title}</div>
+            <div class="oddsFooter">
+               
+    
+    
+            </div>
+        
+       
+            `
+
+
+        //remove this comment
+        extraOddsContainer.appendChild(allBetsDiv)
+
+        const totalOdds = allBets[i].totalBlocks
+            // console.log('all odds here', totalOdds)
+            // console.log('here again')
+        totalOdds.forEach((val, indx) => {
+            let allBetsDiv = document.createElement('div');
+            allBetsDiv.classList.add('finalOddWrapper');
+            allBetsDiv.innerHTML = `
+            <div class="odds1" id="${leagueIndx}-${gameIndx}">${val.oddName}   <span class="highlightOdd">
+            ${val.odds}
+            </span>
+            </div>
+        `
+            const oddsFooter = document.querySelectorAll('.oddsFooter');
+            for (let i = 0; i < oddsFooter.length; i++) {
+
+                oddsFooter[i].appendChild(allBetsDiv)
+            }
+            //remove this comment
+
+        })
+
+
+    }
+
+
+
+
+
+}
+
+// function replaceSidebar(leagueIndx, gameIndx) {
 //     let gameObject = soccerData[leagueIndx].League.Game[gameIndx];
 //     let leagueObject = soccerData[leagueIndx].League
-//     let sport = soccerData[leagueIndx].League.Sports
 //     let allBets = soccerData[leagueIndx].League.Game[gameIndx].allBets;
-//     // console.log(gameObject)
-//     let detailDiv = document.createElement('div');
-//     detailDiv.classList.add('ExtraOddsWrapper');
-//     detailDiv.innerHTML = `
+
+
+//     let oldComponent = document.querySelector('.ExtraOddsWrapper')
+//     let newComponent = document.createElement('div');
+//     newComponent.classList.add('ExtraOddsWrapper');
+//     newComponent.innerHTML = `
 //     <div class="ExtrasHeader">
 //     <div class="upperHeader">
 //         <div class="sports">
-//             <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="30" height="16"></div>${sport}</div>
+//             <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="30" height="16"></div>Soccer</div>
 //         <div class="league"><img src="assets/images/${leagueObject.leagueFlag}.png" alt="" width="19" height="14" class="representLogo">${leagueObject.leagueName}</div>
 //     </div>
 //     <div class="LowerHeader">
@@ -776,16 +920,15 @@ let selectedAmount = 0;
 //         </div>
 //     </div>
 // </div>
-// <div class="gamePlaceHolder"></div>
+// <div class="gamePlaceHolder">
+
 // </div>
 // <div class="extraOddsContainer"></div>
 //     `
-
-//     // sidebar.replaceChild(detailDiv, detailDiv);
-//     //remove this comment
-//     col4.appendChild(detailDiv);
+//     col4.replaceChild(newComponent, oldComponent)
 
 //     let reps = allBets.length
+
 
 //     for (i = 0; i < reps; i++) {
 
@@ -836,241 +979,84 @@ let selectedAmount = 0;
 //     }
 
 
-
-
-
 // }
-
-function replaceSidebar(leagueIndx, gameIndx) {
-    let gameObject = soccerData[leagueIndx].League.Game[gameIndx];
-    let leagueObject = soccerData[leagueIndx].League
-    let allBets = soccerData[leagueIndx].League.Game[gameIndx].allBets;
-
-
-    let oldComponent = document.querySelector('.ExtraOddsWrapper')
-    let newComponent = document.createElement('div');
-    newComponent.classList.add('ExtraOddsWrapper');
-    newComponent.innerHTML = `
-    <div class="ExtrasHeader">
-    <div class="upperHeader">
-        <div class="sports">
-            <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="30" height="16"></div>Soccer</div>
-        <div class="league"><img src="assets/images/${leagueObject.leagueFlag}.png" alt="" width="19" height="14" class="representLogo">${leagueObject.leagueName}</div>
-    </div>
-    <div class="LowerHeader">
-        <div class="time"><i class="bi bi-stopwatch "></i>03/24</div>
-        <div class="fullGame">
-            <div class="team1">
-
-                <img src="assets/images/${gameObject.homeLogo}.png" alt="" width="14" height="14" class="representLogo">${gameObject.home}
-            </div>
-            vs
-            <div class="team2">
-
-                <img src="assets/images/${gameObject.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${gameObject.away}
-            </div>
-
-        </div>
-    </div>
-</div>
-<div class="gamePlaceHolder">
-
-</div>
-<div class="extraOddsContainer"></div>
-    `
-    col4.replaceChild(newComponent, oldComponent)
-
-    let reps = allBets.length
-
-
-    for (i = 0; i < reps; i++) {
-
-
-        let allBetsDiv = document.createElement('div');
-        allBetsDiv.classList.add('extraOddsBody');
-        allBetsDiv.innerHTML = `
-            
-            <div class="oddsHeader fontBlue">${allBets[i].title}</div>
-            <div class="oddsFooter">
-               
-    
-    
-            </div>
-        
-       
-            `
-        const extraOddsContainer = document.querySelector('.extraOddsContainer');
-
-        //remove this comment
-        extraOddsContainer.appendChild(allBetsDiv)
-
-        const totalOdds = allBets[i].totalBlocks
-            // console.log('all odds here', totalOdds)
-            // console.log('here again')
-        totalOdds.forEach((val, indx) => {
-            let allBetsDiv = document.createElement('div');
-            allBetsDiv.classList.add('finalOddWrapper');
-            allBetsDiv.innerHTML = `
-
-
-
-            <div class="odds1" id="${leagueIndx}-${gameIndx}">${val.oddName}   <span class="highlightOdd">
-            ${val.odds}
-            </span>
-            </div>
-        `
-            const oddsFooter = document.querySelectorAll('.oddsFooter');
-            for (let i = 0; i < oddsFooter.length; i++) {
-
-                oddsFooter[i].appendChild(allBetsDiv)
-            }
-            //remove this comment
-
-        })
-
-
-    }
-
-
-}
+// replaceSidebar(0)
 
 function initApp() {
-    // console.log(soccerData)
-    miniGameData.forEach((val, key) => {
-        let loadGames = document.createElement('div')
-        loadGames.classList.add('singleGame');
-        loadGames.innerHTML = `
-        
-        <img src="assets/images/${val.gameImg}.png" class="d-inline-block align-text-top" width="225" height="130" id="${key}">
-   
-        `
-        gamesContainer.appendChild(loadGames)
-
-    })
-
-
     soccerData.forEach((value, key) => {
 
 
         //For leagues
         let newDiv = document.createElement('div');
-        newDiv.classList.add('leagueTable');
+        newDiv.classList.add('LeagueMode');
+        newDiv.setAttribute('id', `${key}`)
         newDiv.innerHTML = `
-        <div class="leagueHeader bbcolor">
-        <div class="leagueCol1">
-
-            <img src="assets/images/${value.League.leagueFlag}.png" alt="" width="19" height="14" class="representLogo"> ${value.League.leagueName}</div>
-        <div class="leagueCol2">
-          
-        <div class="betHeader">Home </div>
-        <div class="betHeader">Draw</div>
-        <div class="bHeader">Away</div>
-        </div>
-        <div class="leagueCol3"> Handicap
-        </div>
-        <div class="leagueCol4">Over/Under
-        </div>
-    </div>
+        <div class="LmodeName ${key==0?'fontBlue':''}" id="${key}">
+        ${value.League.leagueName}
+                                        </div>
    `;
 
-        // leagueTable.appendChild(newDiv);
-
-        let games = value.League.Game;
-        //  console.log(games)
-        games.forEach((val, indx) => {
-            // For Games
-            let gamesDiv = document.createElement('div');
-            gamesDiv.classList.add('leagueFooter');
-            gamesDiv.innerHTML = `
-            <div class="gameCol1" id='${indx}-${key}'>
-
-            <div class="teamRow1">
-                <div class="nestedRow"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
-                <div class="nestedRow fontBlue">${val.homeGoal}</div>
-            </div>
-            <div class="teamRow1">
-                <div class="nestedRow"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
-                <div class="nestedRow fontBlue">${val.awayGoal}</div>
-            </div>
-            <div class="teamRow1">
-                <div class="nestedRow specWidth"><i class="bi bi-stopwatch "></i> 1st half of <span class="fontBlue"> 37:31'</span></div>
-                <div class="nestedRow fontBlue">+48</div>
-            </div>
-    
-        </div>
-        <div class="gameCol2">
-            <div class="betOdds" id="${indx}-${key}-1">
-               
-                ${val.bets[0]}
-            </div>
-            <div class="betOdds" id="${indx}-${key}-2">
-                
-                ${val.bets[1]}</div>
-            <div class="betOdds" id="${indx}-${key}-3">
-                
-                ${val.bets[2]}</div>
-        </div>
-        <div class="gameCol3">
-            <div class="handiOdds">
-                <div class="nestedOdds fontOrange">${val.handiBets[0]}</div>
-                <div class="nestedOdds">${val.handiBets[1]}</div>
-            </div>
-            <div class="handiOdds">
-                <div class="nestedOdds fontOrange">${val.handiBets[2]}</div>
-                <div class="nestedOdds">${val.handiBets[3]}</div>
-            </div>
-    
-    
-        </div>
-        <div class="gameCol4">
-            <div class="handiOdds">
-                <div class="nestedOdds fontRed">${val.handiBets[4]}</div>
-                <div class="nestedOdds">${val.handiBets[5]}</div>
-            </div>
-            <div class="handiOdds">
-                <div class="nestedOdds fontBlue">${val.handiBets[6]}</div>
-                <div class="nestedOdds">${val.handiBets[7]}</div>
-            </div>
-    
-        </div>
-        <div class="gameOdds"></div>
-   `;
-            //  leagueTable.appendChild(gamesDiv);
-
-            // let allBets = val.allBets;
-            // console.log(allBets)
-
-            // allBets.forEach((v, k) => {
-            //     // For Games
-            //     let allBetsDiv = document.createElement('div');
-            //     allBetsDiv.classList.add('extraOddsBody');
-            //     allBetsDiv.innerHTML = `
-            //                 <div class="oddsHeader fontBlue">1x2</div>
-            //                 <div class="oddsFooter">
-            //                     <div class="odds1">FCB 1.90
-            //                     </div>
-
-            //                     <div class="odds1">RMA 4.10</div>
-            //                 </div>`;
-
-            //     ExtraOddsWrapper.appendChild(allBetsDiv);
 
 
-            // })
-
-        })
+        leagueTable.appendChild(newDiv);
 
 
     })
 
-    // function selectOdds() {
-    //     handiOdds.classList.toggle('betActive');
-    // }
-    // console.log(handiOdds)
-    // handiOdds.addEventListener('click', selectOdds);
+    let games = soccerData[activeLeague].League.Game;
+    //  console.log(games)
+    games.forEach((val, indx) => {
+        // For Games
+        let gamesDiv = document.createElement('div');
+        gamesDiv.classList.add('gameMode');
+        gamesDiv.setAttribute('id', `${activeLeague}-${indx}`)
+        gamesDiv.innerHTML = `
+            <div class="modeName ${indx==0?'':''}" id="${activeLeague}-${indx}">
+            ${val.home}
+                                        </div>
+    `;
+        gameTable.appendChild(gamesDiv);
+
+
+
+    })
+
+
+
+}
+
+function replaceGames() {
+
+    let oldComponent = document.querySelectorAll('.gameMode')
+    let games = soccerData[activeLeague].League.Game;
+    //  console.log(games)
+    games.forEach((val, indx) => {
+        // For Games
+        let gamesDiv = document.createElement('div');
+        gamesDiv.classList.add('gameMode');
+        gamesDiv.setAttribute('id', `${activeLeague}-${indx}`)
+        gamesDiv.innerHTML = `
+        <div class="modeName ${indx==0?'':''}" id="${activeLeague}-${indx}">
+        ${val.home}
+                                    </div>
+`;
+        gameTable.replaceChild(gamesDiv, oldComponent[indx]);
+
+        const newGame = document.querySelectorAll('.gameMode')
+        newGame.forEach((game) => {
+            game.addEventListener('click', (e) => {
+                const gameIndex = e.target.id.split('-')[0]
+                const leagueIndex = e.target.id.split('-')[1]
+                console.log(gameIndex, leagueIndex)
+                replaceSidebar(gameIndex, leagueIndex)
+            })
+        })
+
+    })
 }
 initApp();
-// renderSidebar(0, 0);
+
+renderSidebar(0, 0);
 
 // function addToCard(key) {
 //     if (listCards[key] == null) {
@@ -1162,11 +1148,25 @@ function reloadCard() {
 
 // })
 
-// cartBackdrop.addEventListener('click', function() {
-//     cartBackdrop.style.display = 'none'
-//     col3.style.display = ''
-//     col3.style.zIndex = 1
-// })
+
+
+cartWrapper.addEventListener('click', function() {
+    cartBackdrop.style.display = 'flex'
+    col3.style.display = 'flex'
+    col3.style.zIndex = 3
+
+    slipCancel.addEventListener('click', () => {
+        cartBackdrop.style.display = 'none'
+        col3.style.display = ''
+        col3.style.zIndex = 1
+    })
+
+})
+cartBackdrop.addEventListener('click', function() {
+    cartBackdrop.style.display = 'none'
+    col3.style.display = ''
+    col3.style.zIndex = 1
+})
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.handiOdds');
     const betOdds = document.querySelectorAll('.betOdds');
@@ -1186,7 +1186,70 @@ document.addEventListener('DOMContentLoaded', function() {
     const upperItem = document.querySelectorAll('.upperItem');
     const noticeItem = document.querySelectorAll('.noticeItem');
     const singleGame = document.querySelectorAll('.singleGame');
+    const selectLeague = document.querySelectorAll('.LeagueMode');
+    const selectLeaguebyId = document.querySelectorAll('.LmodeName');
+    const selectGamebyId = document.querySelectorAll('.modeName');
+    const selectTime = document.querySelectorAll('.gameMode');
 
+
+
+
+    selectTime.forEach((game) => {
+        game.addEventListener('click', (e) => {
+            const gameIndex = e.target.id.split('-')[0]
+            const leagueIndex = e.target.id.split('-')[1]
+                // setActiveGame(e.target)
+            console.log(gameIndex, leagueIndex)
+            replaceSidebar(gameIndex, leagueIndex)
+        })
+    })
+    selectLeague.forEach((league) => {
+        league.addEventListener('click', (e) => {
+            // const child = e.target.querySelector('.LmodeName');
+            // child.classList.add('fontBlue')
+            setActive(e.target);
+            console.log('clicked')
+            activeLeague = e.target.id;
+            replaceGames(activeLeague)
+
+        })
+    })
+
+    function setActive(button) {
+        // remove active class from all buttons
+        const buttons = document.querySelectorAll('.LmodeName')
+        buttons.forEach(btn => btn.classList.remove('fontBlue'));
+
+        // add active class to the clicked button
+        button.querySelector('.LmodeName').classList.add('fontBlue');
+    }
+
+    function setActiveById(button) {
+        // remove active class from all buttons
+        const buttons = document.querySelectorAll('.LmodeName')
+        buttons.forEach(btn => btn.classList.remove('fontBlue'));
+
+        // add active class to the clicked button
+        button.classList.add('fontBlue');
+    }
+
+    // function setActiveGame(button) {
+    //     // remove active class from all buttons
+    //     const buttons = document.querySelectorAll('.modeName')
+    //     buttons.forEach(btn => btn.classList.remove('fontBlue'));
+
+    //     // add active class to the clicked button
+    //     button.querySelector('.modeName').classList.add('fontBlue');
+    // }
+    selectLeaguebyId.forEach((league) => {
+        league.addEventListener('click', (e) => {
+            console.log('clicked')
+            setActive(e.target)
+            activeLeague = e.target.id;
+            replaceGames(activeLeague)
+
+        })
+    })
 
 
 
@@ -1204,7 +1267,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const gameIndex = event.target.parentNode.id.split('-')[0]
             const leagueIndex = event.target.parentNode.id.split('-')[1]
                 //  console.log(gameIndex, leagueIndex)
-            replaceSidebar(leagueIndex, gameIndex);
+            replaceSidebar(gameIndex, leagueIndex);
 
         })
     })
@@ -1235,7 +1298,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
             // noticeDownHeader.style.display = 'none'
-
 
 
 
@@ -1580,6 +1642,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         })
     })
+
 
     const loginBtn = document.querySelector('.loginBtn')
     const sliderMenu = document.querySelector('.sliderMenu')

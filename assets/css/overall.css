@@ -1,0 +1,57 @@
+/* CSS for offcanvas menu */
+
+.offcanvas-start {
+    width: 70% !important;
+    /* Set the width of the sidebar to 50% */
+}
+
+.customMainColour {
+    background-color: #1F262F !important;
+}
+
+.slipCancel {
+    position: relative;
+    left: 0;
+    background-color: #16bdf9;
+    padding: 10px;
+    display: none;
+    width: 35px;
+    cursor: pointer;
+}
+
+.slipCancel {
+    display: block;
+}
+
+@media not all and (max-width: 1400px) {
+    .slipCancel {
+        display: none;
+    }
+    .slipHeader {
+        justify-content: space-between;
+    }
+}
+
+
+/* 
+@media (max-width: 768px) {
+    .full-top{
+        display: none;
+    }
+    .half-top
+    {
+        display: block;
+    }
+}
+
+.full-top{
+    display: block;
+}
+.half-top
+{
+    display: none;
+} */
+
+.sortWrapper {
+    flex-direction: column !important;
+}

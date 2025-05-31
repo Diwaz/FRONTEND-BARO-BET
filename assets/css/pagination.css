@@ -1,0 +1,64 @@
+.pagination {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.pageRight {
+    display: flex;
+}
+
+.pageController {
+    display: flex;
+}
+
+.chevronLogo {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.pageNo {
+    padding: 10px;
+    background-color: rgb(44 54 64);
+    margin-right: 10px;
+}
+
+.pLeft {
+    padding: 10px;
+    background-color: rgb(44 54 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.limitDrop {
+    background-color: rgb(44 54 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    padding: 10px;
+}
+
+.deactive {
+    background-color: #222a33;
+}
+
+@media (max-width: 852px) {
+    /* Add additional styles as needed */
+    .impBtns {
+        width: 100%!important
+    }
+    .menuWrapper {
+        font-size: 10px;
+    }
+    .headerItem {
+        font-size: 8px;
+    }
+    .footerItem {
+        font-size: 8px;
+    }
+}

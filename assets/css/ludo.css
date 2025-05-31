@@ -1742,7 +1742,7 @@ padding: 5px;
 }
 
 .sliderMenuActive {
-    width: 350px;
+    width: 30%;
 }
 
 
@@ -1932,6 +1932,9 @@ padding: 5px;
         .oddsSelect {
             font-size: 10px;
             padding: 0px
+        }
+        .sliderMenuActive {
+            width: 60%;
         }
     }
     /* Styles for extra large screens (up to 1200px) */

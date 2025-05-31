@@ -748,6 +748,9 @@ function renderSidebar(leagueIndx, gameIndx) {
     detailDiv.classList.add('ExtraOddsWrapper');
     detailDiv.innerHTML = `
     <div class="ExtrasHeader">
+    <div class="exitDetail">
+    <i class="bi bi-chevron-left chevronLogo "></i>Back
+    </div>
     <div class="upperHeader">
         <div class="sports">
             <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="30" height="16"></div>${sport}</div>
@@ -842,6 +845,12 @@ function replaceSidebar(leagueIndx, gameIndx) {
     newComponent.classList.add('ExtraOddsWrapper');
     newComponent.innerHTML = `
     <div class="ExtrasHeader">
+    <div class="exitDetail">
+    <i class="bi bi-chevron-left  ">
+    
+    </i>
+    Back
+    </div>
     <div class="upperHeader">
         <div class="sports">
             <div class="sportLogo"><img src="assets/SVGs/8.svg" alt="" width="30" height="16"></div>Soccer</div>
@@ -980,6 +989,7 @@ function initApp() {
 
         leagueTable.appendChild(newDiv);
 
+
         let games = value.League.Game;
         //  console.log(games)
         games.forEach((val, indx) => {
@@ -989,16 +999,16 @@ function initApp() {
             gamesDiv.innerHTML = `
             <div class="gameCol1" id='${indx}-${key}'>
 
-            <div class="teamRow1">
-                <div class="nestedRow"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
+            <div class="teamRow1" id='${indx}-${key}' >
+                <div class="nestedRow1"> <img src="assets/images/${val.homeLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.home}</div>
                 <div class="nestedRow fontBlue">${val.homeGoal}</div>
             </div>
-            <div class="teamRow1">
-                <div class="nestedRow"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
+            <div class="teamRow1" id='${indx}-${key}'>
+                <div class="nestedRow1"> <img src="assets/images/${val.awayLogo}.png" alt="" width="14" height="14" class="representLogo"> ${val.away}</div>
                 <div class="nestedRow fontBlue">${val.awayGoal}</div>
             </div>
-            <div class="teamRow1">
-                <div class="nestedRow specWidth"><i class="bi bi-stopwatch "></i> 1st half of <span class="fontBlue"> 37:31'</span></div>
+            <div class="teamRow1" id='${indx}-${key}'>
+                <div class="nestedRow1 specWidth"><i class="bi bi-stopwatch "></i> <span class="fontBlue"> 37:31'</span></div>
                 <div class="nestedRow fontBlue">+48</div>
             </div>
     
@@ -1038,30 +1048,67 @@ function initApp() {
             </div>
     
         </div>
+        <div class="gameCol5">
+        <div class="extraOdd" id="${indx}-${key}"><i class="bi bi-chevron-right chevronLogo "></i></div>
+        </div>
         <div class="gameOdds"></div>
    `;
+
+
             leagueTable.appendChild(gamesDiv);
 
-            // let allBets = val.allBets;
-            // console.log(allBets)
+            //         let accorDiv = document.createElement('div')
+            //         accorDiv.setAttribute('id', `${indx}${key}`)
+            //         accorDiv.classList.add('accordionOdd');
 
-            // allBets.forEach((v, k) => {
-            //     // For Games
-            //     let allBetsDiv = document.createElement('div');
-            //     allBetsDiv.classList.add('extraOddsBody');
-            //     allBetsDiv.innerHTML = `
-            //                 <div class="oddsHeader fontBlue">1x2</div>
+            //         accorDiv.innerHTML = `
+            // <div class="extraOddsContainer${indx}${key}">
+            // </div>
+            //             `
+            //         leagueTable.appendChild(accorDiv);
+            //         let allOdds = val.allBets;
+
+            //         let reps = allOdds.length
+            //         console.log('reps', reps)
+            //         for (i = 0; i < reps; i++) {
+
+
+            //             let allBetsDiv = document.createElement('div');
+            //             allBetsDiv.classList.add('extraOddsBody');
+            //             allBetsDiv.innerHTML = `
+
+            //                 <div class="oddsHeader fontBlue">${allOdds[i].title}</div>
             //                 <div class="oddsFooter">
-            //                     <div class="odds1">FCB 1.90
+            //                 </div>
+            //                 `
+            //             const extraOddsContainer = document.querySelector(`.extraOddsContainer${indx}${key}`);
+
+            //             //remove this comment
+            //             extraOddsContainer.appendChild(allBetsDiv)
+
+            //             const totalOdds = allOdds[i].totalBlocks
+            //                 // console.log('all odds here', totalOdds)
+            //                 // console.log('here again')
+            //             totalOdds.forEach((val, index) => {
+            //                 let allBetsDiv = document.createElement('div');
+            //                 allBetsDiv.classList.add('finalOddWrapper');
+            //                 allBetsDiv.innerHTML = `
+            //                     <div class="odds1" id="${indx}-${key}">${val.oddName}   <span class="highlightOdd">
+            //                     ${val.odds}
+            //                     </span>
             //                     </div>
+            //                 `
+            //                 const oddsFooter = document.querySelectorAll('.oddsFooter');
+            //                 for (let i = 0; i < oddsFooter.length; i++) {
 
-            //                     <div class="odds1">RMA 4.10</div>
-            //                 </div>`;
-
-            //     ExtraOddsWrapper.appendChild(allBetsDiv);
+            //                     oddsFooter[i].appendChild(allBetsDiv)
+            //                 }
 
 
-            // })
+            //             })
+
+
+            //         }
 
         })
 
@@ -1190,6 +1237,21 @@ cartBackdrop.addEventListener('click', function() {
     col3.style.display = ''
     col3.style.zIndex = 1
 })
+const accord = document.querySelectorAll('.accordionOdd')
+
+function setActiveButton(id) {
+    // remove active class from all buttons
+
+    let accord = document.getElementById(`${id}`);
+    accord.classList.toggle('accordionActive')
+        // const accordionOdd = document.querySelectorAll('.accordionOdd')
+        // accordionOdd.forEach(btn => btn.classList.remove('accordionActive'));
+
+    // // add active class to the clicked button
+    // accordi.classList.add('accordionActive');
+}
+
+
 
 function setActiveOdd(button) {
     // remove active class from all buttons
@@ -1243,8 +1305,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const gameCol3 = document.querySelectorAll('.gameCol3');
     const gameCol4 = document.querySelectorAll('.gameCol4');
     const selectGame = document.querySelectorAll('.gameCol1');
+    const selectGame2 = document.querySelectorAll('.teamRow1');
     const extraOddBtn = document.querySelectorAll('.odds1');
     const col4 = document.querySelector('.column4');
+    const col2 = document.querySelector('.column2');
+    const col3 = document.querySelector('.column3');
     const slipBody = document.querySelector('.slipBody')
     const noticeDownHeader = document.querySelector('.noticeDownHeader');
     const backBtn = document.querySelector('.msgBack');
@@ -1252,9 +1317,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const noticeItem = document.querySelectorAll('.noticeItem');
     const singleGame = document.querySelectorAll('.singleGame');
     const empty = document.querySelector('.emptyAll');
+
     const selectAmount = document.querySelectorAll('.amount1');
     const maxAmnt = document.querySelector('.maxAmnt');
     const resetAmnt = document.querySelector('.resetAmnt');
+
 
 
     maxAmnt.addEventListener('click', () => {
@@ -1467,7 +1534,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     selectOptions.addEventListener('change', function() {
-
+        console.log('here')
         if (selectOptions.value == 'winner') {
 
             for (let i = 0; i < leagueCol3.length; i++) {
@@ -1536,6 +1603,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     selectGame.forEach(function(selectGame) {
+        selectGame.addEventListener('click', function(event) {
+
+            const gameIndex = event.target.parentNode.id.split('-')[0]
+            const leagueIndex = event.target.parentNode.id.split('-')[1]
+                //  console.log(gameIndex, leagueIndex)
+            replaceSidebar(leagueIndex, gameIndex);
+
+        })
+    })
+    selectGame2.forEach(function(selectGame) {
         selectGame.addEventListener('click', function(event) {
 
             const gameIndex = event.target.parentNode.id.split('-')[0]
@@ -1921,7 +1998,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
     extraOdd.forEach(function(extraOdd) {
         extraOdd.addEventListener('click', function(event) {
-            // Toggle the 'button-active' class on the clicked button element
+            let p = 1
+
+
+
+            let leagueIndx = event.target.id.split('-').join('')[0]
+            let gameIndx = event.target.id.split('-').join('')[1]
+            replaceSidebar(gameIndx, leagueIndx)
+            col2.style.display = 'none'
+            col4.style.display = 'flex'
+            col4.classList.add('maxWidth');
+            const exitDetail = document.querySelector('.exitDetail');
+
+            exitDetail.addEventListener('click', () => {
+                p = p + 1
+                console.log('aa')
+                col2.style.display = ''
+                col4.style.display = 'none'
+                col4.classList.remove('maxWidth');
+
+
+
+            })
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1008) {
+                    col4.style.display = 'flex'
+                    col2.style.display = ''
+
+                } else {
+                    col4.style.display = 'none'
+                    col2.style.display = ''
+                }
+            })
+
+
 
 
 
